@@ -79,9 +79,11 @@ export class QuizPageComponent implements OnInit {
         else
         {
             this.currentPage++;
-            scroll({
-                top: 0
-            });
+            setTimeout(() => {
+                scroll({
+                    top: 0
+                });
+            }, 100);
         }
     }
 
