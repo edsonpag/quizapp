@@ -1,0 +1,45 @@
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding-top: 3rem;
+    padding-inline: 1.4rem;
+}
+
+footer h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+footer .social-media-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.social-media-links div {
+    height: 3.5rem;
+    width: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+div i {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+}
+
+div i:hover {
+    opacity: 0.7;
+}
+
+.copyright-p {
+    margin-top: 2rem;
+    padding-bottom: 0.8rem;
+    text-align: center;
+    font-size: 0.8rem;
+}

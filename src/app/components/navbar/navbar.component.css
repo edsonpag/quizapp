@@ -1,0 +1,15 @@
+.navbar {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding-block: 0.9rem;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-left: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+.navbar-brand span {
+    color: var(--primary-color);
+}

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "quiz-digital-96509": {
+      "hosting": {
+        "quiz-app": [
+          "quiz-digital-96509"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "quiz-digital-96509"
+  }
+}

@@ -1,0 +1,47 @@
+.depoiment {
+    margin-top: 35px;
+    width: 95%;
+    border-radius: 8px;
+    margin-inline: auto;
+    background-color: black;
+    padding: 18px;
+    padding-bottom: 8px;
+    position: relative;
+}
+
+.line-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.line-2 {
+    margin-top: 20px;
+}
+
+.line-3 {
+    margin-top: 20px;
+}
+
+i {
+    font-size: 22px;
+}
+
+.filled {
+    color: #fbbc04;
+}
+
+.not-filled {
+    color: #dadce0;
+}
+
+.name {
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: bold;
+}
+
+.quiz-date, .comment-date {
+    font-size: 10px;
+    margin: 0;
+}

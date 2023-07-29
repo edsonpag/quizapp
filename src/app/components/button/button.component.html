@@ -1,0 +1,7 @@
+<button class="button-component" style="width: {{ width }}; height: {{ height }}; font-size: {{ fontSize }};" [ngClass]="{'disabled': disabled}">
+    {{ text }}
+    <span *ngIf="spanFree">
+        <div class="divider"></div>
+        <span class="text"> É Gratis</span>
+    </span>
+</button>

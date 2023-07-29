@@ -1,0 +1,17 @@
+<div class="depoiment">
+    <div class="line-1">
+        <p class="name">{{ depoiment.name }}, {{ depoiment.age}}</p>
+        <ngb-rating [rate]="depoiment.rate">
+            <ng-template let-fill="fill" let-index="index">
+                <i class="bi-star-fill" [ngClass]="fill === 100 ? 'filled' : 'not-filled'"></i>
+            </ng-template>
+        </ngb-rating>
+    </div>
+    <div class="line-2">
+        <p class="depoiment-text">{{ depoiment.text }}</p>
+    </div>
+    <div class="line-3">
+        <p class="quiz-date">{{ depoiment.quizDate }}</p>
+        <p class="comment-date">{{ depoiment.commentDate }}</p>
+    </div>
+</div>

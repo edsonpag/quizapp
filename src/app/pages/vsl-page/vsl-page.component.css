@@ -1,0 +1,76 @@
+h3 {
+    text-align: center;
+    margin-top: 38px;
+    font-size: 22px;
+    padding-inline: 10px;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+.decoration {
+    background-color: var(--primary-color);
+}
+
+.paragraph-1 {
+    font-size: 22px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.text-emphasis {
+    display: inline-flex;
+    padding: 5px;
+    background-color:var(--primary-color);
+    color: white;
+}
+
+.paragraph-2 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 16px;
+}
+
+.doubts {
+    margin-top: 25px;
+    padding-inline: 10px;
+}
+
+
+.vsl-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.vsl-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    outline: none;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 90%;
+    box-shadow: var(--primary-color) 0px 5px 15px;
+}
+
+.vsl-button p {
+    margin: 0;
+}
+
+ul, li {
+    background-color: black;
+    color: white;
+}
+
+.first-button {
+    margin-top: 40px;
+}
+
+.middle-button {
+    margin-top: 30px;
+}
+
+.last-button {
+    margin-top: 30px;
+    padding-bottom: 25px;
+}

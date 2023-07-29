@@ -1,0 +1,22 @@
+<div class="quiz-page">
+    <ngb-progressbar [animated]="true" [value]="progressBarValue"></ngb-progressbar>
+    <div class="quiz-questions">
+        <div *ngFor="let question of questions[currentPage]" class="quiz-question" [ngClass]="question.showAlert ? 'bg-alert' : ''">
+            <p>{{ question.text }}</p>
+            <div class="answers">
+                <div *ngFor="let answer of question.answers" class="answer">
+                    <div [ngClass]="answer.selected ? 'selected' : ''" class="{{ answer.text }}" (click)="handleClick(question.id, answer.text)"></div>
+                    <p>{{ answer.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="next-previous-container">
+        <p [ngClass]="currentPage <= 0 ? 'hide' : ''" (click)="previousPage()">Voltar</p>
+        <div class="dot" *ngFor="let page of questions; let i = index" [ngClass]="i === currentPage? 'current-page' : ''"></div>
+        <p *ngIf="currentPage < questions.length - 1; else elseBlock" (click)="nextPage()">Avançar</p>
+        <ng-template #elseBlock>
+            <p (click)="finish()">Finalizar</p>
+        </ng-template>
+    </div>
+</div>

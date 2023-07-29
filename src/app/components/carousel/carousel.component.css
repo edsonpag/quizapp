@@ -1,0 +1,12 @@
+.picsum-img-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-caption {
+    text-align: center;
+    margin-top: 1.4rem;
+    padding-inline: 1.3rem;
+}

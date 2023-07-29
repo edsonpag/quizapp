@@ -1,0 +1,10 @@
+<ngb-carousel [interval]="0" [animation]="true" *ngIf="slides" [showNavigationIndicators]="false" [ngClass]="'carousel-dark'">
+	<ng-template ngbSlide *ngFor="let slide of slides">
+        <div class="picsum-img-wrapper">
+            <img [src]="slide.image" class="w-50 rounded-circle" alt="Random first slide" />
+        </div>
+        <div class="my-caption">
+			<p>{{ slide.text }}</p>
+		</div>
+	</ng-template>
+</ngb-carousel>

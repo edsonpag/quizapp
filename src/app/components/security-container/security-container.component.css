@@ -1,0 +1,24 @@
+.security-container {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding-block: 1.6rem;
+    justify-content: space-between;
+    width: 90vw;
+}
+
+.security-container .image-container {
+    display: flex;
+    align-items: center;
+    width: 100px;
+}
+
+.security-container .image-container img {
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+.security-container .image-container span {
+    font-size: 0.7rem;
+}

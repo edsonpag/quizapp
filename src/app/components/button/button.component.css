@@ -1,0 +1,28 @@
+.button-component {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 2rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.divider {
+    width: 13px;
+    height: 1.9px;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin-inline: 1px;
+    display: inline-block;
+    margin-bottom: 3px;
+}
+
+.text {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.3;
+    cursor: auto;
+    user-select: none;
+}
