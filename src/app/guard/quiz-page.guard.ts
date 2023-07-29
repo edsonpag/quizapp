@@ -13,7 +13,7 @@ class QuizPageGuard {
     canActivate(): boolean {
         const hasAcess: boolean = this.leadService.lead.ageRange != "";
         if (!hasAcess) {
-            this.router.navigate(['/age'])
+            this.router.navigate(['/'])
             return false;
         }
         return true;
