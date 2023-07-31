@@ -7,8 +7,5 @@ export interface Lead {
     formDataQuiz: FormDataQuiz,
     results: Result[],
     ageRange: string,
-    questions: Question[],
-    startedPlayingTheVideo: boolean,
-    vslWatchTimeInSeconds: number,
-    checkout: boolean
+    questions: Question[]
 }

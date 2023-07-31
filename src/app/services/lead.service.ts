@@ -16,10 +16,7 @@ export class LeadService {
         },
         results: [],
         ageRange: "",
-        questions: [],
-        startedPlayingTheVideo: false,
-        vslWatchTimeInSeconds: 0,
-        checkout: false
+        questions: []
     }
     
     constructor(private angularFirestore: AngularFirestore) {}
@@ -31,9 +28,5 @@ export class LeadService {
 
     getAll() {
         return this.angularFirestore.collection('/Leads').snapshotChanges();
-    }
-
-    update(): void {
-        this.angularFirestore.collection('/Leads').doc(this.lead.id).set(this.lead);
     }
 }

@@ -43,8 +43,6 @@ export class VlsPageComponent implements OnInit {
     }
 
     goToCheckout(): void {
-        this.leadService.lead.checkout = true;
-        this.leadService.update();
         window.location.href = this.checkoutLink + this.getQueryparams();
     }
 
