@@ -71,7 +71,7 @@ export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
   }
 
   onTimeUpdate(): void {
-    const TIME_IN_SECONDS_TO_UPDATE_VSL_PAGE = 10;
+    const TIME_IN_SECONDS_TO_UPDATE_VSL_PAGE = 600;
     const CURRENT_TIME = this.getVideoPlayerElement().currentTime;
     if (CURRENT_TIME > TIME_IN_SECONDS_TO_UPDATE_VSL_PAGE) {
       this.handleSalesNotification();
