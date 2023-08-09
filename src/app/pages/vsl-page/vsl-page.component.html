@@ -1,6 +1,6 @@
 <div #vsl class="vsl-page">
     <h3>Não seja mais uma Marionete: Descubra Como Ganhar de <span class="decoration">R$500 a R$5.000</span> por Mês como {{ courses[this.vslData.category.index] }}</h3>
-    <app-video-player videoSrc="{{ videoSrc }}" poster="../../../assets/img/poster.jpg"></app-video-player>
+    <app-video-player videoSrc="{{ videoSrc }}"></app-video-player>
     <div class="hide">
         <stopwatch-component *ngIf="vslPageService.isStartTimer()"></stopwatch-component>
         <div class="vsl-button-container first-button" (click)="goToCheckout()">

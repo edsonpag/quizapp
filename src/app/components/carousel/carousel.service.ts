@@ -14,7 +14,7 @@ export class CarouselService {
             },
             {
               image: '../../../assets/img/avatares/avatar-02.png',
-              text: 'Olha, de verdade, esse quiz me surpreendeu. Confesso que era cético em relação a esses testes, pois já havia feito outros sem nenhuma precisão. Hoje sou empregado público e estou em busca de realizar uma transição de carreira e esse quiz me ajudou bastante! Muito obrigado, pessoal!'
+              text: 'Olha, de verdade, esse quiz me surpreendeu. Confesso que não botava tanta fé nesses testes, pois já havia feito outros sem nenhuma precisão. Hoje sou empregado público e estou em busca de realizar uma transição de carreira e esse quiz me ajudou bastante! Muito obrigado, pessoal!'
             },
             {
               image: '../../../assets/img/avatares/avatar-03.png',

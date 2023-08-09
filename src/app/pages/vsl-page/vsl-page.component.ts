@@ -50,8 +50,8 @@ export class VlsPageComponent implements OnInit {
         const email: Email = {
             from: 'Digital Quiz <contato@digitalquiz.com.br>',
             to: this.quizService.getFormDateQuiz().email,
-            subject: 'Titulo Aqui',
-            text: `Olá ${this.quizService.getFormDateQuiz().name}. Mim de o copia e cola aqui Owww mango joe. Tua profissão é ${this.courses[this.vslData.category.index]}`,
+            subject: `Convite Especial`,
+            text: `Olá ${this.quizService.getFormDateQuiz().name}. Vimos que você realizou o nosso quiz digital e a profissão que mais se encaixou no seu perfil foi: ${this.courses[this.vslData.category.index]}. Não perca a essa oportunidade e adquira agora a sua apostila para sair na frente. Link da apostila: ${this.checkoutLink}`,
             fullname: this.quizService.getFormDateQuiz().name,
             profession: this.courses[this.vslData.category.index],
             shootingDate: new Date(shootingDate),
