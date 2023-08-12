@@ -118,7 +118,6 @@ export class QuizPageComponent implements OnInit {
                 points: categoryPoints
             })
         });
-        this.leadService.lead.results = results;
         this.quizService.setResults(results);
     }
 
@@ -133,7 +132,6 @@ export class QuizPageComponent implements OnInit {
     splitQuestionsByCategory(): Question[][] {
         const questionsSplitByCategory: Question[][] = [];
         const questions = this.joinQuestions();
-        this.leadService.lead.questions = questions;
         const numberOfCategories = Object.keys(Category).length / 2;
         for (let i = 1; i < numberOfCategories; i++)
             questionsSplitByCategory.push(questions.filter(question => question.category.valueOf() === i));

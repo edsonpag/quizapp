@@ -8,15 +8,12 @@ export class LeadService {
 
     public lead: Lead = {
         id: "",
-        formDataQuiz: {
-            name: "",
-            email: "",
-            cellphoneNumber: "",
-            terms: false
-        },
-        results: [],
-        ageRange: "",
-        questions: []
+        name: "",
+        email: "",
+        cellphoneNumber: "",
+        terms: false,
+        profission: "",
+        ageRange: ""
     }
     
     constructor(private angularFirestore: AngularFirestore) {}
