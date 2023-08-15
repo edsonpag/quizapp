@@ -55,6 +55,7 @@ export class VlsPageComponent implements OnInit {
             var f = d.getElementsByTagName(s)[0],
             // @ts-ignore
             j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f)';
+            document.head.appendChild(j)
         })(window, document, 'script', 'dataLayer', 'GTM-K2HKXWLG');
         let pixelScript = document.createElement('script');
         pixelScript.setAttribute('src','https://www.googletagmanager.com/gtag/js?id=AW-11296404846%22%3E');
