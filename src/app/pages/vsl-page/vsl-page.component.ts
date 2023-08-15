@@ -42,7 +42,24 @@ export class VlsPageComponent implements OnInit {
         const navbar = this.document.querySelector(".navbar-brand") as HTMLElement;
         navbar.style.color = "white";
         this.sendEmails()
-        
+        this.addPixelGoogleAds()
+    }
+
+    addPixelGoogleAds(): void {
+        let pixelScript = document.createElement('script');
+        pixelScript.setAttribute('src','https://www.googletagmanager.com/gtag/js?id=AW-11296404846%22%3E');
+        pixelScript.async = true
+        document.head.appendChild(pixelScript);
+        // @ts-ignore
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){
+            // @ts-ignore
+            dataLayer.push(arguments);
+        }
+        // @ts-ignore
+        gtag('js', new Date());
+        // @ts-ignore
+        gtag('config', 'AW-11296404846');
     }
 
     sendEmails(): void {
