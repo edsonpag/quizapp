@@ -49,6 +49,6 @@ export class VideoPlayerComponent implements OnInit {
         this.toastService.show({ header: "QuizEducation", body: `${salesNotification[randomPosition].name} acabou de comprar o treinamento`, classname: "bg-success text-light", delay: 4000 });
         this.salesNotificationService.remove(randomPosition);
       }          
-    }, 14000);
+    }, 30000);
   }
 }
