@@ -1,0 +1,6 @@
+@import '~webdatarocks/webdatarocks.min.css';
+
+#webdatarocks-leads {
+    max-width: 95%;
+    margin-inline: auto;
+}
