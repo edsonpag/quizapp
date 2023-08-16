@@ -18,6 +18,10 @@ export class AdminPageComponent implements OnInit {
     constructor(private angularFirestore: AngularFirestore) {}
 
     async ngOnInit(): Promise<void> {
+        await this.createWebDataRocksLeads()
+    }
+
+    async createWebDataRocksLeads(): Promise<void> {
         let leads: Lead[] = []
         const docs = await this.angularFirestore.collection("/Leads").get()
         await docs.forEach(docs => {
