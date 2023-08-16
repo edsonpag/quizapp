@@ -31,7 +31,7 @@ export class VlsPageComponent implements OnInit {
     constructor(private depoimentsService: DepoimentsService, private quizService: QuizService, public vslPageService: VslPageService, private leadService: LeadService, @Inject(DOCUMENT) private document: Document) { }
 
     ngOnInit(): void {
-        this.addPixelGoogleAds()
+        this.addConversionEventGoogleAds()
         const results = this.quizService.getResults();
         results.sort((a, b) => b.points - a.points);
         this.vslData = results[0];
@@ -45,35 +45,10 @@ export class VlsPageComponent implements OnInit {
         this.sendEmails()
     }
 
-    addPixelGoogleAds(): void {
-        (function (w, d, s, l, i) {
-            // @ts-ignore
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-            // @ts-ignore
-            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=%27+i+dl;f.parentNode.insertBefore(j,f)';
-            document.head.appendChild(j)
-        })(window, document, 'script', 'dataLayer', 'GTM-K2HKXWLG');
-        let pixelScript = document.createElement('script');
-        pixelScript.setAttribute('src','https://www.googletagmanager.com/gtag/js?id=AW-11296404846%22%3E');
-        pixelScript.async = true
-        document.head.appendChild(pixelScript);
-        // @ts-ignore
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){
-            // @ts-ignore
-            dataLayer.push(arguments);
-        }
-        // @ts-ignore
-        gtag('js', new Date());
-        // @ts-ignore
-        gtag('config', 'AW-11296404846');
-        let noScript = this.document.createElement('noscript')
-        noScript.insertAdjacentHTML('afterbegin', '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K2HKXWLG" height="0" width="0" style="display:none;visibility:hidden"></iframe>')
-        this.document.body.insertAdjacentElement('afterbegin', noScript)
+    addConversionEventGoogleAds(): void {
+        let script = document.createElement('script');
+        script.textContent = `gtag('event', 'conversion', {'send_to': 'AW-11296404846/Xq5gCPr2htMYEO7qxYoq'});`
+        document.head.appendChild(script);
     }
 
     sendEmails(): void {
