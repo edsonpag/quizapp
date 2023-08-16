@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from "@angular/core";
+import { Component, Inject, OnDestroy, OnInit } from "@angular/core";
 import { Depoiment } from "src/app/interfaces/depoiment.interface";
 import { DepoimentsService } from "src/app/services/depoiments.service";
 import { QuizService } from "../quiz-page/quiz.service";
@@ -16,7 +16,7 @@ import Email from "src/app/interfaces/email.interface";
     styleUrls: ['./vsl-page.component.css']
 })
 
-export class VlsPageComponent implements OnInit {
+export class VlsPageComponent implements OnInit, OnDestroy {
 
     vslData!: Result;
     
@@ -31,6 +31,7 @@ export class VlsPageComponent implements OnInit {
     constructor(private depoimentsService: DepoimentsService, private quizService: QuizService, public vslPageService: VslPageService, private leadService: LeadService, @Inject(DOCUMENT) private document: Document) { }
 
     ngOnInit(): void {
+        this.addConversionEventGoogleAds()
         const results = this.quizService.getResults();
         results.sort((a, b) => b.points - a.points);
         this.vslData = results[0];
@@ -42,7 +43,17 @@ export class VlsPageComponent implements OnInit {
         const navbar = this.document.querySelector(".navbar-brand") as HTMLElement;
         navbar.style.color = "white";
         this.sendEmails()
-        
+    }
+
+    ngOnDestroy(): void {
+        document.querySelector('#script-conversao-lead')?.remove()
+    }
+
+    addConversionEventGoogleAds(): void {
+        let script = document.createElement('script');
+        script.id = 'script-conversao-lead'
+        script.textContent = `gtag('event', 'conversion', {'send_to': 'AW-11296404846/Xq5gCPr2htMYEO7qxYoq'});`
+        document.head.appendChild(script);
     }
 
     sendEmails(): void {

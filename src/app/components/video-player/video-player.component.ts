@@ -28,7 +28,6 @@ export class VideoPlayerComponent implements OnInit {
   startTimer() {
     this.timer = setInterval(() => {
       const TIME_IN_SECONDS_TO_UPDATE_VSL_PAGE = 600;
-      console.log(this.currentTime)
       if (this.currentTime > TIME_IN_SECONDS_TO_UPDATE_VSL_PAGE) {
         this.handleSalesNotification();
         this.vslPageService.updateVslPage();
