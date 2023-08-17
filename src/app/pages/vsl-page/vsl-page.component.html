@@ -1,35 +1,31 @@
 <div #vsl class="vsl-page">
     <h3>Não seja mais uma Marionete: Descubra Como Ganhar de <span class="decoration">R$500 a R$5.000</span> por Mês como {{ courses[this.vslData.category.index] }}</h3>
     <p style="text-align: center; padding-inline: 0.8rem;">Parabéns por ter completado todo o QUIZ! Através das suas respostas, vimos que o melhor caminho para você dentro do digital e que pode colocar no seu bolso de R$500 até R$3000 ou mais todos os meses é a profissão de {{ courses[this.vslData.category.index] }}. Assista o video até o final e descubra como</p>
-    <app-video-player videoSrc="{{ videoSrc }}" profission="{{ courses[this.vslData.category.index] }}"></app-video-player>
-    <div class="hide">
-        <stopwatch-component *ngIf="vslPageService.isStartTimer()"></stopwatch-component>
-        <div class="vsl-button-container first-button" (click)="goToCheckout()">
-            <button class="vsl-button">Garantir meu acesso</button>
-        </div>
-        <p class="paragraph-1">EM 2022 AJUDAMOS MAIS DE <span class="text-emphasis">64 MIL PESSOAS</span></p>
-        <p class="paragraph-2">Pessoas essas, que chegaram para a gente com todos os tipos de problemas, como:</p>
-        <ul class="doubts list-group">
-            <li class="list-group-item">Duvidas sobre qual carreira fazer a transição</li>
-            <li class="list-group-item">Arrependimento na escolha da profissão</li>
-            <li class="list-group-item">Medo de não conseguir se encaixar na nova profissão escolhida</li>
-            <li class="list-group-item">Falta de conhecimento sobre as possibilidades de mercado</li>
-            <li class="list-group-item">Falta de estimulo para iniciar o processo de mudança</li>
-            <li class="list-group-item">Ansiedade em relação as decisões que serão tomadas</li>
-            <li class="list-group-item">Preocupação em tomar a decisão errada</li>
-            <li class="list-group-item">Confusão sobre as opções e os interesse pessoais</li>
-            <li class="list-group-item">Dificuldade em identificar e aprender as habilidades e competências</li>
-            <li class="list-group-item">Estresse por não saber qual caminho seguir</li>
-        </ul>
-        <div class="vsl-button-container middle-button" (click)="goToCheckout()">
-            <button class="vsl-button">Garantir meu acesso</button>
-        </div>
-        <div class="depoiments-container" >
-            <depoiments-component *ngFor="let depoiment of depoiments" [depoiment]="depoiment"></depoiments-component>
-        </div>
-        <div class="vsl-button-container last-button" (click)="goToCheckout()">
-            <button class="vsl-button">Garantir meu acesso</button>
-        </div>
+    <div class="vsl-button-container first-button" (click)="goToCheckout()">
+        <button class="vsl-button">Garantir meu acesso</button>
+    </div>
+    <p class="paragraph-1">EM 2022 AJUDAMOS MAIS DE <span class="text-emphasis">64 MIL PESSOAS</span></p>
+    <p class="paragraph-2">Pessoas essas, que chegaram para a gente com todos os tipos de problemas, como:</p>
+    <ul class="doubts list-group">
+        <li class="list-group-item">Duvidas sobre qual carreira fazer a transição</li>
+        <li class="list-group-item">Arrependimento na escolha da profissão</li>
+        <li class="list-group-item">Medo de não conseguir se encaixar na nova profissão escolhida</li>
+        <li class="list-group-item">Falta de conhecimento sobre as possibilidades de mercado</li>
+        <li class="list-group-item">Falta de estimulo para iniciar o processo de mudança</li>
+        <li class="list-group-item">Ansiedade em relação as decisões que serão tomadas</li>
+        <li class="list-group-item">Preocupação em tomar a decisão errada</li>
+        <li class="list-group-item">Confusão sobre as opções e os interesse pessoais</li>
+        <li class="list-group-item">Dificuldade em identificar e aprender as habilidades e competências</li>
+        <li class="list-group-item">Estresse por não saber qual caminho seguir</li>
+    </ul>
+    <div class="vsl-button-container middle-button" (click)="goToCheckout()">
+        <button class="vsl-button">Garantir meu acesso</button>
+    </div>
+    <div class="depoiments-container" >
+        <depoiments-component *ngFor="let depoiment of depoiments" [depoiment]="depoiment"></depoiments-component>
+    </div>
+    <div class="vsl-button-container last-button" (click)="goToCheckout()">
+        <button class="vsl-button">Garantir meu acesso</button>
     </div>
 </div>
 

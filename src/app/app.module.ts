@@ -10,7 +10,6 @@ import { ToastComponent } from './components/toast/toast.component';
 import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 import { QuizService } from './pages/quiz-page/quiz.service';
 import { ToastService } from './services/app-toast.service';
-import { VslPageService } from './pages/vsl-page/vsl-page.service';
 import { DepoimentsService } from './services/depoiments.service';
 import { SalesNotificationService } from './services/sales-notification.service';
 import { environment } from '../environments/environment';
@@ -32,7 +31,6 @@ import { AngularFireModule } from '@angular/fire/compat';
   ],
   providers: [
     QuizService,
-    VslPageService,
     DepoimentsService,
     SalesNotificationService,
     LeadService,
