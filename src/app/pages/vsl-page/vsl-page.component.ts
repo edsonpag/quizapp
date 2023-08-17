@@ -1,14 +1,14 @@
-import { Component, Inject, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Depoiment } from "src/app/interfaces/depoiment.interface";
 import { DepoimentsService } from "src/app/services/depoiments.service";
 import { QuizService } from "../quiz-page/quiz.service";
 import { Result } from "src/app/interfaces/results.interface";
 import { Checkout } from "src/app/enums/checkout.enum";
 import { FormDataQuiz } from "src/app/interfaces/form-data.interface";
-import { VslPageService } from "./vsl-page.service";
-import { LeadService } from "src/app/services/lead.service";
-import { DOCUMENT } from "@angular/common";
 import Email from "src/app/interfaces/email.interface";
+import { SalesNotification } from "src/app/interfaces/sales-notification";
+import { SalesNotificationService } from "src/app/services/sales-notification.service";
+import { ToastService } from "src/app/services/app-toast.service";
 
 @Component({
     selector: 'vsl-page',
@@ -28,25 +28,23 @@ export class VlsPageComponent implements OnInit, OnDestroy {
 
     courses: string[] = ["", "Influencer", "Social Media", "Gestor de Tráfego"]
 
-    constructor(private depoimentsService: DepoimentsService, private quizService: QuizService, public vslPageService: VslPageService, private leadService: LeadService, @Inject(DOCUMENT) private document: Document) { }
+    constructor(private depoimentsService: DepoimentsService, private quizService: QuizService, private salesNotificationService: SalesNotificationService, private toastService: ToastService) { }
 
     ngOnInit(): void {
+        this.addDarkMode()
         this.addConversionEventGoogleAds()
+        this.handleSalesNotification()
         const results = this.quizService.getResults();
         results.sort((a, b) => b.points - a.points);
         this.vslData = results[0];
-        this.videoSrc = `../../../assets/video/${this.vslData.category.name}.mp4`;
         this.checkoutLink = new Checkout().links[this.vslData.category.index];
         this.depoiments = this.depoimentsService.getAll();
-        this.document.body.style.backgroundColor = "black";
-        this.document.body.style.color = "white";
-        const navbar = this.document.querySelector(".navbar-brand") as HTMLElement;
-        navbar.style.color = "white";
         this.sendEmails()
     }
 
     ngOnDestroy(): void {
         document.querySelector('#script-conversao-lead')?.remove()
+        this.removeDarkMode()
     }
 
     addConversionEventGoogleAds(): void {
@@ -94,5 +92,30 @@ export class VlsPageComponent implements OnInit, OnDestroy {
         queryParms += "&"
         queryParms += "phone=" + formDataQuiz.cellphoneNumber;
         return queryParms;
+    }
+
+    handleSalesNotification(): void {
+        setInterval(() => {
+            const salesNotification: SalesNotification[] = this.salesNotificationService.getAll();
+            if (salesNotification.length > 0) {
+                const randomPosition = Math.floor(salesNotification.length * Math.random());
+                this.toastService.show({ header: "QuizEducation", body: `${salesNotification[randomPosition].name} acabou de comprar o treinamento`, classname: "bg-success text-light", delay: 4000 });
+                this.salesNotificationService.remove(randomPosition);
+            }     
+        }, 60000)
+    }
+
+    addDarkMode(): void {
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "white";
+        const navbar = document.querySelector(".navbar-brand") as HTMLElement;
+        navbar.style.color = "white";
+    }
+
+    removeDarkMode(): void {
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+        const navbar = document.querySelector(".navbar-brand") as HTMLElement;
+        navbar.style.color = "black";
     }
 }
