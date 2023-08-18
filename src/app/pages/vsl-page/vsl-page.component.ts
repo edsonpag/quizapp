@@ -10,7 +10,6 @@ import { SalesNotification } from "src/app/interfaces/sales-notification";
 import { SalesNotificationService } from "src/app/services/sales-notification.service";
 import { ToastService } from "src/app/services/app-toast.service";
 import PageData from "src/app/interfaces/page-data.interface";
-import * as ScrollReveal from 'scrollreveal'
 
 @Component({
     selector: 'vsl-page',
