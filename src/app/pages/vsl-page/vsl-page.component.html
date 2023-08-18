@@ -16,18 +16,6 @@
     <div class="cv-page-2">
         <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt dicta quia deserunt ab! Facere accusamus, asperiores dolores placeat repudiandae reprehenderit, corrupti ad magni repellendus ab itaque in deserunt animi earum. Blanditiis laborum odit eum consectetur, suscipit debitis, dolorem adipisci, nisi tempora cupiditate odio exercitationem explicabo. Mollitia nesciunt expedita totam iste velit aperiam officiis! Iusto, voluptatem doloribus! Rem expedita exercitationem magni!</p>
-        <div class="audios">
-            <h2>Depoimentos em áudio</h2>
-            <audio [controls]="true">
-                <source src="../../../assets/audios/ingrid.mp3" type="audio/mp3">
-            </audio>
-            <audio [controls]="true">
-                <source src="../../../assets/audios/iara.mp3" type="audio/mp3">
-            </audio>
-            <audio [controls]="true">
-                <source src="../../../assets/audios/arthur.mp3" type="audio/mp3">
-            </audio>
-        </div>
         <div class="about">
             <p class="paragraph-1">EM 2022 AJUDAMOS MAIS DE <span class="text-emphasis">64 MIL PESSOAS</span></p>
             <p class="paragraph-2">Pessoas essas, que chegaram para a gente com todos os tipos de problemas, como:</p>
@@ -44,6 +32,21 @@
                 <li class="list-group-item">Estresse por não saber qual caminho seguir</li>
             </ul>
         </div>
+        <div class="vsl-button-container first-button" (click)="goToCheckout()">
+            <button class="vsl-button">Garantir meu acesso</button>
+        </div>
+        <div class="audios">
+            <h2>Depoimentos em áudio</h2>
+            <audio [controls]="true">
+                <source src="../../../assets/audios/ingrid.mp3" type="audio/mp3">
+            </audio>
+            <audio [controls]="true">
+                <source src="../../../assets/audios/iara.mp3" type="audio/mp3">
+            </audio>
+            <audio [controls]="true">
+                <source src="../../../assets/audios/arthur.mp3" type="audio/mp3">
+            </audio>
+        </div>
         <div class="depoiment-form-container">
             <depoiment-form-component></depoiment-form-component>
         </div>
@@ -52,6 +55,9 @@
         </div>
         <div class="faq-container">
             <faq-component></faq-component>
+        </div>
+        <div class="vsl-button-container last-button" (click)="goToCheckout()">
+            <button class="vsl-button">Garantir meu acesso</button>
         </div>
     </div>
 </div>

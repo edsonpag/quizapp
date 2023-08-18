@@ -144,7 +144,7 @@ ul, li {
 }
 
 .about {
-    margin-top: 25px;
+    margin-top: 12px;
 }
 
 .paragraph-1 {
@@ -179,4 +179,30 @@ ul, li {
 .faq-container {
     margin-top: 40px;
     width: 100%;
+}
+
+.vsl-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.vsl-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    outline: none;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 22rem;
+    box-shadow: var(--primary-color) 0px 5px 15px;
+}
+
+.first-button {
+    margin-top: 40px;
+}
+
+.last-button {
+    margin-top: 30px;
+    padding-bottom: 25px;
 }
