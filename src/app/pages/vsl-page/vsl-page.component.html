@@ -1,6 +1,7 @@
 <div #vsl class="vsl-page">
-    <h3>Não seja mais uma Marionete: Descubra Como Ganhar de <span class="decoration">R$500 a R$5.000</span> por Mês como {{ courses[this.vslData.category.index] }}</h3>
-    <p style="text-align: center; padding-inline: 0.8rem;">Parabéns por ter completado todo o QUIZ! Através das suas respostas, vimos que o melhor caminho para você dentro do digital e que pode colocar no seu bolso de R$500 até R$3000 ou mais todos os meses é a profissão de {{ courses[this.vslData.category.index] }}. Assista o video até o final e descubra como</p>
+    <h3>{{ pageData.title }}</h3>
+    <p style="text-align: center; padding-inline: 0.8rem;">{{ pageData.subtitle }}</p>
+    <p style="text-align: center; padding-inline: 0.8rem;">{{ pageData.copy }}</p>
     <div class="vsl-button-container first-button" (click)="goToCheckout()">
         <button class="vsl-button">Garantir meu acesso</button>
     </div>

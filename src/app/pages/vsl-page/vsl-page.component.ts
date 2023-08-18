@@ -9,6 +9,7 @@ import Email from "src/app/interfaces/email.interface";
 import { SalesNotification } from "src/app/interfaces/sales-notification";
 import { SalesNotificationService } from "src/app/services/sales-notification.service";
 import { ToastService } from "src/app/services/app-toast.service";
+import PageData from "src/app/interfaces/page-data.interface";
 
 @Component({
     selector: 'vsl-page',
@@ -28,18 +29,25 @@ export class VlsPageComponent implements OnInit, OnDestroy {
 
     courses: string[] = ["", "Influencer", "Social Media", "Gestor de Tráfego"]
 
+    pageData: PageData = {
+        title: "",
+        subtitle: "",
+        copy: ""
+    }
+
     constructor(private depoimentsService: DepoimentsService, private quizService: QuizService, private salesNotificationService: SalesNotificationService, private toastService: ToastService) { }
 
-    ngOnInit(): void {
-        this.addDarkMode()
+    async ngOnInit(): Promise<void> {
         this.addConversionEventGoogleAds()
-        this.handleSalesNotification()
+        this.addDarkMode()
         const results = this.quizService.getResults();
         results.sort((a, b) => b.points - a.points);
         this.vslData = results[0];
         this.checkoutLink = new Checkout().links[this.vslData.category.index];
         this.depoiments = this.depoimentsService.getAll();
+        await this.fillPage()
         this.sendEmails()
+        this.handleSalesNotification()
     }
 
     ngOnDestroy(): void {
@@ -52,6 +60,10 @@ export class VlsPageComponent implements OnInit, OnDestroy {
         script.id = 'script-conversao-lead'
         script.textContent = `gtag('event', 'conversion', {'send_to': 'AW-11296404846/Xq5gCPr2htMYEO7qxYoq'});`
         document.head.appendChild(script);
+    }
+
+    async fillPage(): Promise<void> {
+       this.pageData = await import(`../../configs/pages/${this.vslData.category.name}.json`)
     }
 
     sendEmails(): void {
