@@ -107,6 +107,13 @@ export class VlsPageComponent implements OnInit, OnDestroy {
         return queryParms;
     }
 
+    arrowDownClick(): void {
+        scrollTo({
+            behavior: "smooth",
+            top: 830
+        })
+    }
+
     handleSalesNotification(): void {
         setInterval(() => {
             const salesNotification: SalesNotification[] = this.salesNotificationService.getAll();
@@ -146,6 +153,7 @@ export class VlsPageComponent implements OnInit, OnDestroy {
                 setTimeout(() => {
                     document.querySelector('.arrow-down')?.classList.add('animated-arrow-down')
                     document.querySelector('.arrow-down')?.classList.add('bounce')
+                    document.querySelector('#page-2')?.classList.remove('hide')
                 }, 1000)
                 clearInterval(interval)
             }
