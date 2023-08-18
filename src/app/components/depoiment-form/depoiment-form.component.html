@@ -1,0 +1,30 @@
+<form [formGroup]="depoimentForm" (ngSubmit)="onSubmit()" data-bs-theme="dark">
+    <div class="form-group">
+      <input type="text" class="form-control" id="input-name" placeholder="Nome Completo" formControlName="name">
+    </div>
+    <div class="form-group">
+        <input type="number" class="form-control" id="input-age" placeholder="Idade" formControlName="age">
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" placeholder="Depoimento" id="textarea-depoiment" formControlName="depoiment"></textarea>
+    </div>
+    <div class="form-group">
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Data do Teste</span>
+            <input type="datetime-local" id="input-test-performed" class="form-control" aria-describedby="addon-wrapping" formControlName="testPerformed">
+        </div>
+    </div>
+    <div class="last-line">
+        <div class="form-group">
+            <ngb-rating [(rate)]="currentRate">
+                <ng-template let-fill="fill" let-index="index">
+                    <i class="bi-star{{fill === 100 ? '-fill' : ''}}" [class.filled]="fill === 100" (click)="changeCurrentRate(index)"></i>
+                </ng-template>
+            </ngb-rating>
+        </div>
+        <button [disabled]="depoimentForm.invalid || currentRate == 0" type="submit" class="btn">Comentar</button>
+    </div>
+</form>
+<div class="depoiment-added hide">
+    <ngb-alert [type]="'success'" (closed)="onClose()">Depoimento Adicionado com Sucesso</ngb-alert>
+</div>

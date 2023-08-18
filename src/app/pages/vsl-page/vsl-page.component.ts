@@ -30,23 +30,23 @@ export class VlsPageComponent implements OnInit, OnDestroy {
     courses: string[] = ["", "Influencer", "Social Media", "Gestor de Tráfego"]
 
     pageData: PageData = {
-        title: "",
-        subtitle: "",
+        profission: "",
         copy: ""
     }
 
     constructor(private depoimentsService: DepoimentsService, private quizService: QuizService, private salesNotificationService: SalesNotificationService, private toastService: ToastService) { }
 
     async ngOnInit(): Promise<void> {
-        this.addConversionEventGoogleAds()
+       /*this.addConversionEventGoogleAds()*/
         this.addDarkMode()
-        const results = this.quizService.getResults();
+        this.addAnimations()
+        /*const results = this.quizService.getResults();
         results.sort((a, b) => b.points - a.points);
         this.vslData = results[0];
-        this.checkoutLink = new Checkout().links[this.vslData.category.index];
+        this.checkoutLink = new Checkout().links[this.vslData.category.index];*/
         this.depoiments = this.depoimentsService.getAll();
         await this.fillPage()
-        this.sendEmails()
+        /*this.sendEmails()*/
         this.handleSalesNotification()
     }
 
@@ -63,7 +63,8 @@ export class VlsPageComponent implements OnInit, OnDestroy {
     }
 
     async fillPage(): Promise<void> {
-       this.pageData = await import(`../../configs/pages/${this.vslData.category.name}.json`)
+       //this.pageData = await import(`../../configs/pages/${this.vslData.category.name}.json`)
+       this.pageData = await import(`../../configs/pages/INFLUENCER.json`)
     }
 
     sendEmails(): void {
@@ -111,7 +112,7 @@ export class VlsPageComponent implements OnInit, OnDestroy {
             const salesNotification: SalesNotification[] = this.salesNotificationService.getAll();
             if (salesNotification.length > 0) {
                 const randomPosition = Math.floor(salesNotification.length * Math.random());
-                this.toastService.show({ header: "QuizEducation", body: `${salesNotification[randomPosition].name} acabou de comprar o treinamento`, classname: "bg-success text-light", delay: 4000 });
+                this.toastService.show({ header: "QuizEducation", body: `${salesNotification[randomPosition].name} acabou de comprar o treinamento`, classname: "bg-purple text-light", delay: 4000 });
                 this.salesNotificationService.remove(randomPosition);
             }     
         }, 60000)
@@ -129,5 +130,30 @@ export class VlsPageComponent implements OnInit, OnDestroy {
         document.body.style.color = "black";
         const navbar = document.querySelector(".navbar-brand") as HTMLElement;
         navbar.style.color = "black";
+    }
+
+    addAnimations(): void {
+        const allH2 = document.querySelectorAll('.cv-page-1 h2');
+        let currentH2Index = 0
+        if (currentH2Index < allH2.length) {
+            const h2 = allH2.item(currentH2Index)
+            h2.classList.add('animated-text')
+            currentH2Index++
+        }
+        const interval = setInterval(() => {
+            if (currentH2Index >= allH2.length) {
+                document.querySelector('p')?.classList.add('animated-p')
+                setTimeout(() => {
+                    document.querySelector('.arrow-down')?.classList.add('animated-arrow-down')
+                    document.querySelector('.arrow-down')?.classList.add('bounce')
+                }, 1000)
+                clearInterval(interval)
+            }
+            else {
+                const h2 = allH2.item(currentH2Index)
+                h2.classList.add('animated-text')
+                currentH2Index++
+            }
+        }, 1700)
     }
 }

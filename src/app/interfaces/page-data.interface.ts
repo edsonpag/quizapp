@@ -1,5 +1,4 @@
 export default interface PageData {
-    title: string
-    subtitle: string
+    profission: string
     copy: string
 }
