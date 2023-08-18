@@ -1,0 +1,35 @@
+form div {
+    margin-block: 20px;
+}
+
+i {
+    font-size: 1.5rem;
+    padding-right: 0.1rem;
+    margin-inline: 8px;
+    color: #b0c4de;
+    cursor: pointer;
+}
+
+.filled {
+    color: #fbbc04;
+}
+
+.last-line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    border: none;
+}
+
+#addon-wrapping {
+    font-size: 12px;
+}
+
+.hide {
+    display: none;
+}

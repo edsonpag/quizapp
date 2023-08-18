@@ -11,11 +11,11 @@ class VslPageGuard {
     constructor(private quizService: QuizService, private router: Router) { }
 
     canActivate(): boolean {
-        const hasAcess: boolean = this.quizService.isSubmitted() && this.quizService.getFormDateQuiz() != undefined;
+        /*const hasAcess: boolean = this.quizService.isSubmitted() && this.quizService.getFormDateQuiz() != undefined;
         if (!hasAcess) {
             this.router.navigate(['/'])
             return false;
-        }
+        }*/
         return true;
     }
 }
