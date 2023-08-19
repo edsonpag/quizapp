@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { AfterViewInit, Component, OnDestroy, OnInit } from "@angular/core";
 import { Depoiment } from "src/app/interfaces/depoiment.interface";
 import { DepoimentsService } from "src/app/services/depoiments.service";
 import { QuizService } from "../quiz-page/quiz.service";
@@ -20,7 +20,7 @@ import { bottom, left, right } from "@popperjs/core";
     styleUrls: ['./vsl-page.component.css']
 })
 
-export class VlsPageComponent implements OnInit, OnDestroy {
+export class VlsPageComponent implements OnInit, AfterViewInit, OnDestroy {
 
     vslData!: Result;
     
@@ -45,7 +45,6 @@ export class VlsPageComponent implements OnInit, OnDestroy {
        /*this.addConversionEventGoogleAds()*/
         this.addDarkMode()
         this.addAnimations()
-        this.addScrollReveal()
         /*const results = this.quizService.getResults();
         results.sort((a, b) => b.points - a.points);
         this.vslData = results[0];
@@ -54,6 +53,10 @@ export class VlsPageComponent implements OnInit, OnDestroy {
         await this.fillPage()
         /*this.sendEmails()*/
         this.handleSalesNotification()
+    }
+
+    ngAfterViewInit(): void {
+        this.addScrollReveal()
     }
 
     ngOnDestroy(): void {
