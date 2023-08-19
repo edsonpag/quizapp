@@ -34,6 +34,8 @@ export class VlsPageComponent implements OnInit, OnDestroy {
 
     pageData: PageData = {
         profission: "",
+        congratulations: "",
+        headline: "",
         copy: ""
     }
 
@@ -43,6 +45,7 @@ export class VlsPageComponent implements OnInit, OnDestroy {
        /*this.addConversionEventGoogleAds()*/
         this.addDarkMode()
         this.addAnimations()
+        this.addScrollReveal()
         /*const results = this.quizService.getResults();
         results.sort((a, b) => b.points - a.points);
         this.vslData = results[0];
@@ -151,16 +154,8 @@ export class VlsPageComponent implements OnInit, OnDestroy {
             currentH2Index++
         }
         const interval = setInterval(() => {
-            if (currentH2Index >= allH2.length) {
-                document.querySelector('p')?.classList.add('animated-p')
-                setTimeout(() => {
-                    document.querySelector('.arrow-down')?.classList.add('animated-arrow-down')
-                    document.querySelector('.arrow-down')?.classList.add('bounce')
-                    document.querySelector('#page-2')?.classList.remove('hide')
-                    this.addScrollReveal()
-                }, 1000)
+            if (currentH2Index >= allH2.length)
                 clearInterval(interval)
-            }
             else {
                 const h2 = allH2.item(currentH2Index)
                 h2.classList.add('animated-text')
@@ -176,6 +171,8 @@ export class VlsPageComponent implements OnInit, OnDestroy {
             duration: 1400,
             delay: 0
         })
+        ScrollReveal().reveal('.cv-page-1 p', { reset: false, delay: 1500, origin: left })
+        ScrollReveal().reveal('.arrow-down', { reset: false, delay: 1500, origin: bottom })
         ScrollReveal().reveal('#copy-2-title', { origin: left })
         ScrollReveal().reveal('#copy-2', { origin: bottom })
         ScrollReveal().reveal('.paragraph-1', { origin: left })
@@ -186,8 +183,8 @@ export class VlsPageComponent implements OnInit, OnDestroy {
         ScrollReveal().reveal('.audios audio', { origin: left, interval: 200 })
         ScrollReveal().reveal('.depoiment-form-container div', { origin: bottom })
         ScrollReveal().reveal('.depoiments-container .depoiment div', { origin: left })
-        ScrollReveal().reveal('.faq-container h2', { origin: left })
-        ScrollReveal().reveal('.faq-container div .accordion-item', { origin: bottom, interval: 200 })
+        ScrollReveal().reveal('.faq-container .faq-title', { origin: left })
+        ScrollReveal().reveal('.my-accordion-item', { origin: bottom, interval: 200 })
         ScrollReveal().reveal('.last-button', { origin: bottom })
     }
 }
