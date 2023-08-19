@@ -2,6 +2,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { QuizPageComponent } from "./quiz-page.component";
 import { NgModule } from "@angular/core";
 import { authenticationGuardQuizPage } from "src/app/guard/quiz-page.guard";
+import { authenticationGuardCompletedQuiz } from "src/app/guard/lading-page.guard";
 
 const routes: Routes = [
     {
@@ -11,7 +12,8 @@ const routes: Routes = [
     },
     {
         path: 'results',
-        loadChildren: () => import('../results-page/results-page.module').then(resultsPageModule => resultsPageModule.ResultsPageModule)
+        loadChildren: () => import('../results-page/results-page.module').then(resultsPageModule => resultsPageModule.ResultsPageModule),
+        canActivate: [authenticationGuardCompletedQuiz()]
     },
     {
         path: 'profission',
@@ -29,6 +31,4 @@ const routes: Routes = [
     providers: []
 })
 
-export class QuizPageRoutingModule {
-    
-}
+export class QuizPageRoutingModule { }

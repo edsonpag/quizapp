@@ -50,8 +50,10 @@ export class VlsPageComponent implements OnInit, OnDestroy {
         this.checkoutLink = new Checkout().links[this.vslData.category.index];
         this.depoiments = this.depoimentsService.getAll();
         await this.fillPage()
-        this.sendEmails()
+        if (localStorage.getItem('sendEmail') != 'false')
+            this.sendEmails()
         this.handleSalesNotification()
+        this.saveCompletedQuiz()
     }
 
     ngOnDestroy(): void {
@@ -189,5 +191,12 @@ export class VlsPageComponent implements OnInit, OnDestroy {
         ScrollReveal().reveal('.faq-container .faq-title', { origin: 'left' })
         ScrollReveal().reveal('.my-accordion-item', { origin: 'bottom', interval: 200 })
         ScrollReveal().reveal('.last-button', { origin: 'bottom' })
+    }
+
+    saveCompletedQuiz(): void {
+        localStorage.setItem("categoryName", this.vslData.category.name)
+        localStorage.setItem("categoryIndex", this.vslData.category.index.toString())
+        localStorage.setItem("points", this.vslData.points.toString())
+        localStorage.setItem("sendEmail", 'false')
     }
 }

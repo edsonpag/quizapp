@@ -28,6 +28,4 @@ import { ButtonModule } from 'src/app/components/button/button.module';
 })
 
 
-export class LadingPageModulo {
-
-}
+export class LadingPageModulo { }
