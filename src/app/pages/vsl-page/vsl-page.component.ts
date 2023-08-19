@@ -10,6 +10,9 @@ import { SalesNotification } from "src/app/interfaces/sales-notification";
 import { SalesNotificationService } from "src/app/services/sales-notification.service";
 import { ToastService } from "src/app/services/app-toast.service";
 import PageData from "src/app/interfaces/page-data.interface";
+// @ts-ignore
+import * as ScrollReveal from "../../libs/scrollreveal/scrollreveal";
+import { bottom, left, right } from "@popperjs/core";
 
 @Component({
     selector: 'vsl-page',
@@ -154,6 +157,7 @@ export class VlsPageComponent implements OnInit, OnDestroy {
                     document.querySelector('.arrow-down')?.classList.add('animated-arrow-down')
                     document.querySelector('.arrow-down')?.classList.add('bounce')
                     document.querySelector('#page-2')?.classList.remove('hide')
+                    this.addScrollReveal()
                 }, 1000)
                 clearInterval(interval)
             }
@@ -163,5 +167,27 @@ export class VlsPageComponent implements OnInit, OnDestroy {
                 currentH2Index++
             }
         }, 1700)
+    }
+
+    addScrollReveal(): void {
+        ScrollReveal({
+            reset: true,
+            distance: '60px',
+            duration: 1400,
+            delay: 0
+        })
+        ScrollReveal().reveal('#copy-2-title', { origin: left })
+        ScrollReveal().reveal('#copy-2', { origin: bottom })
+        ScrollReveal().reveal('.paragraph-1', { origin: left })
+        ScrollReveal().reveal('.paragraph-2', { origin: bottom })
+        ScrollReveal().reveal('.list-group li', { origin: bottom, interval: 200 })
+        ScrollReveal().reveal('.first-button', { origin: bottom })
+        ScrollReveal().reveal('.audios h2', { origin: bottom })
+        ScrollReveal().reveal('.audios audio', { origin: left, interval: 200 })
+        ScrollReveal().reveal('.depoiment-form-container div', { origin: bottom })
+        ScrollReveal().reveal('.depoiments-container .depoiment div', { origin: left })
+        ScrollReveal().reveal('.faq-container h2', { origin: left })
+        ScrollReveal().reveal('.faq-container div .accordion-item', { origin: bottom, interval: 200 })
+        ScrollReveal().reveal('.last-button', { origin: bottom })
     }
 }
