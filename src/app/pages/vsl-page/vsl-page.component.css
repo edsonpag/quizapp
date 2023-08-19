@@ -138,7 +138,7 @@
     padding-inline: 10px;
 }
 
-ul, li {
+.about ul, .about ul li {
     background-color: black;
     color: white;
 }
