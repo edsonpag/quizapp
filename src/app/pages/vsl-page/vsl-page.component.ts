@@ -12,7 +12,6 @@ import { ToastService } from "src/app/services/app-toast.service";
 import PageData from "src/app/interfaces/page-data.interface";
 // @ts-ignore
 import * as ScrollReveal from "../../libs/scrollreveal/scrollreveal";
-import { bottom, left, right } from "@popperjs/core";
 
 @Component({
     selector: 'vsl-page',
@@ -34,22 +33,24 @@ export class VlsPageComponent implements OnInit, OnDestroy {
 
     pageData: PageData = {
         profission: "",
+        congratulations: "",
+        headline: "",
         copy: ""
     }
 
     constructor(private depoimentsService: DepoimentsService, private quizService: QuizService, private salesNotificationService: SalesNotificationService, private toastService: ToastService) { }
 
     async ngOnInit(): Promise<void> {
-       /*this.addConversionEventGoogleAds()*/
+        this.addConversionEventGoogleAds()
         this.addDarkMode()
         this.addAnimations()
-        /*const results = this.quizService.getResults();
+        const results = this.quizService.getResults();
         results.sort((a, b) => b.points - a.points);
         this.vslData = results[0];
-        this.checkoutLink = new Checkout().links[this.vslData.category.index];*/
+        this.checkoutLink = new Checkout().links[this.vslData.category.index];
         this.depoiments = this.depoimentsService.getAll();
         await this.fillPage()
-        /*this.sendEmails()*/
+        this.sendEmails()
         this.handleSalesNotification()
     }
 
@@ -66,8 +67,7 @@ export class VlsPageComponent implements OnInit, OnDestroy {
     }
 
     async fillPage(): Promise<void> {
-       //this.pageData = await import(`../../configs/pages/${this.vslData.category.name}.json`)
-       this.pageData = await import(`../../configs/pages/INFLUENCER.json`)
+       this.pageData = await import(`../../configs/pages/${this.vslData.category.name}.json`)
     }
 
     sendEmails(): void {
@@ -125,7 +125,7 @@ export class VlsPageComponent implements OnInit, OnDestroy {
                 this.toastService.show({ header: "QuizEducation", body: `${salesNotification[randomPosition].name} acabou de comprar o treinamento`, classname: "bg-purple text-light", delay: 4000 });
                 this.salesNotificationService.remove(randomPosition);
             }     
-        }, 60000)
+        }, 120000)
     }
 
     addDarkMode(): void {
@@ -156,8 +156,8 @@ export class VlsPageComponent implements OnInit, OnDestroy {
                 setTimeout(() => {
                     document.querySelector('.arrow-down')?.classList.add('animated-arrow-down')
                     document.querySelector('.arrow-down')?.classList.add('bounce')
-                    document.querySelector('#page-2')?.classList.remove('hide')
                     this.addScrollReveal()
+                    document.querySelector('#page-2')?.classList.remove('hide')
                 }, 1000)
                 clearInterval(interval)
             }
@@ -166,28 +166,28 @@ export class VlsPageComponent implements OnInit, OnDestroy {
                 h2.classList.add('animated-text')
                 currentH2Index++
             }
-        }, 1700)
+        }, 2200)
     }
 
     addScrollReveal(): void {
         ScrollReveal({
             reset: true,
             distance: '60px',
-            duration: 1400,
+            duration: 900,
             delay: 0
         })
-        ScrollReveal().reveal('#copy-2-title', { origin: left })
-        ScrollReveal().reveal('#copy-2', { origin: bottom })
-        ScrollReveal().reveal('.paragraph-1', { origin: left })
-        ScrollReveal().reveal('.paragraph-2', { origin: bottom })
-        ScrollReveal().reveal('.list-group li', { origin: bottom, interval: 200 })
-        ScrollReveal().reveal('.first-button', { origin: bottom })
-        ScrollReveal().reveal('.audios h2', { origin: bottom })
-        ScrollReveal().reveal('.audios audio', { origin: left, interval: 200 })
-        ScrollReveal().reveal('.depoiment-form-container div', { origin: bottom })
-        ScrollReveal().reveal('.depoiments-container .depoiment div', { origin: left })
-        ScrollReveal().reveal('.faq-container h2', { origin: left })
-        ScrollReveal().reveal('.faq-container div .accordion-item', { origin: bottom, interval: 200 })
-        ScrollReveal().reveal('.last-button', { origin: bottom })
+        ScrollReveal().reveal('#copy-2-title', { origin: 'left' })
+        ScrollReveal().reveal('#copy-2', { origin: 'bottom' })
+        ScrollReveal().reveal('.paragraph-1', { origin: 'left' })
+        ScrollReveal().reveal('.paragraph-2', { origin: 'bottom' })
+        ScrollReveal().reveal('.list-group li', { origin: 'bottom', interval: 200 })
+        ScrollReveal().reveal('.first-button', { origin: 'bottom' })
+        ScrollReveal().reveal('.audios h2', { origin: 'bottom' })
+        ScrollReveal().reveal('.audios audio', { origin: 'left', interval: 200 })
+        ScrollReveal().reveal('.depoiment-form-container div', { origin: 'bottom' })
+        ScrollReveal().reveal('.depoiments-container .depoiment div', { origin: 'left' })
+        ScrollReveal().reveal('.faq-container .faq-title', { origin: 'left' })
+        ScrollReveal().reveal('.my-accordion-item', { origin: 'bottom', interval: 200 })
+        ScrollReveal().reveal('.last-button', { origin: 'bottom' })
     }
 }

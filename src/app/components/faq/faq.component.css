@@ -1,8 +1,18 @@
-h2 {
+.faq-title {
     font-size: 24px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+}
+
+.accordion-header {
+    margin: 0 !important;
 }
 
 .accordion-body {
     text-align: left;
+}
+
+@media only screen and (max-width: 424px) {
+    .faq-title {
+        font-size: 22px !important;
+    }
 }
