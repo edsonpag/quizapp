@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { authenticationGuardCompletedQuiz } from './guard/lading-page.guard';
+import { authenticationGuardCompletedQuiz } from './guard/completed-quiz.guard';
 
 const routes: Routes = [
   {

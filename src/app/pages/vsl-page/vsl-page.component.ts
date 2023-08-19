@@ -35,8 +35,20 @@ export class VlsPageComponent implements OnInit, OnDestroy {
         profission: "",
         congratulations: "",
         headline: "",
-        copy: ""
+        copy1: "",
+        copy2: "",
+        copy3: "",
+        copy4: "",
+        copy5: "",
+        copy6: "",
+        copy7: "",
+        copy8: "",
+        copy9: "",
+        copy10: "",
+        copy11: ""
     }
+
+    newCopy1: string = ""
 
     constructor(private depoimentsService: DepoimentsService, private quizService: QuizService, private salesNotificationService: SalesNotificationService, private toastService: ToastService) { }
 
@@ -179,7 +191,9 @@ export class VlsPageComponent implements OnInit, OnDestroy {
             delay: 0
         })
         ScrollReveal().reveal('#copy-2-title', { origin: 'left' })
-        ScrollReveal().reveal('#copy-2', { origin: 'bottom' })
+        ScrollReveal().reveal('.copy-part', { origin: 'bottom', interval: 200 })
+        ScrollReveal().reveal('.treasure-map-person-name', { origin: 'left' })
+        ScrollReveal().reveal('.treasure-map', { origin: 'left' })
         ScrollReveal().reveal('.paragraph-1', { origin: 'left' })
         ScrollReveal().reveal('.paragraph-2', { origin: 'bottom' })
         ScrollReveal().reveal('.list-group li', { origin: 'bottom', interval: 200 })
@@ -191,12 +205,30 @@ export class VlsPageComponent implements OnInit, OnDestroy {
         ScrollReveal().reveal('.faq-container .faq-title', { origin: 'left' })
         ScrollReveal().reveal('.my-accordion-item', { origin: 'bottom', interval: 200 })
         ScrollReveal().reveal('.last-button', { origin: 'bottom' })
+        ScrollReveal().reveal('.still-have-doubts', { origin: 'left' })
+        ScrollReveal().reveal('.still-have-doubts-p', { origin: 'left' })
+        ScrollReveal().reveal('.change-history-button', { origin: 'bottom' })
     }
 
     saveCompletedQuiz(): void {
         localStorage.setItem("categoryName", this.vslData.category.name)
         localStorage.setItem("categoryIndex", this.vslData.category.index.toString())
         localStorage.setItem("points", this.vslData.points.toString())
+        if (localStorage.getItem("fullname") === null)
+            localStorage.setItem("fullname", this.quizService.getFormDateQuiz().name)
         localStorage.setItem("sendEmail", 'false')
+    }
+
+    changeHistoryButton(): void {
+        const fullname = localStorage.getItem("fullname")
+        const treasureMapPersonName = document.querySelector('.treasure-map-person-name')
+        if (fullname && treasureMapPersonName) {
+            treasureMapPersonName.textContent = fullname
+            this.newCopy1 = this.pageData.copy1.replaceAll('Rafaela', fullname)
+        }
+        scrollTo({
+            behavior: "smooth",
+            top: 830
+        })
     }
 }

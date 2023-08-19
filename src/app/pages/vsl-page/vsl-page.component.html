@@ -13,7 +13,23 @@
 <div id="page-2" class="cv-page-2-container hide">
     <div class="cv-page-2">
         <h2 id="copy-2-title">{{ pageData.headline }}</h2>
-        <p id="copy-2">{{ pageData.copy }}</p>
+        <div class="copy-container">
+            <p class="copy-part">{{ newCopy1 === "" ? pageData.copy1 : newCopy1 }}</p>
+            <p class="copy-part">{{ pageData.copy2 }}</p>
+            <p class="copy-part">{{ pageData.copy3 }}</p>
+            <p class="copy-part">{{ pageData.copy4 }}</p>
+            <p class="copy-part">{{ pageData.copy5 }}</p>
+            <p class="copy-part">{{ pageData.copy6 }}</p>
+            <p class="copy-part">{{ pageData.copy7 }}</p>
+            <p class="copy-part">{{ pageData.copy8 }}</p>
+            <p class="copy-part">{{ pageData.copy9 }}</p>
+            <p class="copy-part">{{ pageData.copy10 }}</p>
+            <p class="copy-part">{{ pageData.copy11 }}</p>
+        </div>
+        <div class="treasure-map-container">
+            <h3 class="treasure-map-person-name">Rafaela</h3>
+            <img class="treasure-map" src="../../../assets/img/map.png" alt="Mapa do tesouro">
+        </div>
         <div class="about">
             <p class="paragraph-1">EM 2022 AJUDAMOS MAIS DE <span class="text-emphasis">64 MIL PESSOAS</span></p>
             <p class="paragraph-2">Pessoas essas, que chegaram para a gente com todos os tipos de problemas, como:</p>
@@ -31,7 +47,7 @@
             </ul>
         </div>
         <div class="vsl-button-container first-button" (click)="goToCheckout()">
-            <button class="vsl-button">Garantir meu acesso</button>
+            <button class="vsl-button">Acessar o jogo</button>
         </div>
         <div class="audios">
             <h2>Depoimentos em áudio</h2>
@@ -55,7 +71,12 @@
             <faq-component></faq-component>
         </div>
         <div class="vsl-button-container last-button" (click)="goToCheckout()">
-            <button class="vsl-button">Garantir meu acesso</button>
+            <button class="vsl-button">Acessar o jogo</button>
+        </div>
+        <div class="still-have-doubts-container">
+            <h2 class="still-have-doubts">Ainda tem alguma dúvida se o jogo é para você?</h2>
+            <p class="still-have-doubts-p">Caso você ainda esteja com dúvida se o jogo é realmente para você, clique no botão abaixo e leia novamente a história da Rafaela, porém agora com o seu nome no lugar</p>
+            <button class="change-history-button" (click)="changeHistoryButton()">Ler Novamente</button>
         </div>
     </div>
 </div>
