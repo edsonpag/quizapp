@@ -180,7 +180,7 @@ export class VlsPageComponent implements OnInit, OnDestroy {
                 h2.classList.add('animated-text')
                 currentH2Index++
             }
-        }, 2200)
+        }, 900)
     }
 
     addScrollReveal(): void {

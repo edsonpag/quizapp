@@ -1,9 +1,11 @@
 <img src="../../../assets/videos/background.gif" alt="gif" class="hero-video">
 <div id="page-1" class="cv-page-1-container">
     <div class="cv-page-1">
-        <h2>Sua profissão digital é:</h2>
+        <h2>Jogue o jogo da</h2>
         <h2>{{ pageData.profission }}</h2>
-        <p>{{ pageData.congratulations }}</p>
+        <h2> e ganhe R$500,00</h2>
+        <h2> todos os meses</h2>
+        <p class="congratulations">{{ pageData.congratulations }}</p>
         <div class="arrow-down" (click)="arrowDownClick()">
             <i class="bi bi-arrow-down"></i>
         </div>
@@ -12,7 +14,7 @@
 
 <div id="page-2" class="cv-page-2-container hide">
     <div class="cv-page-2">
-        <h2 id="copy-2-title">{{ pageData.headline }}</h2>
+        <h2 id="copy-2-title"><span class="text-emphasis">{{ pageData.headline }}</span></h2>
         <div class="copy-container">
             <p class="copy-part">{{ newCopy1 === "" ? pageData.copy1 : newCopy1 }}</p>
             <p class="copy-part">{{ pageData.copy2 }}</p>
@@ -29,6 +31,9 @@
         <div class="treasure-map-container">
             <h3 class="treasure-map-person-name">Rafaela</h3>
             <img class="treasure-map" src="../../../assets/img/map.png" alt="Mapa do tesouro">
+        </div>
+        <div class="vsl-button-container button-zero" (click)="goToCheckout()">
+            <button class="vsl-button">Acessar o jogo</button>
         </div>
         <div class="about">
             <p class="paragraph-1">EM 2022 AJUDAMOS MAIS DE <span class="text-emphasis">64 MIL PESSOAS</span></p>
@@ -61,11 +66,11 @@
                 <source src="../../../assets/audios/arthur.mp3" type="audio/mp3">
             </audio>
         </div>
-        <div class="depoiment-form-container">
-            <depoiment-form-component></depoiment-form-component>
-        </div>
         <div class="depoiments-container">
             <depoiments-component *ngFor="let depoiment of depoiments" [depoiment]="depoiment"></depoiments-component>
+        </div>
+        <div class="depoiment-form-container">
+            <depoiment-form-component></depoiment-form-component>
         </div>
         <div class="faq-container">
             <faq-component></faq-component>

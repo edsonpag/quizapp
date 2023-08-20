@@ -52,9 +52,13 @@
     margin-inline: auto;
 }
 
+.congratulations {
+    font-size: 16px;
+}
+
 .animated-text {
     visibility: visible !important;
-    animation: type 2s steps(60, end);
+    animation: type 0.9s steps(60, end);
 }
 
 @keyframes type {
@@ -201,11 +205,11 @@
 
 .depoiment-form-container {
     width: 90%;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .faq-container {
-    margin-top: 40px;
+    margin-top: 20px;
     width: 100%;
 }
 
@@ -226,6 +230,10 @@
     box-shadow: var(--primary-color) 0px 5px 15px;
 }
 
+.button-zero {
+    margin-top: 20px;
+}
+
 .first-button {
     margin-top: 40px;
 }
@@ -236,6 +244,11 @@
 
 .still-have-doubts-container {
     margin-top: 15px;
+}
+
+.copy-part {
+    font-size: 16px;
+    text-align: left;
 }
 
 .change-history-button {
