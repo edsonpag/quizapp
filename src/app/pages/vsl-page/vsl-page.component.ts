@@ -161,7 +161,7 @@ export class VlsPageComponent implements OnInit, OnDestroy {
         let currentH2Index = 0
         if (currentH2Index < allH2.length) {
             const h2 = allH2.item(currentH2Index)
-            h2.classList.add('animated-text')
+            h2.classList.add('animated-p')
             currentH2Index++
         }
         const interval = setInterval(() => {
@@ -177,10 +177,10 @@ export class VlsPageComponent implements OnInit, OnDestroy {
             }
             else {
                 const h2 = allH2.item(currentH2Index)
-                h2.classList.add('animated-text')
+                h2.classList.add('animated-p')
                 currentH2Index++
             }
-        }, 900)
+        }, 700)
     }
 
     addScrollReveal(): void {

@@ -46,25 +46,11 @@
 .cv-page-1 h2 {
     visibility: hidden;
     font-size: 26px;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 18rem;
     margin-inline: auto;
 }
 
 .congratulations {
     font-size: 16px;
-}
-
-.animated-text {
-    visibility: visible !important;
-    animation: type 0.9s steps(60, end);
-}
-
-@keyframes type {
-    from {
-        width: 0;
-    }
 }
 
 .cv-page-1 p {
