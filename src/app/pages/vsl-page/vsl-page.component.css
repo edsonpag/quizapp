@@ -49,10 +49,6 @@
     margin-inline: auto;
 }
 
-.congratulations {
-    font-size: 18px;
-}
-
 .cv-page-1 p {
     visibility: hidden;
     margin-top: 25px;
@@ -233,7 +229,6 @@
 }
 
 .copy-part {
-    font-size: 18px;
     text-align: left;
 }
 
@@ -255,16 +250,8 @@
         font-size: 22px !important;
     }
 
-    .cv-page-1 p {
-        font-size: 12px !important;
-    }
-
     #copy-2-title {
         font-size: 22px !important;
-    }
-
-    .copy-part {
-        font-size: 12px !important;
     }
 
     .paragraph-2 {
