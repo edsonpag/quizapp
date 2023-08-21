@@ -88,14 +88,52 @@ export class VlsPageComponent implements OnInit, OnDestroy {
         const email = {
             from: 'Digital Quiz <contato@digitalquiz.com.br>',
             to: this.quizService.getFormDateQuiz().email,
-            subject: `Prezado passageiro ${this.quizService.getFormDateQuiz().name}!`,
-            templateCode: '001',
+            subject: `Este é o nosso compromisso com você`,
+            templateCode: '002',
             shootingDate: new Date(shootingDate),
+            attachments: [
+                {
+                    filename: "image-01.png",
+                    path: "src/views/assets/email-002/image-01.png",
+                    cid: "image-01.png"
+                },
+                {
+                    filename: "image-02.png",
+                    path: "src/views/assets/email-002/image-02.png",
+                    cid: "image-02.png"
+                },
+                {
+                    filename: "image-03.png",
+                    path: "src/views/assets/email-002/image-03.png",
+                    cid: "image-03.png"
+                },
+                {
+                    filename: "image-04.png",
+                    path: "src/views/assets/email-002/image-04.png",
+                    cid: "image-04.png"
+                },
+                {
+                    filename: "image-05.png",
+                    path: "src/views/assets/email-002/image-05.png",
+                    cid: "image-05.png"
+                },
+                {
+                    filename: "image-06.png",
+                    path: "src/views/assets/email-002/image-06.png",
+                    cid: "image-06.png"
+                },
+                {
+                    filename: "image-07.png",
+                    path: "src/views/assets/email-002/image-07.png",
+                    cid: "image-07.png"
+                }
+            ],
             context: {
-                profission: this.courses[this.vslData.category.index],
+                fullname: this.quizService.getFormDateQuiz().name,
                 checkoutLink: this.checkoutLink
             }
         }
+
         fetch('https://imail.onrender.com/email/store', {
             method: 'POST',
             headers: {
