@@ -5,7 +5,6 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
 import { CommonModule } from "@angular/common";
 import { ReactiveFormsModule } from "@angular/forms";
 import { ResultsPageRoutingModule } from "./results-page-routing.module";
-import { VideoPlayerModule } from "src/app/components/video-player/video-player.module";
 
 @NgModule({
     imports: [
@@ -14,7 +13,6 @@ import { VideoPlayerModule } from "src/app/components/video-player/video-player.
         MatProgressSpinnerModule,
         ReactiveFormsModule,
         ResultsPageRoutingModule,
-        VideoPlayerModule,
         CommonModule
     ],
     declarations: [

@@ -1,17 +1,17 @@
 import { NgModule } from "@angular/core";
-import { VideoPlayerModule } from "src/app/components/video-player/video-player.module";
 import { VlsPageComponent } from "./vsl-page.component";
 import { VslPageRoutingModule } from "./vsl-page-routing.module";
 import { CommonModule } from "@angular/common";
 import { DepoimentsModule } from "src/app/components/depoiments/depoiments.module";
-import { StopWatchModule } from "src/app/components/stopwatch/stopwatch.module";
+import { DepoimentFormModule } from "src/app/components/depoiment-form/depoiment-form.module";
+import { FaqModule } from "src/app/components/faq/faq.module";
 
 @NgModule({
     imports: [
         VslPageRoutingModule,
-        VideoPlayerModule,
         DepoimentsModule,
-        StopWatchModule,
+        DepoimentFormModule,
+        FaqModule,
         CommonModule
     ],
     declarations: [

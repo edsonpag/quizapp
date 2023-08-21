@@ -5,7 +5,7 @@
     </div>
     <div class="liberation">
         <h2>Existe uma profissão épica esperando por você!</h2>
-        <h4>Você quer ganhar dinheiro fazendo o que combina com você? Preencha os dados a baixo que na pagina seguinte encontrará a resposta para suas dúvidas ao final do vídeo.</h4>
+        <h4>Você quer ganhar dinheiro fazendo o que combina com você? Preencha os dados a baixo que na pagina seguinte iremos revelar sua profissão digital.</h4>
         <div class="line-separator"></div>
         <form [formGroup]="liberationForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
@@ -16,14 +16,15 @@
               </div>
             </div>
             <div class="form-group">
-              <input [class.is-invalid]="getEmail()?.invalid && getEmail()?.touched" type="email" class="form-control" id="input-email" placeholder="Email" formControlName="email">
+              <input [class.is-invalid]="getEmail()?.invalid && getEmail()?.touched" type="email" class="form-control" id="input-email" placeholder="Seu melhor email" formControlName="email">
+              <small class="text-muted">Iremos enviar um presente especial para você no email.</small>
               <div *ngIf="getEmail()?.invalid && getEmail()?.touched">
                 <small *ngIf="getEmail()?.errors?.['required']" class="text-danger">Campo obrigatório</small>
                 <small *ngIf="getEmail()?.errors?.['emailInvalid']" class="text-danger">Email inválido</small>
               </div>
             </div>
             <div class="form-group">
-              <input [class.is-invalid]="getCellphoneNumber()?.invalid && getCellphoneNumber()?.touched" type="tel" class="form-control" id="input-cellphone-number" placeholder="Telefone" formControlName="cellphoneNumber" mask="(00) 00000-0000" [dropSpecialCharacters]="false">
+              <input [class.is-invalid]="getCellphoneNumber()?.invalid && getCellphoneNumber()?.touched" type="tel" class="form-control" id="input-cellphone-number" placeholder="WhatsApp" formControlName="cellphoneNumber" mask="(00) 00000-0000" [dropSpecialCharacters]="false">
               <div *ngIf="getCellphoneNumber()?.invalid && getCellphoneNumber()?.touched">
                 <small *ngIf="getCellphoneNumber()?.errors?.['required']" class="text-danger">Campo obrigatório</small>
                 <small *ngIf="getCellphoneNumber()?.errors?.['cellphoneInvalid']" class="text-danger">Telefone inválido</small>
