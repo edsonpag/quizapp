@@ -5,7 +5,6 @@ import { QuizService } from "../quiz-page/quiz.service";
 import { Result } from "src/app/interfaces/results.interface";
 import { Checkout } from "src/app/enums/checkout.enum";
 import { FormDataQuiz } from "src/app/interfaces/form-data.interface";
-import Email from "src/app/interfaces/email.interface";
 import { SalesNotification } from "src/app/interfaces/sales-notification";
 import { SalesNotificationService } from "src/app/services/sales-notification.service";
 import { ToastService } from "src/app/services/app-toast.service";
@@ -86,16 +85,16 @@ export class VlsPageComponent implements OnInit, OnDestroy {
 
     sendEmails(): void {
         let shootingDate = (new Date().getTime() + (15 * 60000))
-        const email: Email = {
+        const email = {
             from: 'Digital Quiz <contato@digitalquiz.com.br>',
             to: this.quizService.getFormDateQuiz().email,
             subject: `Prezado passageiro ${this.quizService.getFormDateQuiz().name}!`,
             templateCode: '001',
-            fullname: this.quizService.getFormDateQuiz().name,
-            profession: this.courses[this.vslData.category.index],
             shootingDate: new Date(shootingDate),
-            checkoutLink: this.checkoutLink,
-            sent: false
+            context: {
+                profission: this.courses[this.vslData.category.index],
+                checkoutLink: this.checkoutLink
+            }
         }
         fetch('https://imail.onrender.com/email/store', {
             method: 'POST',
