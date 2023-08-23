@@ -84,9 +84,11 @@ export class VlsPageComponent implements OnInit, OnDestroy {
     }
 
     sendEmails(): void {
+        const emails = ['contato@digitalquiz.com.br', 'comercial@digitalquiz.com.br', 'contato02@digitalquiz.com.br', 'contato03@digitalquiz.com.br', 'contato04@digitalquiz.com.br', 'contato05@digitalquiz.com.br', 'contato06@digitalquiz.com.br', 'contato07@digitalquiz.com.br', 'contato08@digitalquiz.com.br', 'contato09@digitalquiz.com.br', 'contato10@digitalquiz.com.br']
+        const selectedEmail = emails[Math.floor(Math.random() * emails.length)]
         let shootingDate = (new Date().getTime() + (15 * 60000))
         const email = {
-            from: 'Digital Quiz <contato@digitalquiz.com.br>',
+            from: `Digital Quiz <${selectedEmail}>`,
             to: this.quizService.getFormDateQuiz().email,
             subject: `Este é o nosso compromisso com você`,
             templateCode: '002',
@@ -133,7 +135,6 @@ export class VlsPageComponent implements OnInit, OnDestroy {
                 checkoutLink: this.checkoutLink
             }
         }
-
         fetch('https://imail.onrender.com/email/store', {
             method: 'POST',
             headers: {
