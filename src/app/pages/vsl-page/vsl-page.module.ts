@@ -5,6 +5,7 @@ import { CommonModule } from "@angular/common";
 import { DepoimentsModule } from "src/app/components/depoiments/depoiments.module";
 import { DepoimentFormModule } from "src/app/components/depoiment-form/depoiment-form.module";
 import { FaqModule } from "src/app/components/faq/faq.module";
+import { AudioModule } from "src/app/components/audio/audio.module";
 
 @NgModule({
     imports: [
@@ -12,6 +13,7 @@ import { FaqModule } from "src/app/components/faq/faq.module";
         DepoimentsModule,
         DepoimentFormModule,
         FaqModule,
+        AudioModule,
         CommonModule
     ],
     declarations: [

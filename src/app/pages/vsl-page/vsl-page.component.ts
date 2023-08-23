@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { AfterViewInit, Component, OnDestroy, OnInit } from "@angular/core";
 import { Depoiment } from "src/app/interfaces/depoiment.interface";
 import { DepoimentsService } from "src/app/services/depoiments.service";
 import { QuizService } from "../quiz-page/quiz.service";
@@ -18,7 +18,7 @@ import * as ScrollReveal from "../../libs/scrollreveal/scrollreveal";
     styleUrls: ['./vsl-page.component.css']
 })
 
-export class VlsPageComponent implements OnInit, OnDestroy {
+export class VlsPageComponent implements OnInit, AfterViewInit, OnDestroy {
 
     vslData!: Result;
     
@@ -44,7 +44,9 @@ export class VlsPageComponent implements OnInit, OnDestroy {
         copy8: "",
         copy9: "",
         copy10: "",
-        copy11: ""
+        copy11: "",
+        videoSrc: "",
+        captionsSrc: ""
     }
 
     newCopy1: string = ""
@@ -63,8 +65,18 @@ export class VlsPageComponent implements OnInit, OnDestroy {
         await this.fillPage()
         if (localStorage.getItem('sendEmail') != 'false')
             this.sendEmails()
-        this.handleSalesNotification()
         this.saveCompletedQuiz()
+    }
+
+    ngAfterViewInit(): void {
+        ScrollReveal({
+            reset: true,
+            distance: '60px',
+            duration: 900,
+            delay: 0
+        })
+        ScrollReveal().reveal('.cv-page-1 h2', { origin: 'top' })
+        ScrollReveal().reveal('.cv-page-1 .audio-player', { origin: 'left' })
     }
 
     ngOnDestroy(): void {
@@ -161,13 +173,6 @@ export class VlsPageComponent implements OnInit, OnDestroy {
         return queryParms;
     }
 
-    arrowDownClick(): void {
-        scrollTo({
-            behavior: "smooth",
-            top: 830
-        })
-    }
-
     handleSalesNotification(): void {
         setInterval(() => {
             const salesNotification: SalesNotification[] = this.salesNotificationService.getAll();
@@ -194,30 +199,9 @@ export class VlsPageComponent implements OnInit, OnDestroy {
     }
 
     addAnimations(): void {
-        const allH2 = document.querySelectorAll('.cv-page-1 h2');
-        let currentH2Index = 0
-        if (currentH2Index < allH2.length) {
-            const h2 = allH2.item(currentH2Index)
-            h2.classList.add('animated-p')
-            currentH2Index++
-        }
-        const interval = setInterval(() => {
-            if (currentH2Index >= allH2.length) {
-                document.querySelector('p')?.classList.add('animated-p')
-                setTimeout(() => {
-                    document.querySelector('.arrow-down')?.classList.add('animated-arrow-down')
-                    document.querySelector('.arrow-down')?.classList.add('bounce')
-                    this.addScrollReveal()
-                    document.querySelector('#page-2')?.classList.remove('hide')
-                }, 1000)
-                clearInterval(interval)
-            }
-            else {
-                const h2 = allH2.item(currentH2Index)
-                h2.classList.add('animated-p')
-                currentH2Index++
-            }
-        }, 700)
+        setTimeout(() => {
+            this.addScrollReveal()
+        }, 1000)
     }
 
     addScrollReveal(): void {
@@ -236,7 +220,7 @@ export class VlsPageComponent implements OnInit, OnDestroy {
         ScrollReveal().reveal('.list-group li', { origin: 'bottom', interval: 200 })
         ScrollReveal().reveal('.first-button', { origin: 'bottom' })
         ScrollReveal().reveal('.audios h2', { origin: 'bottom' })
-        ScrollReveal().reveal('.audios audio', { origin: 'left', interval: 200 })
+        ScrollReveal().reveal('.audios .audio-player', { origin: 'left', interval: 200 })
         ScrollReveal().reveal('.depoiment-form-container div', { origin: 'bottom' })
         ScrollReveal().reveal('.depoiments-container .depoiment div', { origin: 'left' })
         ScrollReveal().reveal('.faq-container .faq-title', { origin: 'left' })
