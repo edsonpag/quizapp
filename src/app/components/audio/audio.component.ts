@@ -13,9 +13,6 @@ export class AudioComponent implements OnInit {
   @Input('src')
   src!: string
 
-  @Input('captionsSrc')
-  captionsSrc!: string
-
   @Input('customStyle')
   customStyle!: string
 
@@ -34,9 +31,6 @@ export class AudioComponent implements OnInit {
 
   @ViewChild('volumeBtn', { static: true })
   volumeBtn!: ElementRef
-
-  @ViewChild('canvas', { static: true })
-  canvas!: ElementRef
 
   ngOnInit(): void {
     this.audioPlayerEl.nativeElement.style = this.customStyle

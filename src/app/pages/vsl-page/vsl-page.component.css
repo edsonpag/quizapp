@@ -46,6 +46,7 @@
 .cv-page-1 h2 {
     font-size: 26px;
     margin-inline: auto;
+    margin-bottom: 32px;
 }
 
 @keyframes fade {

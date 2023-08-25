@@ -15,10 +15,6 @@
     display: none;
 }
 
-.audio-player p {
-    margin: 0;
-}
-
 .audio-player button {
     background-color: transparent;
     outline: none;
@@ -30,34 +26,4 @@
 
 .audio-player path {
     stroke: white;
-}
-
-.audio-player .sound-wave {
-    height: 45px;
-    display: flex;
-    align-items: center;
-}
-
-.audio-player .sound-wave .stroke {
-    display: block;
-    position: relative;
-    background: var(--primary-color);
-    height: 100%;
-    width: 10px;
-    border-radius: 50px;
-    margin: 0 5px;
-    animation: wave 1.2s linear infinite;
-}
-
-.hidden {
-    visibility: hidden;
-}
-
-@keyframes wave {
-    50% {
-        height: 20%;
-    }
-    100% {
-        height: 100%;
-    }
 }
