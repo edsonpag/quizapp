@@ -76,7 +76,6 @@ export class VlsPageComponent implements OnInit, AfterViewInit, OnDestroy {
             delay: 0
         })
         ScrollReveal().reveal('.cv-page-1 h2', { origin: 'top' })
-        ScrollReveal().reveal('.cv-page-1 .video-player', { origin: 'left' })
     }
 
     ngOnDestroy(): void {

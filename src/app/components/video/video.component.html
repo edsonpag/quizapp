@@ -1,7 +1,12 @@
 <div #videoPlayer class="video-player">
+    <div class="alternatives-1">
+        <button>Iniciante</button>
+        <button>Médio</button>
+        <button>Avançado</button>
+    </div>
     <video #video [src]="src"></video>
     <div class="media-controls">
-        <button #playPauseBtn class="play-pause-btn"></button>
+        <button [disabled]="!canPressPlayPauseBtn" #playPauseBtn class="play-pause-btn"></button>
         <button #volumeBtn class="volume-btn"></button>
     </div>
 </div>
