@@ -56,7 +56,6 @@ export class VlsPageComponent implements OnInit, AfterViewInit, OnDestroy {
     async ngOnInit(): Promise<void> {
         this.addConversionEventGoogleAds()
         this.addDarkMode()
-        this.addAnimations()
         const results = this.quizService.getResults();
         results.sort((a, b) => b.points - a.points);
         this.vslData = results[0];
@@ -76,6 +75,8 @@ export class VlsPageComponent implements OnInit, AfterViewInit, OnDestroy {
             delay: 0
         })
         ScrollReveal().reveal('.cv-page-1 h2', { origin: 'top' })
+        ScrollReveal().reveal('.depoiment-form-container div', { origin: 'bottom' })
+        ScrollReveal().reveal('.depoiments-container .depoiment div', { origin: 'left' })
     }
 
     ngOnDestroy(): void {
@@ -195,39 +196,6 @@ export class VlsPageComponent implements OnInit, AfterViewInit, OnDestroy {
         document.body.style.color = "black";
         const navbar = document.querySelector(".navbar-brand") as HTMLElement;
         navbar.style.color = "black";
-    }
-
-    addAnimations(): void {
-        setTimeout(() => {
-            this.addScrollReveal()
-        }, 1000)
-    }
-
-    addScrollReveal(): void {
-        ScrollReveal({
-            reset: true,
-            distance: '60px',
-            duration: 900,
-            delay: 0
-        })
-        ScrollReveal().reveal('#copy-2-title', { origin: 'left' })
-        ScrollReveal().reveal('.copy-part', { origin: 'bottom', interval: 200 })
-        ScrollReveal().reveal('.treasure-map-person-name', { origin: 'left' })
-        ScrollReveal().reveal('.treasure-map', { origin: 'left' })
-        ScrollReveal().reveal('.paragraph-1', { origin: 'left' })
-        ScrollReveal().reveal('.paragraph-2', { origin: 'bottom' })
-        ScrollReveal().reveal('.list-group li', { origin: 'bottom', interval: 200 })
-        ScrollReveal().reveal('.first-button', { origin: 'bottom' })
-        ScrollReveal().reveal('.audios h2', { origin: 'bottom' })
-        ScrollReveal().reveal('.audios .audio-player', { origin: 'left', interval: 200 })
-        ScrollReveal().reveal('.depoiment-form-container div', { origin: 'bottom' })
-        ScrollReveal().reveal('.depoiments-container .depoiment div', { origin: 'left' })
-        ScrollReveal().reveal('.faq-container .faq-title', { origin: 'left' })
-        ScrollReveal().reveal('.my-accordion-item', { origin: 'bottom', interval: 200 })
-        ScrollReveal().reveal('.last-button', { origin: 'bottom' })
-        ScrollReveal().reveal('.still-have-doubts', { origin: 'left' })
-        ScrollReveal().reveal('.still-have-doubts-p', { origin: 'left' })
-        ScrollReveal().reveal('.change-history-button', { origin: 'bottom' })
     }
 
     saveCompletedQuiz(): void {

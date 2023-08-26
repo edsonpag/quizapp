@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, ViewEncapsulation, Input } from '@angular/core'
 import Lottie, { AnimationItem } from 'lottie-web'
+// @ts-ignore
+import * as ScrollReveal from "../../libs/scrollreveal/scrollreveal";
 
 @Component({
   selector: 'video-component',
@@ -12,17 +14,16 @@ export class VideoComponent implements OnInit {
 
     @Input('src')
     src!: string
-  
+
     @ViewChild('videoPlayer', { static: true })
     audioPlayerEl!: ElementRef
-  
+
     @ViewChild('video', { static: true })
     videoEl!: ElementRef
-  
+
     @ViewChild('playPauseBtn', { static: true })
     playPauseBtn!: ElementRef
-  
-  
+
     @ViewChild('volumeBtn', { static: true })
     volumeBtn!: ElementRef
 
@@ -125,7 +126,12 @@ export class VideoComponent implements OnInit {
         this.playing = true
       }
     }
-  
+
+    resumeVideoAndUnblockPressPlayButton() {
+      this.canPressPlayPauseBtn = true
+      this.resumeVideo()
+    }
+
     unmuteVideo() {
       this.getVideoEl().volume = 1
       this.volumeBtnAnimation.playSegments([14, 27], true)
@@ -137,10 +143,47 @@ export class VideoComponent implements OnInit {
       this.volumeBtnAnimation.playSegments([0, 14], true)
       this.mutated = true
     }
-    
+
     pauseVideoToShowQuestions() {
       this.pauseVideoAndBlockPressPlayPauseBtn()
       this.getVideoEl().removeEventListener('timeupdate', this.boundHandleVideoTimeUpdateToShowQuestions)
       document.querySelector('.alternatives-1')?.classList.add('transition-effect')
     }
+
+    resumeVideoAndHideQuestionsAndUpdateVslPage(alternative: string) {
+      this.resumeVideoAndUnblockPressPlayButton()
+      document.querySelector('.alternatives-1')?.classList.remove('transition-effect')
+      this.updateVslPage()
+    }
+
+    updateVslPage() {
+      document.querySelectorAll('.cv-page-2-container .hide').forEach(el => el.classList.remove('hide'))
+      this.addScrollReveal()
+    }
+
+    addScrollReveal(): void {
+      ScrollReveal({
+          reset: true,
+          distance: '60px',
+          duration: 900,
+          delay: 0
+      })
+      ScrollReveal().reveal('#copy-2-title', { origin: 'left' })
+      ScrollReveal().reveal('.copy-part', { origin: 'bottom', interval: 200 })
+      ScrollReveal().reveal('.treasure-map-person-name', { origin: 'left' })
+      ScrollReveal().reveal('.treasure-map', { origin: 'left' })
+      ScrollReveal().reveal('.button-zero', { origin: 'bottom' })
+      ScrollReveal().reveal('.paragraph-1', { origin: 'left' })
+      ScrollReveal().reveal('.paragraph-2', { origin: 'bottom' })
+      ScrollReveal().reveal('.list-group li', { origin: 'bottom', interval: 200 })
+      ScrollReveal().reveal('.first-button', { origin: 'bottom' })
+      ScrollReveal().reveal('.audios h2', { origin: 'bottom' })
+      ScrollReveal().reveal('.audios .audio-player', { origin: 'left', interval: 200 })
+      ScrollReveal().reveal('.faq-container .faq-title', { origin: 'left' })
+      ScrollReveal().reveal('.my-accordion-item', { origin: 'bottom', interval: 200 })
+      ScrollReveal().reveal('.last-button', { origin: 'bottom' })
+      ScrollReveal().reveal('.still-have-doubts', { origin: 'left' })
+      ScrollReveal().reveal('.still-have-doubts-p', { origin: 'left' })
+      ScrollReveal().reveal('.change-history-button', { origin: 'bottom' })
+  }
 }
