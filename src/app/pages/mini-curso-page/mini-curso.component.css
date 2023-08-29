@@ -8,6 +8,10 @@
     z-index: -1;
 }
 
+.button-first-page {
+    margin-top: 38px;
+}
+
 .treasure-map-container {
     position: relative;
 }

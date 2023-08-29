@@ -5,7 +5,6 @@ import { QuizService } from "../quiz-page/quiz.service";
 import { Result } from "src/app/interfaces/results.interface";
 import { Checkout } from "src/app/enums/checkout.enum";
 import { FormDataQuiz } from "src/app/interfaces/form-data.interface";
-import { SalesNotification } from "src/app/interfaces/sales-notification";
 import { SalesNotificationService } from "src/app/services/sales-notification.service";
 import { ToastService } from "src/app/services/app-toast.service";
 import PageData from "src/app/interfaces/page-data.interface";
@@ -126,6 +125,8 @@ export class MiniCursoPageComponent implements OnInit, AfterViewInit, OnDestroy 
         })
         ScrollReveal().reveal('.cv-page-1 h2', { origin: 'left' })
         ScrollReveal().reveal('.cv-page-1 .video-player', { origin: 'left' })
+        ScrollReveal().reveal('.depoiment-form-container div', { origin: 'bottom' })
+        ScrollReveal().reveal('.depoiments-container .depoiment div', { origin: 'left' })
     }
 
     removeDarkMode(): void {

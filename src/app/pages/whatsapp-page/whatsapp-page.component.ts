@@ -68,7 +68,7 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
 
     attachWhatsAppButtonClickEvent(): void {
         const whatsappLink = "https://wa.me/5547999480308?text="
-        let whatsappMessage = "Olá, gostaria de saber minha profissão secreta"
+        let whatsappMessage = "Olá, gostaria de saber minha profissão digital secreta"
         if (this.vslData.category.name === "INFLUENCER")
             whatsappMessage += "!"
         else if (this.vslData.category.name === "SOCIAL_MEDIA")

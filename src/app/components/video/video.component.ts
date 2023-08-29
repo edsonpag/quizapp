@@ -102,7 +102,7 @@ export class VideoComponent implements OnInit {
 
     attachUpdateMiniCursoPageEvent() {
       this.getVideoEl().addEventListener('timeupdate', () => {
-        const TIME_TO_UPDATE_MINI_CURSO_PAGE_IN_SECONDS = 2
+        const TIME_TO_UPDATE_MINI_CURSO_PAGE_IN_SECONDS = 600
         const currentTime = this.getVideoEl().currentTime
         if (TIME_TO_UPDATE_MINI_CURSO_PAGE_IN_SECONDS < currentTime) {
           this.updateMiniCursoPage()
@@ -163,7 +163,7 @@ export class VideoComponent implements OnInit {
     }
 
     updateMiniCursoPage() {
-      document.querySelector('.cv-page-2-container')?.classList.remove('hide')
+      document.querySelectorAll(".hide").forEach(el => el.classList.remove("hide"))
       this.addScrollReveal()
     }
 
@@ -174,6 +174,7 @@ export class VideoComponent implements OnInit {
           duration: 900,
           delay: 0
       })
+      ScrollReveal().reveal('.button-first-page', { origin: 'left' })
       ScrollReveal().reveal('#copy-2-title', { origin: 'left' })
       ScrollReveal().reveal('.copy-part', { origin: 'bottom', interval: 200 })
       ScrollReveal().reveal('.treasure-map-person-name', { origin: 'left' })
@@ -184,8 +185,6 @@ export class VideoComponent implements OnInit {
       ScrollReveal().reveal('.first-button', { origin: 'bottom' })
       ScrollReveal().reveal('.audios h2', { origin: 'bottom' })
       ScrollReveal().reveal('.audios .audio-player', { origin: 'left', interval: 200 })
-      ScrollReveal().reveal('.depoiment-form-container div', { origin: 'bottom' })
-      ScrollReveal().reveal('.depoiments-container .depoiment div', { origin: 'left' })
       ScrollReveal().reveal('.faq-container .faq-title', { origin: 'left' })
       ScrollReveal().reveal('.my-accordion-item', { origin: 'bottom', interval: 200 })
       ScrollReveal().reveal('.last-button', { origin: 'bottom' })

@@ -1,15 +1,18 @@
 <img src="../../../assets/videos/background.gif" alt="gif" class="hero-video">
 <div id="page-1" class="cv-page-1-container">
     <div class="cv-page-1">
-        <h2>Olá {{ quizService.getFormDateQuiz().name }}, dê o play e descubra sua profissão digital secreta</h2>
+        <h2>Olá {{ quizService.getFormDateQuiz().name }}, nossa equipe preparou um material exclusivo para você, dê o play e descubra agora qual é a sua profissão digital secreta</h2>
         <video-component [src]="pageData.videoSrc"></video-component>
+        <div class="vsl-button-container button-first-page hide">
+            <button class="vsl-button">Acessar agora</button>
+        </div>
     </div>
 </div>
 
-<div id="page-2" class="cv-page-2-container hide">
+<div id="page-2" class="cv-page-2-container">
     <div class="cv-page-2">
-        <h2 id="copy-2-title"><span class="text-emphasis">Caso de Sucesso</span></h2>
-        <div class="copy-container">
+        <h2 id="copy-2-title" class="hide"><span class="text-emphasis">Caso de Sucesso</span></h2>
+        <div class="copy-container hide">
             <p class="copy-part">{{ newCopy1 === "" ? pageData.copy1 : newCopy1 }}</p>
             <p class="copy-part">{{ pageData.copy2 }}</p>
             <p class="copy-part">{{ pageData.copy3 }}</p>
@@ -22,14 +25,14 @@
             <p class="copy-part">{{ pageData.copy10 }}</p>
             <p class="copy-part">{{ pageData.copy11 }}</p>
         </div>
-        <div class="treasure-map-container">
+        <div class="treasure-map-container hide">
             <h3 class="treasure-map-person-name">Rafaela</h3>
             <img class="treasure-map" src="../../../assets/img/map.png" alt="Mapa do tesouro">
         </div>
-        <div class="vsl-button-container button-zero">
+        <div class="vsl-button-container button-zero hide">
             <button class="vsl-button">Acessar agora</button>
         </div>
-        <div class="about">
+        <div class="about hide">
             <p class="paragraph-1">EM 2022 AJUDAMOS MAIS DE <span class="text-emphasis">64 MIL PESSOAS</span></p>
             <p class="paragraph-2">Pessoas essas, que chegaram para a gente com todos os tipos de problemas, como:</p>
             <ul class="doubts list-group">
@@ -45,10 +48,10 @@
                 <li class="list-group-item">Estresse por não saber qual caminho seguir</li>
             </ul>
         </div>
-        <div class="vsl-button-container first-button">
+        <div class="vsl-button-container first-button hide">
             <button class="vsl-button">Acessar agora</button>
         </div>
-        <div class="audios">
+        <div class="audios hide">
             <h2>Depoimentos em áudio</h2>
             <audio-component [src]="'../../../assets/audios/ingrid.mp3'" [customStyle]="'border: 2px solid var(--primary-color);'"></audio-component>
             <audio-component [src]="'../../../assets/audios/iara.mp3'" [customStyle]="'border: 2px solid var(--primary-color);'"></audio-component>
@@ -60,13 +63,13 @@
         <div class="depoiment-form-container">
             <depoiment-form-component></depoiment-form-component>
         </div>
-        <div class="faq-container">
+        <div class="faq-container hide">
             <faq-component></faq-component>
         </div>
-        <div class="vsl-button-container last-button">
+        <div class="vsl-button-container last-button hide">
             <button class="vsl-button">Acessar agora</button>
         </div>
-        <div class="still-have-doubts-container">
+        <div class="still-have-doubts-container hide">
             <h2 class="still-have-doubts">Ainda tem alguma dúvida se o jogo é para você?</h2>
             <p class="still-have-doubts-p">Caso você ainda esteja com dúvida se o jogo é realmente para você, clique no botão abaixo e leia novamente a história da Rafaela, porém agora com o seu nome no lugar</p>
             <button class="change-history-button">Ler Novamente</button>
