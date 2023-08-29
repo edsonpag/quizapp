@@ -152,12 +152,14 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
         localStorage.setItem("categoryName", this.vslData.category.name)
         localStorage.setItem("categoryIndex", this.vslData.category.index.toString())
         localStorage.setItem("points", this.vslData.points.toString())
-        if (localStorage.getItem("fullname") === null && this.quizService.getFormDateQuiz().name)
-            localStorage.setItem("fullname", this.quizService.getFormDateQuiz().name)
-        if (localStorage.getItem("cellphoneNumber") === null && this.quizService.getFormDateQuiz().cellphoneNumber)
-            localStorage.setItem("cellphoneNumber", this.quizService.getFormDateQuiz().cellphoneNumber)
-        if (localStorage.getItem("email") === null && this.quizService.getFormDateQuiz().email)
-            localStorage.setItem("email", this.quizService.getFormDateQuiz().email)
+        if (this.quizService.getFormDateQuiz()) {
+            if (localStorage.getItem("fullname") === null)
+                localStorage.setItem("fullname", this.quizService.getFormDateQuiz().name)
+            if (localStorage.getItem("cellphoneNumber") === null)
+                localStorage.setItem("cellphoneNumber", this.quizService.getFormDateQuiz().cellphoneNumber)
+            if (localStorage.getItem("email") === null)
+                localStorage.setItem("email", this.quizService.getFormDateQuiz().email)
+        }
         localStorage.setItem("sendEmail", 'false')
     }
 
