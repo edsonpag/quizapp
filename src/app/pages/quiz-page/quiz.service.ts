@@ -40,6 +40,12 @@ export class QuizService {
     this.formDataQuiz = formDataQuiz;
   }
 
+  getVslData(): Result {
+    let results = this.getResults()
+    results.sort((a, b) => b.points - a.points)
+    return results[0]
+  }
+
   questions: Question[] = [
     {
       id: 0,

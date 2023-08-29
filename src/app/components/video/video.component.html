@@ -1,10 +1,10 @@
 <div #videoPlayer class="video-player">
     <div class="alternatives-1">
-        <button (click)="resumeVideoAndHideQuestionsAndUpdateVslPage('beginner')">Iniciante</button>
-        <button (click)="resumeVideoAndHideQuestionsAndUpdateVslPage('intermediary')">Médio</button>
-        <button (click)="resumeVideoAndHideQuestionsAndUpdateVslPage('advanced')">Avançado</button>
+        <button (click)="resumeVideoAndHideQuestions('beginner')">Iniciante</button>
+        <button (click)="resumeVideoAndHideQuestions('intermediary')">Médio</button>
+        <button (click)="resumeVideoAndHideQuestions('advanced')">Avançado</button>
     </div>
-    <video #video [src]="src"></video>
+    <video #video [src]="src" [playsInline]="true"></video>
     <div class="media-controls">
         <button [disabled]="!canPressPlayPauseBtn" #playPauseBtn class="play-pause-btn"></button>
         <button #volumeBtn class="volume-btn"></button>

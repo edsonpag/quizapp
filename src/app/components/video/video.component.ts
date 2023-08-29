@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, ViewEncapsulation, Input } from '@angular/core'
+import { Component, OnInit, ViewChild, ElementRef, ViewEncapsulation, Input, OnDestroy } from '@angular/core'
 import Lottie, { AnimationItem } from 'lottie-web'
 // @ts-ignore
 import * as ScrollReveal from "../../libs/scrollreveal/scrollreveal";
@@ -14,9 +14,6 @@ export class VideoComponent implements OnInit {
 
     @Input('src')
     src!: string
-
-    @ViewChild('videoPlayer', { static: true })
-    audioPlayerEl!: ElementRef
 
     @ViewChild('video', { static: true })
     videoEl!: ElementRef
@@ -37,9 +34,12 @@ export class VideoComponent implements OnInit {
 
     volumeBtnAnimation!: AnimationItem
 
-    boundHandleVideoTimeUpdateToShowQuestions = this.handleVideoTimeUpdateToShowQuestions.bind(this)
-
     ngOnInit(): void {
+      this.createLottieAnimations()
+      this.attachEvents()
+    }
+
+    createLottieAnimations(): void {
       this.playPauseBtnAnimation = Lottie.loadAnimation({
         container: this.playPauseBtn.nativeElement,
         path: "../../../assets/lottie/pause.json",
@@ -56,14 +56,14 @@ export class VideoComponent implements OnInit {
         autoplay: false,
         name: "Volume Animation"
       })
-      this.attachEvents()
     }
 
     attachEvents() {
       this.attachPlayPauseBtnEvent()
       this.attachEndEvent()
       this.attachVolumeBtnEvent()
-      this.attachQuestionsToUserEvent()
+      //this.attachQuestionsToUserEvent()
+      this.attachUpdateMiniCursoPageEvent()
     }
 
     attachPlayPauseBtnEvent() {
@@ -92,14 +92,22 @@ export class VideoComponent implements OnInit {
     }
 
     attachQuestionsToUserEvent() {
-      this.getVideoEl().addEventListener('timeupdate', this.boundHandleVideoTimeUpdateToShowQuestions)
-    }
-
-    handleVideoTimeUpdateToShowQuestions() {
+      this.getVideoEl().addEventListener('timeupdate', () => {
         const TIME_TO_SHOW_QUESTIONS_IN_SECONDS = 8
         const currentTime = this.getVideoEl().currentTime
         if (currentTime > TIME_TO_SHOW_QUESTIONS_IN_SECONDS)
           this.pauseVideoToShowQuestions()
+      })
+    }
+
+    attachUpdateMiniCursoPageEvent() {
+      this.getVideoEl().addEventListener('timeupdate', () => {
+        const TIME_TO_UPDATE_MINI_CURSO_PAGE_IN_SECONDS = 2
+        const currentTime = this.getVideoEl().currentTime
+        if (TIME_TO_UPDATE_MINI_CURSO_PAGE_IN_SECONDS < currentTime) {
+          this.updateMiniCursoPage()
+        }
+      })
     }
 
     getVideoEl(): HTMLVideoElement {
@@ -146,18 +154,16 @@ export class VideoComponent implements OnInit {
 
     pauseVideoToShowQuestions() {
       this.pauseVideoAndBlockPressPlayPauseBtn()
-      this.getVideoEl().removeEventListener('timeupdate', this.boundHandleVideoTimeUpdateToShowQuestions)
       document.querySelector('.alternatives-1')?.classList.add('transition-effect')
     }
 
-    resumeVideoAndHideQuestionsAndUpdateVslPage(alternative: string) {
+    resumeVideoAndHideQuestions(alternative: string) {
       this.resumeVideoAndUnblockPressPlayButton()
       document.querySelector('.alternatives-1')?.classList.remove('transition-effect')
-      this.updateVslPage()
     }
 
-    updateVslPage() {
-      document.querySelectorAll('.cv-page-2-container .hide').forEach(el => el.classList.remove('hide'))
+    updateMiniCursoPage() {
+      document.querySelector('.cv-page-2-container')?.classList.remove('hide')
       this.addScrollReveal()
     }
 
@@ -172,13 +178,14 @@ export class VideoComponent implements OnInit {
       ScrollReveal().reveal('.copy-part', { origin: 'bottom', interval: 200 })
       ScrollReveal().reveal('.treasure-map-person-name', { origin: 'left' })
       ScrollReveal().reveal('.treasure-map', { origin: 'left' })
-      ScrollReveal().reveal('.button-zero', { origin: 'bottom' })
       ScrollReveal().reveal('.paragraph-1', { origin: 'left' })
       ScrollReveal().reveal('.paragraph-2', { origin: 'bottom' })
       ScrollReveal().reveal('.list-group li', { origin: 'bottom', interval: 200 })
       ScrollReveal().reveal('.first-button', { origin: 'bottom' })
       ScrollReveal().reveal('.audios h2', { origin: 'bottom' })
       ScrollReveal().reveal('.audios .audio-player', { origin: 'left', interval: 200 })
+      ScrollReveal().reveal('.depoiment-form-container div', { origin: 'bottom' })
+      ScrollReveal().reveal('.depoiments-container .depoiment div', { origin: 'left' })
       ScrollReveal().reveal('.faq-container .faq-title', { origin: 'left' })
       ScrollReveal().reveal('.my-accordion-item', { origin: 'bottom', interval: 200 })
       ScrollReveal().reveal('.last-button', { origin: 'bottom' })

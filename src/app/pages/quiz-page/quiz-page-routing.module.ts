@@ -17,7 +17,7 @@ const routes: Routes = [
     },
     {
         path: 'profission',
-        loadChildren: () => import('../vsl-page/vsl-page.module').then(vslPageModule => vslPageModule.VslPageModule)
+        loadChildren: () => import('../whatsapp-page/whatsapp-page.module').then(whatsAppPageModule => whatsAppPageModule.WhatsAppPageModule)
     }
 ]
 

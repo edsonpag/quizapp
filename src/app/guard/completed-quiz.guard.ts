@@ -25,7 +25,6 @@ class CompletedQuizGuard {
                     points: parseInt(points)
                 }
             ]
-            this.quizService.setFormDataQuiz({cellphoneNumber: '', email: '', name: '', terms: false})
             this.quizService.setResults(results)
             this.quizService.setSubmitted(true)
             this.router.navigate(['quiz', 'profission'])
