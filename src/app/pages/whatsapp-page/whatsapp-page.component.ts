@@ -24,7 +24,7 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
 
     peopleHelpedLocaleFormatted!: string
 
-    constructor(private depoimentsService: DepoimentsService, private quizService: QuizService, private salesNotificationService: SalesNotificationService, private toastService: ToastService) {
+    constructor(private depoimentsService: DepoimentsService, private quizService: QuizService) {
         this.depoiments = this.depoimentsService.getAll()
         this.vslData = this.quizService.getVslData()
     }
@@ -70,7 +70,13 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
 
     attachWhatsAppButtonClickEvent(): void {
         const whatsappLink = "https://wa.me/5547999480308?text="
-        const whatsappMessage = "Testando Nova Mensagem"
+        let whatsappMessage = "Olá, gostaria de saber minha profissão secreta"
+        if (this.vslData.category.name === "INFLUENCER")
+            whatsappMessage += "!"
+        else if (this.vslData.category.name === "SOCIAL_MEDIA")
+            whatsappMessage += "!!"
+        else
+            whatsappMessage += "!!!"
         document.querySelectorAll('.vsl-button').forEach(vslButtonEl => vslButtonEl.addEventListener("click", () => {
             window.open(whatsappLink + encodeURIComponent(whatsappMessage), "_blank")
         }))
