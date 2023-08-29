@@ -5,8 +5,6 @@ import { Depoiment } from "src/app/interfaces/depoiment.interface";
 import { DepoimentsService } from "src/app/services/depoiments.service";
 import { Result } from "src/app/interfaces/results.interface";
 import { QuizService } from "../quiz-page/quiz.service";
-import { SalesNotificationService } from "src/app/services/sales-notification.service";
-import { ToastService } from "src/app/services/app-toast.service";
 
 @Component({
     selector: 'whatsapp-page',
