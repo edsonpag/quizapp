@@ -10,6 +10,9 @@ import { ToastService } from "src/app/services/app-toast.service";
 import PageData from "src/app/interfaces/page-data.interface";
 // @ts-ignore
 import * as ScrollReveal from "../../libs/scrollreveal/scrollreveal";
+import * as INFLUENCER_PAGE_DATA from "../../configs/pages/INFLUENCER.json"
+import * as TRAFFIC_MANAGER_PAGE_DATA from "../../configs/pages/TRAFFIC_MANAGER.json"
+import * as SOCIAL_MEDIA_PAGE_DATA from "../../configs/pages/SOCIAL_MEDIA.json"
 
 @Component({
     selector: 'mini-curso',
@@ -52,10 +55,10 @@ export class MiniCursoPageComponent implements OnInit, AfterViewInit, OnDestroy 
         this.addConversionEventGoogleAds()
         this.addDarkMode()
         this.attachEvents()
+        this.fillPage()
     }
 
     async ngAfterViewInit(): Promise<void> {
-        await this.fillPage()
         this.addScrollReveal()
     }
 
@@ -112,8 +115,14 @@ export class MiniCursoPageComponent implements OnInit, AfterViewInit, OnDestroy 
         })
     }
 
-    async fillPage(): Promise<void> {
-        this.pageData = await import(`../../configs/pages/${this.vslData.category.name}.json`)
+    fillPage(): void {
+        const profission = this.vslData.category.name
+        if (profission === "TRAFFIC_MANAGER")
+            this.pageData = TRAFFIC_MANAGER_PAGE_DATA
+        else if (profission === "SOCIAL_MEDIA")
+            this.pageData = SOCIAL_MEDIA_PAGE_DATA
+        else
+            this.pageData = INFLUENCER_PAGE_DATA
     }
 
     addScrollReveal(): void {
