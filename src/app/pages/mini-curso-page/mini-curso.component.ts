@@ -58,7 +58,7 @@ export class MiniCursoPageComponent implements OnInit, AfterViewInit, OnDestroy 
         this.fillPage()
     }
 
-    async ngAfterViewInit(): Promise<void> {
+    ngAfterViewInit(): void {
         this.addScrollReveal()
     }
 
