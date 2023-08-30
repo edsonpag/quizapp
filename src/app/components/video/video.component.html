@@ -5,7 +5,7 @@
         <button (click)="resumeVideoAndHideQuestions('advanced')">Avançado</button>
     </div>
     <video [playsInline]="true" #video>
-        <source [src]="src" type="video/webm">
+        <source [src]="src" type="video/mp4">
     </video>
     <div class="media-controls">
         <button [disabled]="!canPressPlayPauseBtn" #playPauseBtn class="play-pause-btn"></button>
