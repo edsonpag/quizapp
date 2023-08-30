@@ -55,10 +55,11 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
         if (!peopleHelpedAux)
             peopleHelpedAux = '10138'
         this.peopleHelped = peopleHelpedAux
+        this.peopleHelpedLocaleFormatted = parseInt(this.peopleHelped).toLocaleString("pt-BR")
         setInterval(() => {
             this.peopleHelped = (parseInt(this.peopleHelped) + 1).toString()
             localStorage.setItem('peopleHelped', this.peopleHelped)
-            this.peopleHelpedLocaleFormatted = (parseInt(this.peopleHelped) + 1).toLocaleString("pt-BR")
+            this.peopleHelpedLocaleFormatted = parseInt(this.peopleHelped).toLocaleString("pt-BR")
         }, 1500)
     }
 

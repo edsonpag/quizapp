@@ -4,7 +4,7 @@
         <button (click)="resumeVideoAndHideQuestions('intermediary')">Médio</button>
         <button (click)="resumeVideoAndHideQuestions('advanced')">Avançado</button>
     </div>
-    <video #video [src]="src" [playsInline]="true"></video>
+    <video #video [src]="src"></video>
     <div class="media-controls">
         <button [disabled]="!canPressPlayPauseBtn" #playPauseBtn class="play-pause-btn"></button>
         <button #volumeBtn class="volume-btn"></button>
