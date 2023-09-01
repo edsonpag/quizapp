@@ -5,6 +5,7 @@ import { Depoiment } from "src/app/interfaces/depoiment.interface";
 import { DepoimentsService } from "src/app/services/depoiments.service";
 import { Result } from "src/app/interfaces/results.interface";
 import { QuizService } from "../quiz-page/quiz.service";
+import { ChangeService } from "src/app/services/change.service";
 
 @Component({
     selector: 'whatsapp-page',
@@ -22,12 +23,19 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
 
     peopleHelpedLocaleFormatted!: string
 
-    constructor(private depoimentsService: DepoimentsService, private quizService: QuizService) {
+    whatsappNumber: string
+
+    whatsappLink: string
+
+    constructor(private depoimentsService: DepoimentsService, private quizService: QuizService, private changeService: ChangeService) {
         this.depoiments = this.depoimentsService.getAll()
         this.vslData = this.quizService.getVslData()
+        this.whatsappNumber = this.getWhatsappNumber()
+        this.whatsappLink = this.getWhatsappLink()
     }
 
     ngOnInit(): void {
+        this.subscribeChangeService()
         this.addDarkMode()
         this.initPeopleHelped()
         this.attachEventsListener()
@@ -41,6 +49,40 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
 
     ngOnDestroy(): void {
         this.removeDarkMode()
+    }
+
+    getWhatsappNumber(): string {
+        let whatsappNumber = localStorage.getItem("whatsappNumber")
+        if (whatsappNumber != null)
+            return whatsappNumber
+        const whatsappNumbers = ["5547999480308", "5547992528564"]
+        const whatsappPosition = Math.floor(Math.random() * whatsappNumbers.length)
+        whatsappNumber = whatsappNumbers[whatsappPosition]
+        localStorage.setItem("whatsappNumber", whatsappNumber)
+        return whatsappNumber
+    }
+
+    getWhatsappLink(): string {
+        let whatsappLink = `https://wa.me/${this.whatsappNumber}?text=`
+        let whatsappText = "Olá, gostaria de saber minha profissão digital secreta"
+        if (this.vslData.category.name === "INFLUENCER")
+            whatsappText += "!"
+        else if (this.vslData.category.name === "SOCIAL_MEDIA")
+            whatsappText += "!!"
+        else
+            whatsappText += "!!!"
+        let whatsappTextEncoded = encodeURIComponent(whatsappText)
+        whatsappLink = whatsappLink + whatsappTextEncoded
+        return whatsappLink
+    }
+
+    subscribeChangeService(): void {
+        this.changeService.changed.subscribe(value => {
+            ScrollReveal().destroy()
+            setTimeout(() => {
+                this.addScrollReveal()
+            }, 1)
+        })
     }
 
     addDarkMode(): void {
@@ -68,16 +110,8 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     attachWhatsAppButtonClickEvent(): void {
-        const whatsappLink = "https://wa.me/5547999480308?text="
-        let whatsappMessage = "Olá, gostaria de saber minha profissão digital secreta"
-        if (this.vslData.category.name === "INFLUENCER")
-            whatsappMessage += "!"
-        else if (this.vslData.category.name === "SOCIAL_MEDIA")
-            whatsappMessage += "!!"
-        else
-            whatsappMessage += "!!!"
         document.querySelectorAll('.vsl-button').forEach(vslButtonEl => vslButtonEl.addEventListener("click", () => {
-            window.open(whatsappLink + encodeURIComponent(whatsappMessage), "_blank")
+            window.open(this.whatsappLink, "_blank")
         }))
     }
 
@@ -132,7 +166,7 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
             ],
             context: {
                 fullname: this.quizService.getFormDateQuiz().name,
-                checkoutLink: ""
+                whatsappLink: this.whatsappLink
             }
         }
         fetch('https://imail.onrender.com/email/store', {
@@ -173,9 +207,10 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
         ScrollReveal().reveal('.cv-page-1 p', { origin: 'bottom' })
         ScrollReveal().reveal('#button-zero', { origin: 'left'  })
         ScrollReveal().reveal('.people-helped', { origin: 'left'  })
-        ScrollReveal().reveal('.depoiment-form-container form div', { origin: 'bottom' })
         ScrollReveal().reveal('.depoiments-container .depoiment div', { origin: 'left' })
-        ScrollReveal().reveal('#button-one', { origin: 'left'  })
+        ScrollReveal().reveal('.depoiment-form-container form div', { origin: 'bottom' })
+        ScrollReveal().reveal('.depoiment-added', { origin: 'bottom' })
+        ScrollReveal().reveal('#button-one', { origin: 'bottom'  })
     }
 
     removeDarkMode(): void {
@@ -184,5 +219,4 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
         const navbar = document.querySelector(".navbar-brand") as HTMLElement;
         navbar.style.color = "black";
     }
-
 }
