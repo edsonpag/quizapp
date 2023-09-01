@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { authenticationGuardCompletedQuiz } from './guard/completed-quiz.guard';
+import { authenticationGuardMiniCurso } from './guard/mini-curso-page.guard';
 
 const routes: Routes = [
   {
@@ -15,6 +16,11 @@ const routes: Routes = [
   {
     path: 'admin/644ecc8c-f0c2-4e39-bd22-af2c036bcc68',
     loadChildren: () => import('./pages/admin-page/admin-page.module').then(adminPageModule => adminPageModule.AdmingPageModule)
+  },
+  {
+    path: 'mini-curso',
+    loadChildren: () => import('./pages/mini-curso-page/mini-curso.module').then(miniCursoPageModule => miniCursoPageModule.MiniCursoPageModule),
+    canActivate: [authenticationGuardMiniCurso()]
   }
 ];
 

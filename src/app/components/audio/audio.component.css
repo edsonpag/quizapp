@@ -1,0 +1,29 @@
+.audio-player {
+    min-width: 310px;
+    position: relative;
+    background-color: black;
+    height: 65px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 12px;
+}
+
+.audio-player audio {
+    display: none;
+}
+
+.audio-player button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.audio-player path {
+    stroke: white;
+}

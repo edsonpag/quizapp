@@ -1,7 +1,4 @@
 export default interface PageData {
-    profission: string
-    congratulations: string
-    headline: string
     copy1: string
     copy2: string
     copy3: string
@@ -13,4 +10,5 @@ export default interface PageData {
     copy9: string
     copy10: string
     copy11: string
+    videoSrc: string
 }
