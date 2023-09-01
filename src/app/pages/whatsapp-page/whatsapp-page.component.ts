@@ -5,6 +5,7 @@ import { Depoiment } from "src/app/interfaces/depoiment.interface";
 import { DepoimentsService } from "src/app/services/depoiments.service";
 import { Result } from "src/app/interfaces/results.interface";
 import { QuizService } from "../quiz-page/quiz.service";
+import { ChangeService } from "src/app/services/change.service";
 
 @Component({
     selector: 'whatsapp-page',
@@ -26,7 +27,7 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
 
     whatsappLink: string
 
-    constructor(private depoimentsService: DepoimentsService, private quizService: QuizService) {
+    constructor(private depoimentsService: DepoimentsService, private quizService: QuizService, private changeService: ChangeService) {
         this.depoiments = this.depoimentsService.getAll()
         this.vslData = this.quizService.getVslData()
         this.whatsappNumber = this.getWhatsappNumber()
@@ -34,6 +35,7 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     ngOnInit(): void {
+        this.subscribeChangeService()
         this.addDarkMode()
         this.initPeopleHelped()
         this.attachEventsListener()
@@ -72,6 +74,15 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
         let whatsappTextEncoded = encodeURIComponent(whatsappText)
         whatsappLink = whatsappLink + whatsappTextEncoded
         return whatsappLink
+    }
+
+    subscribeChangeService(): void {
+        this.changeService.changed.subscribe(value => {
+            ScrollReveal().destroy()
+            setTimeout(() => {
+                this.addScrollReveal()
+            }, 1)
+        })
     }
 
     addDarkMode(): void {
@@ -198,7 +209,8 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
         ScrollReveal().reveal('.people-helped', { origin: 'left'  })
         ScrollReveal().reveal('.depoiments-container .depoiment div', { origin: 'left' })
         ScrollReveal().reveal('.depoiment-form-container form div', { origin: 'bottom' })
-        ScrollReveal().reveal('#button-one', { origin: 'left'  })
+        ScrollReveal().reveal('.depoiment-added', { origin: 'bottom' })
+        ScrollReveal().reveal('#button-one', { origin: 'bottom'  })
     }
 
     removeDarkMode(): void {
@@ -207,5 +219,4 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
         const navbar = document.querySelector(".navbar-brand") as HTMLElement;
         navbar.style.color = "black";
     }
-
 }

@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Depoiment } from "src/app/interfaces/depoiment.interface";
 import { DepoimentsService } from "src/app/services/depoiments.service";
 import * as moment from 'moment'
+import { ChangeService } from "src/app/services/change.service";
 
 @Component({
     selector: 'depoiment-form-component',
@@ -21,7 +22,7 @@ export class DepoimentFormComponent {
         testPerformed: new FormControl('', Validators.required)
     })
 
-    constructor(private depoimentsService: DepoimentsService) { }
+    constructor(private depoimentsService: DepoimentsService, private changeService: ChangeService) { }
 
     changeCurrentRate(index: number): void {
         this.currentRate = index + 1
@@ -44,6 +45,7 @@ export class DepoimentFormComponent {
             commentDate: `Comentário enviado dia ${moment().format('DD/MM/YYYY')} ás ${moment().format('hh:mm a')}`
         }
         this.depoimentsService.add(depoiment)
+        this.changeService.emit("new depoiment added")
     }
 
     updatePageAfterAddDepoiment(): void {

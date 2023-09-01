@@ -39,10 +39,11 @@
     color: white;
     border: none;
     outline: none;
-    padding: 20px;
     border-radius: 8px;
     text-align: center;
     width: 22rem;
+    height: 62px;
+    padding-inline: 20px;
     box-shadow: var(--primary-color) 0px 5px 15px;
 }
 
@@ -86,4 +87,15 @@
 
 #button-one {
     margin-block: 32px;
+}
+
+@media only screen and (max-width: 424px) {
+    .vsl-button {
+        width: 18rem;
+        padding-inline: 14px;
+    }
+
+    .bi-whatsapp {
+        font-size: 22px;
+    }
 }
