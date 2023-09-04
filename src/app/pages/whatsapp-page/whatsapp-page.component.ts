@@ -55,7 +55,7 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
         let whatsappNumber = localStorage.getItem("whatsappNumber")
         if (whatsappNumber != null)
             return whatsappNumber
-        const whatsappNumbers = ["5547999480308", "5547992825338"]
+        const whatsappNumbers = ["5547999480308", "5547992528564"]
         const whatsappPosition = Math.floor(Math.random() * whatsappNumbers.length)
         whatsappNumber = whatsappNumbers[whatsappPosition]
         localStorage.setItem("whatsappNumber", whatsappNumber)
