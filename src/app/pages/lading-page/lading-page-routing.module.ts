@@ -6,10 +6,6 @@ const routes: Routes = [
     {
         path: '',
         component: LadingPageComponent
-    },
-    {
-        path: 'age',
-        loadChildren: () => import("../age-page/age-page.module").then(agePageModulo => agePageModulo.AgePageModulo),
     }
 ]
 

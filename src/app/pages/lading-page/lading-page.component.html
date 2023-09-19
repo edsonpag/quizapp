@@ -1,20 +1,20 @@
-<main class="lading-page">
-    <h1>Descubra sua profissão digital secreta</h1>
-    <p>Desenvolvida por programadores e inteligência artificial o digital quiz é uma ferramenta que vem direcionando milhares de pessoas para uma vida mais próspera</p>
-    <button-component routerLink="/aplicativo/age" [text]="'Revelar Profissão'" [fontSize]="'0.9rem'" [width]="'16rem'" [height]="'3.5rem'" [spanFree]="false"></button-component>
-    <div class="security-container">
+<div class="lading-page-container">
+    <main class="lading-page">
+        <h1>Descubra sua profissão digital secreta</h1>
+        <p>Desenvolvida por programadores e inteligência artificial o digital quiz é uma ferramenta que vem direcionando milhares de pessoas para uma vida mais próspera</p>
+        <button-component routerLink="/quiz" [text]="'Revelar Profissão'" [fontSize]="'0.9rem'" [width]="'16rem'" [height]="'3.5rem'" [spanFree]="false"></button-component>
         <security-container></security-container>
+        <img src="../../../assets/img/quiz.png" alt="Imagem do teste vocacional">
+    </main>
+    <section class="lading-page">
+        <topic-component
+        *ngFor="let topic of topics"
+        [title]="topic.title" [description]="topic.description"
+        ></topic-component>
+    </section>
+    <carousel-component></carousel-component>
+    <div class="call-to-action">
+        <button-component routerLink="/quiz" [text]="'Revelar Profissão'" [fontSize]="'0.9rem'" [width]="'16rem'" [height]="'3.5rem'" [spanFree]="false"></button-component>
     </div>
-    <img src="../../../assets/img/quiz.png" alt="Imagem do teste vocacional">
-</main>
-<section class="lading-page">
-    <topic-component
-    *ngFor="let topic of topics"
-    [title]="topic.title" [description]="topic.description"
-    ></topic-component>
-</section>
-<carousel-component></carousel-component>
-<div class="call-to-action">
-    <button-component routerLink="/aplicativo/age" [text]="'Revelar Profissão'" [fontSize]="'0.9rem'" [width]="'16rem'" [height]="'3.5rem'" [spanFree]="false"></button-component>
+    <footer-component></footer-component>
 </div>
-<footer-component></footer-component>

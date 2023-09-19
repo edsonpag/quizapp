@@ -2,7 +2,7 @@ footer {
     background-color: var(--primary-color);
     color: white;
     padding-top: 3rem;
-    padding-inline: 1.4rem;
+    padding-inline: 1rem;
 }
 
 footer h3 {

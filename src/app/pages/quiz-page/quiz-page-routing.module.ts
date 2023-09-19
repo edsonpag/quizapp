@@ -1,17 +1,17 @@
 import { RouterModule, Routes } from "@angular/router";
 import { QuizPageComponent } from "./quiz-page.component";
 import { NgModule } from "@angular/core";
-import { authenticationGuardQuizPage } from "src/app/guard/quiz-page.guard";
+import { authenticationGuardIALoadingPage } from "src/app/guard/loading-page.guard";
 
 const routes: Routes = [
     {
         path: '',
-        component: QuizPageComponent,
-        canActivate: [authenticationGuardQuizPage()]
+        component: QuizPageComponent
     },
     {
-        path: 'results',
-        loadChildren: () => import('../results-page/results-page.module').then(resultsPageModule => resultsPageModule.ResultsPageModule)
+        path: 'loading',
+        loadChildren: () => import('../loading-page/ia-loading-page.module').then(aiLoadingPageModule => aiLoadingPageModule.IALoadingPageModule),
+        canActivate: [authenticationGuardIALoadingPage()]
     },
     {
         path: 'profission',

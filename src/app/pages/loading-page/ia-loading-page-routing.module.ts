@@ -1,13 +1,11 @@
 import { RouterModule, Routes } from "@angular/router";
 import { NgModule } from "@angular/core";
-import { ResultsPageComponent } from "./results-page.component";
-import { authenticationGuardResultsPage } from "src/app/guard/results-page.guard";
+import { IALoadingPageComponent } from "./ia-loading-pagecomponent";
 
 const routes: Routes = [
     {
         path: '',
-        component: ResultsPageComponent,
-        canActivate: [authenticationGuardResultsPage()]
+        component: IALoadingPageComponent
     }
 ]
 
@@ -21,4 +19,4 @@ const routes: Routes = [
     providers: []
 })
 
-export class ResultsPageRoutingModule { }
+export class IALoadingPageRoutingModule { }

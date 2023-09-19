@@ -6,7 +6,7 @@ import { CanActivateFn, Router } from "@angular/router";
     providedIn: 'root'
 })
 
-class ResultsPageGuard {
+class IALoadingPageGuard {
 
     constructor(private quizService: QuizService, private router: Router) { }
 
@@ -20,8 +20,8 @@ class ResultsPageGuard {
     }
 }
 
-export const authenticationGuardResultsPage = (): CanActivateFn => {
+export const authenticationGuardIALoadingPage = (): CanActivateFn => {
     return (): boolean => {
-        return inject(ResultsPageGuard).canActivate();
+        return inject(IALoadingPageGuard).canActivate();
     }
 }

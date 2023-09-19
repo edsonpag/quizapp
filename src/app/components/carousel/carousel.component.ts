@@ -1,5 +1,4 @@
 import { Component, OnInit, inject } from "@angular/core";
-import { NgbSlideEvent } from "@ng-bootstrap/ng-bootstrap";
 import { CarouselService } from "./carousel.service";
 
 @Component({

@@ -52,7 +52,6 @@ export class MiniCursoPageComponent implements OnInit, AfterViewInit, OnDestroy 
     }
 
     ngOnInit(): void {
-        this.addConversionEventGoogleAds()
         this.addDarkMode()
         this.attachEvents()
         this.fillPage()
@@ -65,13 +64,6 @@ export class MiniCursoPageComponent implements OnInit, AfterViewInit, OnDestroy 
     ngOnDestroy(): void {
         this.removeConversionEventGoogleAds()
         this.removeDarkMode()
-    }
-
-    addConversionEventGoogleAds(): void {
-        let script = document.createElement('script');
-        script.id = 'script-conversao-lead'
-        script.textContent = `gtag('event', 'conversion', {'send_to': 'AW-11296404846/Xq5gCPr2htMYEO7qxYoq'});`
-        document.head.appendChild(script);
     }
 
     addDarkMode(): void {

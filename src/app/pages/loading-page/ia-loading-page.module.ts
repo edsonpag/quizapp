@@ -1,10 +1,10 @@
 import { NgModule } from "@angular/core";
-import { ResultsPageComponent } from "./results-page.component";
+import { IALoadingPageComponent } from "./ia-loading-pagecomponent";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
 import { CommonModule } from "@angular/common";
 import { ReactiveFormsModule } from "@angular/forms";
-import { ResultsPageRoutingModule } from "./results-page-routing.module";
+import { IALoadingPageRoutingModule } from "./ia-loading-page-routing.module";
 
 @NgModule({
     imports: [
@@ -12,18 +12,18 @@ import { ResultsPageRoutingModule } from "./results-page-routing.module";
         NgxMaskPipe,
         MatProgressSpinnerModule,
         ReactiveFormsModule,
-        ResultsPageRoutingModule,
+        IALoadingPageRoutingModule,
         CommonModule
     ],
     declarations: [
-        ResultsPageComponent
+        IALoadingPageComponent
     ],
     exports: [
-        ResultsPageComponent
+        IALoadingPageComponent
     ],
     providers: [
         provideNgxMask()
     ]
 })
 
-export class ResultsPageModule { }
+export class IALoadingPageModule { }
