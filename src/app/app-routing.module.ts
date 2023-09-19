@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { authenticationGuardCompletedQuiz } from './guard/completed-quiz.guard';
 import { authenticationGuardMiniCurso } from './guard/mini-curso-page.guard';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./pages/lading-page/lading-page.module').then(ladingPageModulo => ladingPageModulo.LadingPageModulo),
-    canActivate: [authenticationGuardCompletedQuiz()]
+    loadChildren: () => import('./pages/vsl-page/vsl-page.module').then(vslPageModule => vslPageModule.VslPageModule)
+  },
+  {
+    path: 'aplicativo',
+    loadChildren: () => import('./pages/lading-page/lading-page.module').then(ladingPageModulo => ladingPageModulo.LadingPageModulo)
   },
   {
     path: 'quiz',

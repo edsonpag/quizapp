@@ -28,3 +28,10 @@ body {
 .hide {
     display: none !important;
 }
+
+.text-emphasis {
+    display: inline-flex;
+    padding: 5px;
+    background-color: var(--primary-color);
+    color: white;
+}

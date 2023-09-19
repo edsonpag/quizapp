@@ -6,6 +6,10 @@ import { DepoimentsService } from "src/app/services/depoiments.service";
 import { Result } from "src/app/interfaces/results.interface";
 import { QuizService } from "../quiz-page/quiz.service";
 import { ChangeService } from "src/app/services/change.service";
+import PageData from "src/app/interfaces/page-data.interface";
+import * as INFLUENCER_PAGE_DATA from "../../configs/pages/INFLUENCER.json"
+import * as TRAFFIC_MANAGER_PAGE_DATA from "../../configs/pages/TRAFFIC_MANAGER.json"
+import * as SOCIAL_MEDIA_PAGE_DATA from "../../configs/pages/SOCIAL_MEDIA.json"
 
 @Component({
     selector: 'whatsapp-page',
@@ -27,11 +31,32 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
 
     whatsappLink: string
 
+    profission: string
+
+    pageData: PageData = {
+        copy1: "",
+        copy2: "",
+        copy3: "",
+        copy4: "",
+        copy5: "",
+        copy6: "",
+        copy7: "",
+        copy8: "",
+        copy9: "",
+        copy10: "",
+        copy11: "",
+        videoSrc: ""
+    }
+
+    newCopy1: string = ""
+
     constructor(private depoimentsService: DepoimentsService, private quizService: QuizService, private changeService: ChangeService) {
         this.depoiments = this.depoimentsService.getAll()
         this.vslData = this.quizService.getVslData()
         this.whatsappNumber = this.getWhatsappNumber()
         this.whatsappLink = this.getWhatsappLink()
+        this.profission = this.getProfission()
+        this.fillPage()
     }
 
     ngOnInit(): void {
@@ -39,7 +64,7 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
         this.addDarkMode()
         this.initPeopleHelped()
         this.attachEventsListener()
-        this.sendEmails()
+        //this.sendEmails()
         this.saveCompletedQuiz()
     }
 
@@ -49,6 +74,16 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
 
     ngOnDestroy(): void {
         this.removeDarkMode()
+    }
+
+    fillPage(): void {
+        const profission = this.vslData.category.name
+        if (profission === "TRAFFIC_MANAGER")
+            this.pageData = TRAFFIC_MANAGER_PAGE_DATA
+        else if (profission === "SOCIAL_MEDIA")
+            this.pageData = SOCIAL_MEDIA_PAGE_DATA
+        else
+            this.pageData = INFLUENCER_PAGE_DATA
     }
 
     getWhatsappNumber(): string {
@@ -64,16 +99,27 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
 
     getWhatsappLink(): string {
         let whatsappLink = `https://wa.me/${this.whatsappNumber}?text=`
-        let whatsappText = "Olá, gostaria de saber minha profissão digital secreta"
+        let whatsappText = ""
         if (this.vslData.category.name === "INFLUENCER")
-            whatsappText += "!"
+            whatsappText += "Olá, gostaria de jogar o Digital Boost e faturar até 10 mil reais no mês como produtor de conteúdo"
         else if (this.vslData.category.name === "SOCIAL_MEDIA")
-            whatsappText += "!!"
+            whatsappText += "Olá, gostaria de jogar o Digital Boost e faturar até 10 mil reais no mês como social media"
         else
-            whatsappText += "!!!"
+            whatsappText += "Olá, gostaria de jogar o Digital Boost e faturar até 10 mil reais no mês como gestor de tráfego"
         let whatsappTextEncoded = encodeURIComponent(whatsappText)
         whatsappLink = whatsappLink + whatsappTextEncoded
         return whatsappLink
+    }
+
+    getProfission(): string {
+        let profission = ""
+        if (this.vslData.category.name === "INFLUENCER")
+            profission = "Produtor de Conteúdo"
+        else if (this.vslData.category.name === "SOCIAL_MEDIA")
+            profission = "Social Media"
+        else
+            profission = "Gestor de Tráfego"
+        return profission
     }
 
     subscribeChangeService(): void {
@@ -102,7 +148,7 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
             this.peopleHelped = (parseInt(this.peopleHelped) + 1).toString()
             localStorage.setItem('peopleHelped', this.peopleHelped)
             this.peopleHelpedLocaleFormatted = parseInt(this.peopleHelped).toLocaleString("pt-BR")
-        }, 1500)
+        }, 4000)
     }
 
     attachEventsListener(): void {
@@ -204,12 +250,14 @@ export class WhatsAppPageComponent implements OnInit, AfterViewInit, OnDestroy {
             delay: 0
         })
         ScrollReveal().reveal('.cv-page-1 h2', { origin: 'left' })
+        ScrollReveal().reveal('.cv-page-1 h3', { origin: 'bottom' })
         ScrollReveal().reveal('.cv-page-1 p', { origin: 'bottom' })
         ScrollReveal().reveal('#button-zero', { origin: 'left'  })
         ScrollReveal().reveal('.people-helped', { origin: 'left'  })
-        ScrollReveal().reveal('.depoiments-container .depoiment div', { origin: 'left' })
-        ScrollReveal().reveal('.depoiment-form-container form div', { origin: 'bottom' })
-        ScrollReveal().reveal('.depoiment-added', { origin: 'bottom' })
+        ScrollReveal().reveal('#copy-2-title', { origin: 'left' })
+        ScrollReveal().reveal('.copy-part', { origin: 'bottom', interval: 200 })
+        ScrollReveal().reveal('.faq-container .faq-title', { origin: 'left' })
+        ScrollReveal().reveal('.my-accordion-item', { origin: 'bottom', interval: 200 })
         ScrollReveal().reveal('#button-one', { origin: 'bottom'  })
     }
 

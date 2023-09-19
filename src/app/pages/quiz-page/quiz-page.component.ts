@@ -158,6 +158,6 @@ export class QuizPageComponent implements OnInit {
         }
         this.calculateResults();
         this.quizService.setSubmitted(true);
-        this.router.navigate(['quiz/results'])
+        this.router.navigate(['quiz/profission'])
     }
 }

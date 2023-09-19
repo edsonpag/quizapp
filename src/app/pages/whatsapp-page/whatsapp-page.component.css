@@ -27,13 +27,19 @@
     margin-inline: auto;
 }
 
+.cv-page-1 h3 {
+    font-size: 20px;
+    margin-block: 30px;
+}
+
 .cv-page-1 p {
     margin-top: 24px;
 }
 
 .vsl-button {
+    position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: var(--primary-color);
     color: white;
@@ -56,6 +62,8 @@
 
 .bi-whatsapp {
     font-size: 26px;
+    position: absolute;
+    right: 20px;
 }
 
 #button-zero {
@@ -76,6 +84,10 @@
     text-align: center;
 }
 
+.copy-container {
+    text-align: left !important;
+}
+
 .depoiments-container {
     text-align: left !important;
 }
@@ -83,6 +95,10 @@
 .depoiment-form-container {
     width: 90%;
     margin-top: 20px;
+}
+
+.faq-container {
+    margin-top: 25px;
 }
 
 #button-one {
