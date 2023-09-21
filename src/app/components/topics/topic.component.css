@@ -6,7 +6,10 @@
     margin-bottom: 3rem;
 }
 
-.topic h2 {
+.topic h4 {
     font-weight: bold;
-    font-size: 22px;
+}
+
+.topic small {
+    margin-top: 10px;
 }

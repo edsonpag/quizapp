@@ -6,6 +6,10 @@ const routes: Routes = [
     {
         path: '',
         component: LadingPageComponent
+    },
+    {
+        path: 'quiz',
+        loadChildren: () => import('../quiz-page/quiz-page.module').then(quizPageModule => quizPageModule.QuizPageModule)
     }
 ]
 

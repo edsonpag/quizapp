@@ -1,0 +1,89 @@
+{
+    "avatar": "../../../assets/svg/STABLE.svg",
+    "alt": "Avatar de uma pessoa estável",
+    "personalityDescription": "Os Estáveis são conhecidos por sua estabilidade emocional e equilíbrio. Lidam bem com situações estressantes e são resistentes a flutuações emocionais extremas. Sua estabilidade emocional os torna uma fonte de apoio para os outros em momentos difíceis, sendo considerados confiáveis, previsíveis e capazes de manter um senso de calma e tranquilidade em situações desafiadoras.",
+    "pages": [
+        {
+            "title": "Energia",
+            "avatar": "../../../assets/svg/PAGE1.svg",
+            "alt": "Avatar de uma pessoa sentada na grama",
+            "text": "A empatia é uma característica essencial de pessoas com personalidade estável. Elas têm a capacidade de se colocar no lugar dos outros, compreender suas emoções e oferecer apoio genuíno. Essa habilidade as torna excelentes ouvintes e conselheiras."
+        },
+        {
+            "title": "Calma",
+            "avatar": "../../../assets/svg/PAGE2.svg",
+            "alt": "Dois avatares conversando sentados em um sofá",
+            "text": "A calma é uma qualidade notável em pessoas com personalidade estável. Elas mantêm a serenidade mesmo em situações estressantes, o que ajuda a reduzir a ansiedade em seu ambiente e a tomar decisões ponderadas."
+        },
+        {
+            "title": "Senso de equilíbrio",
+            "avatar": "../../../assets/svg/PAGE3.svg",
+            "alt": "Dois avatares conversando proximos a uma árvore",
+            "text": "As pessoas com personalidade estável reconhecem a importância de manter um equilíbrio saudável entre suas obrigações e tempo pessoal. Elas valorizam o autocuidado e sabem quando é hora de se desconectar e relaxar."
+        },
+        {
+            "title": "Resiliência",
+            "avatar": "../../../assets/svg/PAGE4.svg",
+            "alt": "Dois avatares negociando compra e venda de produtos",
+            "text": "A resiliência é uma qualidade que permite que essas pessoas superem desafios com sucesso. Elas veem contratempos como oportunidades de aprendizado e são capazes de se recuperar rapidamente de adversidades."
+        },
+        {
+            "title": "Confiança",
+            "avatar": "../../../assets/svg/PAGE5.svg",
+            "alt": "Dois avatares, um setado mexendo no computador e outro olhando para ele",
+            "text": "A confiança em si mesmas e em suas habilidades é uma característica notável das personalidades estáveis. Isso as ajuda a enfrentar desafios com autoestima e a manter a determinação, mesmo quando as coisas ficam difíceis."
+        },
+        {
+            "title": "Cooperação",
+            "avatar": "../../../assets/svg/PAGE6.svg",
+            "alt": "Quatro avatares sentandos em uma mesa conversando e um cachorro do lado",
+            "text": "Essas pessoas são excelentes em trabalhar em equipe. Elas valorizam as opiniões dos outros, são colaborativas e contribuem para um ambiente de trabalho harmonioso. Sua disposição para ouvir e apoiar os colegas é uma qualidade valiosa."
+        },
+        {
+            "title": "Lealdade",
+            "avatar": "../../../assets/svg/PAGE7.svg",
+            "alt": "Dois avatares conversando sobre carros",
+            "text": "A lealdade é uma qualidade sólida em personalidades estáveis. Elas valorizam relacionamentos duradouros e são conhecidas por serem confiáveis e fiéis a amigos, familiares e colegas."
+        },
+        {
+            "title": "Comunicação eficaz",
+            "avatar": "../../../assets/svg/PAGE8.svg",
+            "alt": "Dois avatares conversando",
+            "text": "Embora sejam geralmente reservadas, as personalidades estáveis têm a capacidade de comunicar seus pensamentos e sentimentos de maneira clara e direta quando necessário. Sua comunicação é direcionada para resolver problemas e promover a compreensão."
+        },
+        {
+            "title": "Adaptabilidade",
+            "avatar": "../../../assets/svg/PAGE9.svg",
+            "alt": "Dois avatares em uma livraria",
+            "text": "Apesar de sua estabilidade emocional, essas pessoas também têm a capacidade de se adaptar a novas situações e circunstâncias quando necessário. Elas equilibram sua estabilidade com flexibilidade, o que é uma habilidade valiosa em um mundo em constante mudança."
+        },
+        {
+            "title": "Tolerância",
+            "avatar": "../../../assets/svg/PAGE10.svg",
+            "alt": "Dois avatares em uma livraria",
+            "text": "As pessoas com personalidade estável geralmente têm alta tolerância a situações desafiadoras e a pessoas com diferentes perspectivas e opiniões. Elas são capazes de manter a calma e a compostura em situações conflituosas e trabalham para encontrar soluções pacíficas e colaborativas. Sua tolerância ajuda a criar ambientes harmoniosos e promover a compreensão mútua."
+        }
+    ],
+    "professions": [
+        {
+            "title": "Farmacêutico",
+            "description": "Farmacêuticos são profissionais de saúde que preparam, dispensam e orientam pacientes sobre medicamentos. Eles garantem que os medicamentos sejam administrados com segurança e eficácia, verificando interações medicamentosas e fornecendo informações sobre doses e efeitos colaterais."
+        },
+        {
+            "title": "Veterinário",
+            "description": "Veterinários cuidam da saúde e bem-estar de animais. Eles fazem exames, diagnosticam doenças, tratam lesões e realizam cirurgias em animais domésticos e selvagens. Os veterinários também aconselham os proprietários sobre o cuidado dos animais."
+        },
+        {
+            "title": "Administrador",
+            "description": "Administradores desempenham um papel vital na gestão de organizações e empresas. Eles planejam, coordenam e supervisionam atividades e recursos para atingir metas e objetivos organizacionais. Os administradores são responsáveis por tomar decisões estratégicas, gerenciar equipes e recursos financeiros, e garantir que as operações funcionem de maneira eficiente."
+        },
+        {
+            "title": "Advogado",
+            "description": "Advogados são profissionais legais que representam clientes em questões legais. Eles oferecem aconselhamento jurídico, realizam pesquisas legais, elaboram documentos legais, como contratos e petições, e representam clientes em tribunais, quando necessário. Os advogados devem analisar casos, interpretar leis e regulamentos, e fornecer orientação jurídica para proteger os interesses de seus clientes."
+        },
+        {
+            "title": "Analista de Investimentos",
+            "description": "Analistas de investimentos coletam e analisam dados financeiros para orientar decisões de investimento. A precisão é crítica para avaliar o desempenho de ativos e identificar oportunidades de investimento."
+        }
+    ]
+}

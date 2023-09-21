@@ -1,0 +1,75 @@
+.result-page {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-footer {
+    position: relative;
+    background-color: white;
+    min-height: 88px;
+    width: 90vw;
+    max-width: 995px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 12px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+}
+
+.dots {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.dot {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.dot.active {
+    opacity: 1;
+}
+
+.next-button {
+    position: absolute;
+    right: 20px;
+    background-color: var(--primary-color);
+    border-radius: 40px;
+    padding: 10px 30px;
+    border: 1px solid var(--primary-color);
+    outline: none;
+    color: white;
+}
+
+
+@media only screen and (max-width: 650px) and (min-width: 521px) {
+    .next-button {
+        position: static;
+    }
+
+    .first-modal-footer {
+        padding: 20px;
+        justify-content: space-between;
+    }
+}
+
+
+@media only screen and (max-width: 520px) {
+    .next-button {
+        position: static;
+    }
+
+    .modal-footer {
+        padding: 20px;
+        flex-direction: column;
+    }
+}

@@ -1,7 +1,6 @@
 import { RouterModule, Routes } from "@angular/router";
 import { QuizPageComponent } from "./quiz-page.component";
 import { NgModule } from "@angular/core";
-import { authenticationGuardIALoadingPage } from "src/app/guard/loading-page.guard";
 
 const routes: Routes = [
     {
@@ -11,11 +10,10 @@ const routes: Routes = [
     {
         path: 'loading',
         loadChildren: () => import('../loading-page/ia-loading-page.module').then(aiLoadingPageModule => aiLoadingPageModule.IALoadingPageModule),
-        canActivate: [authenticationGuardIALoadingPage()]
     },
     {
-        path: 'profission',
-        loadChildren: () => import('../whatsapp-page/whatsapp-page.module').then(whatsAppPageModule => whatsAppPageModule.WhatsAppPageModule)
+        path: 'result',
+        loadChildren: () => import('../result-page/result-page.module').then(resultPageModule => resultPageModule.ResultPageModule)
     }
 ]
 

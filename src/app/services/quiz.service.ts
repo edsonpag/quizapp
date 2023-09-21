@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { Category } from "src/app/enums/category.enum";
-import { FormDataQuiz } from "src/app/interfaces/form-data.interface";
 import { Question } from "src/app/interfaces/question.interface";
 import { Result } from "src/app/interfaces/results.interface";
 
@@ -10,40 +9,44 @@ import { Result } from "src/app/interfaces/results.interface";
 
 export class QuizService {
 
-  private results!: Result[];
-  
   private submitted!: boolean;
 
-  private formDataQuiz!: FormDataQuiz;
-
-  getResults(): Result[] {
-    return this.results;
-  }
-
-  setResults(results: Result[]): void {
-    this.results = results;
-  }
-
+  private result!: Result;
+  
   isSubmitted(): boolean {
-    return this.submitted;
+    let submitted = this.submitted
+    if (!submitted)
+      submitted = localStorage.getItem("submitted") === "true" ? true : false
+    return submitted
   }
 
   setSubmitted(submitted: boolean): void {
     this.submitted = submitted;
   }
 
-  getFormDateQuiz(): FormDataQuiz {
-    return this.formDataQuiz;
+  getResult(): Result {
+    if (!this.result) {
+      let name = localStorage.getItem("name")
+      let index = localStorage.getItem("index")
+      let points = localStorage.getItem("points")
+      if (name && index && points) {
+        this.result = {
+          category: {
+            name: name,
+            index: parseInt(index)
+          },
+          points: parseInt(points)
+        }
+      }
+    }
+    return this.result
   }
 
-  setFormDataQuiz(formDataQuiz: FormDataQuiz): void{
-    this.formDataQuiz = formDataQuiz;
-  }
-
-  getVslData(): Result {
-    let results = this.getResults()
-    results.sort((a, b) => b.points - a.points)
-    return results[0]
+  setResult(result: Result): void {
+    this.result = result
+    localStorage.setItem("name", this.result.category.name)
+    localStorage.setItem("index", this.result.category.index.toString())
+    localStorage.setItem("points", this.result.points.toString())
   }
 
   questions: Question[] = [
@@ -101,7 +104,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.INFLUENCER
+      category: Category.COMMUNICATIVE
     },
 
     {
@@ -130,7 +133,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.SOCIAL_MEDIA
+      category: Category.STABLE
     },
 
     {
@@ -159,7 +162,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.TRAFFIC_MANAGER
+      category: Category.ANALYTICAL
     },
 
     {
@@ -188,7 +191,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.SOCIAL_MEDIA
+      category: Category.STABLE
     },
     
     {
@@ -217,7 +220,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.SOCIAL_MEDIA
+      category: Category.STABLE
     },
     
     {
@@ -246,7 +249,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.INFLUENCER
+      category: Category.COMMUNICATIVE
     },
 
     {
@@ -275,7 +278,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.INFLUENCER
+      category: Category.COMMUNICATIVE
     },
 
     {
@@ -304,7 +307,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.SOCIAL_MEDIA
+      category: Category.STABLE
     },
 
     {
@@ -333,7 +336,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.TRAFFIC_MANAGER
+      category: Category.ANALYTICAL
     },
 
     {
@@ -362,7 +365,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.TRAFFIC_MANAGER
+      category: Category.ANALYTICAL
     },
 
     {
@@ -391,7 +394,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.TRAFFIC_MANAGER
+      category: Category.ANALYTICAL
     },
     
     {
@@ -420,7 +423,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.SOCIAL_MEDIA
+      category: Category.STABLE
     },
 
     {
@@ -449,7 +452,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.INFLUENCER
+      category: Category.COMMUNICATIVE
     },
 
     {
@@ -478,7 +481,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.TRAFFIC_MANAGER
+      category: Category.ANALYTICAL
     },
 
     {
@@ -507,7 +510,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.TRAFFIC_MANAGER
+      category: Category.ANALYTICAL
     },
 
     {
@@ -536,7 +539,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.SOCIAL_MEDIA
+      category: Category.STABLE
     },
 
     {
@@ -565,7 +568,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.INFLUENCER
+      category: Category.COMMUNICATIVE
     },
 
     {
@@ -594,7 +597,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.TRAFFIC_MANAGER
+      category: Category.ANALYTICAL
     },
 
     {
@@ -623,7 +626,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.INFLUENCER
+      category: Category.COMMUNICATIVE
     },
 
     {
@@ -652,7 +655,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.SOCIAL_MEDIA
+      category: Category.STABLE
     },
 
     {
@@ -681,7 +684,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.SOCIAL_MEDIA
+      category: Category.STABLE
     },
 
     {
@@ -710,7 +713,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.TRAFFIC_MANAGER
+      category: Category.ANALYTICAL
     },
 
     
@@ -740,7 +743,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.INFLUENCER
+      category: Category.COMMUNICATIVE
     },
 
     {
@@ -769,7 +772,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.TRAFFIC_MANAGER
+      category: Category.ANALYTICAL
     },
 
     {
@@ -798,7 +801,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.INFLUENCER
+      category: Category.COMMUNICATIVE
     },
 
     {
@@ -827,7 +830,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.INFLUENCER
+      category: Category.COMMUNICATIVE
     },
 
     {
@@ -856,7 +859,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.TRAFFIC_MANAGER
+      category: Category.ANALYTICAL
     },
 
     {
@@ -885,7 +888,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.INFLUENCER
+      category: Category.COMMUNICATIVE
     },
 
     {
@@ -914,7 +917,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.SOCIAL_MEDIA
+      category: Category.STABLE
     },
 
     {
@@ -943,7 +946,7 @@ export class QuizService {
         }
       ],
       showAlert: false,
-      category: Category.SOCIAL_MEDIA
+      category: Category.STABLE
     }
   ];
 
