@@ -1,13 +1,13 @@
 import { RouterModule, Routes } from "@angular/router";
 import { NgModule } from "@angular/core";
-import { WhatsAppPageComponent } from "./whatsapp-page.component";
-import { authenticationWhatsAppPageGuard } from "src/app/guard/whatsapp-page.guard";
+import { ResultPageComponent } from "./result-page.component";
+import { authenticationResultPageGuard } from "src/app/guard/result-page.guard";
 
 const routes: Routes = [
     {
         path: '',
-        component: WhatsAppPageComponent,
-        canActivate: [authenticationWhatsAppPageGuard()]
+        component: ResultPageComponent,
+        canActivate: [authenticationResultPageGuard()]
     }
 ]
 
@@ -21,4 +21,4 @@ const routes: Routes = [
     providers: []
 })
 
-export class WhatsAppPageRoutingModule { }
+export class ResultPageRoutingModule { }

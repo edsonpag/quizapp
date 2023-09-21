@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ToastComponent } from './components/toast/toast.component';
 import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
-import { QuizService } from './pages/quiz-page/quiz.service';
+import { QuizService } from './services/quiz.service';
 import { ToastService } from './services/app-toast.service';
 import { DepoimentsService } from './services/depoiments.service';
 import { SalesNotificationService } from './services/sales-notification.service';

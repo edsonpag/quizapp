@@ -1,0 +1,89 @@
+{
+    "avatar": "../../../assets/svg/COMMUNICATIVE.svg",
+    "alt": "Avatar de uma pessoa comunicativa e criativa",
+    "personalityDescription": "Os Comunicativos são caracterizados por suas habilidades sociais e excelência na comunicação. São pessoas extrovertidas que constroem relacionamentos interpessoais com facilidade. Expressam suas ideias de forma clara e persuasiva, tornando-se bons comunicadores. Costumam ser empáticos e atenciosos nas interações com os outros.",
+    "pages": [
+        {
+            "title": "Habilidades de Comunicação",
+            "avatar": "../../../assets/svg/PAGE1.svg",
+            "alt": "Avatar de uma pessoa sentada na grama",
+            "text": "Como alguém que valoriza a interação social, considere carreiras que exijam habilidades de comunicação sólidas, como vendas, marketing, relações públicas ou consultoria."
+        },
+        {
+            "title": "Trabalho em Equipe",
+            "avatar": "../../../assets/svg/PAGE2.svg",
+            "alt": "Dois avatares conversando sentados em um sofá",
+            "text": "Independente de gostar ou não de trabalhar em equipe, você tem competências e habilidades que irão te destacar em ambientes sociais e de grupo."
+        },
+        {
+            "title": "Networking",
+            "avatar": "../../../assets/svg/PAGE3.svg",
+            "alt": "Dois avatares conversando proximos a uma árvore",
+            "text": "Sua capacidade de criar relacionamentos pode ser uma vantagem em carreiras que dependem de uma rede profissional sólida, como gestão de eventos, recrutamento ou consultoria de negócios."
+        },
+        {
+            "title": "Criatividade",
+            "avatar": "../../../assets/svg/PAGE4.svg",
+            "alt": "Dois avatares negociando compra e venda de produtos",
+            "text": "Se você é criativo e gosta de inovar, considere profissões relacionadas à arte, design, publicidade ou entretenimento."
+        },
+        {
+            "title": "Empatia",
+            "avatar": "../../../assets/svg/PAGE5.svg",
+            "alt": "Dois avatares, um setado mexendo no computador e outro olhando para ele",
+            "text": "Sua capacidade de entender e se conectar com os outros pode ser uma vantagem em carreiras que envolvam cuidados de saúde, psicologia, aconselhamento ou trabalho social."
+        },
+        {
+            "title": "Flexibilidade",
+            "avatar": "../../../assets/svg/PAGE6.svg",
+            "alt": "Quatro avatares sentandos em uma mesa conversando e um cachorro do lado",
+            "text": "Avalie sua disposição para lidar com mudanças e ambientes de trabalho dinâmicos, uma vez que muitas carreiras sociais envolvem situações imprevisíveis."
+        },
+        {
+            "title": "Tolerância ao Estresse",
+            "avatar": "../../../assets/svg/PAGE7.svg",
+            "alt": "Dois avatares conversando sobre carros",
+            "text": "Antes de escolher uma carreira verifique se você consegue lidar bem com o estresse, especialmente em carreiras que envolvam negociação, vendas de alto volume ou gestão de crises."
+        },
+        {
+            "title": "Resolução de Conflitos",
+            "avatar": "../../../assets/svg/PAGE8.svg",
+            "alt": "Dois avatares conversando",
+            "text": "Suas habilidades interpessoais podem ser valiosas em carreiras que envolvam resolução de conflitos, como mediação ou recursos humanos."
+        },
+        {
+            "title": "Paixão pelo Público",
+            "avatar": "../../../assets/svg/PAGE9.svg",
+            "alt": "Dois avatares em uma livraria",
+            "text": "Considere profissões que envolvam servir ou entreter o público, como atuação, música, educação ou jornalismo."
+        },
+        {
+            "title": "Equilíbrio Entre Trabalho e Vida Pessoa",
+            "avatar": "../../../assets/svg/PAGE10.svg",
+            "alt": "Dois avatares em uma livraria",
+            "text": "Lembre-se de buscar carreiras que lhe proporcionem o equilíbrio entre trabalho e vida pessoal que você deseja, pois muitas carreiras sociais podem ser exigentes em termos de tempo."
+        }
+    ],
+    "professions": [
+        {
+            "title": "Psicologia ou Aconselhamento",
+            "description": "Se você está interessado em ajudar as pessoas a lidar com questões emocionais e psicológicas, uma carreira em psicologia ou aconselhamento pode ser adequada. Sua capacidade de empatia e comunicação seria crucial nesse campo."
+        },
+        {
+            "title": "Relações Públicas (RP)",
+            "description": "Profissionais de relações públicas lidam com a gestão da imagem e reputação de organizações ou indivíduos. Eles constroem relacionamentos com a mídia e o público em geral, usando suas habilidades sociais."
+        },
+        {
+            "title": "Recursos Humanos (RH)",
+            "description": "Na área de recursos humanos, você poderia trabalhar em recrutamento, treinamento e desenvolvimento de funcionários, onde sua empatia e capacidade de entender as necessidades das pessoas seriam um ativo."
+        },
+        {
+            "title": "Vendas e Marketing",
+            "description": "Carreiras em vendas, marketing e publicidade envolvem a promoção de produtos, serviços ou ideias para o público. Suas habilidades de comunicação e persuasão seriam altamente relevantes aqui."
+        },
+        {
+            "title": "Gestor de Eventos",
+            "description": "Como gestor de eventos, você planejaria, coordenaria e supervisionaria eventos, como conferências, casamentos, exposições e festas. Sua capacidade de se conectar com pessoas e criar experiências memoráveis seria um trunfo valioso."
+        }
+    ]
+}

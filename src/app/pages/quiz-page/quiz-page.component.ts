@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { QuizService } from "./quiz.service";
+import { QuizService } from "../../services/quiz.service";
 import { Question } from "src/app/interfaces/question.interface";
 import { ToastService } from "src/app/services/app-toast.service";
 import { Router } from "@angular/router";
@@ -118,7 +118,8 @@ export class QuizPageComponent implements OnInit {
                 points: categoryPoints
             })
         });
-        this.quizService.setResults(results);
+        results.sort((a, b) => b.points - a.points)
+        this.quizService.setResult(results[0]);
     }
 
     joinQuestions(): Question[] {
@@ -158,6 +159,7 @@ export class QuizPageComponent implements OnInit {
         }
         this.calculateResults();
         this.quizService.setSubmitted(true);
-        this.router.navigate(['quiz/loading'])
+        localStorage.setItem("submitted", "true")
+        this.router.navigate(['aplicativo/quiz/loading'])
     }
 }

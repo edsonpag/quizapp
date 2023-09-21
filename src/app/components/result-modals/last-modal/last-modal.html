@@ -1,0 +1,15 @@
+<div class="last-modal">
+    <div class="modal-header">
+        <h4>Profissões Recomendadas</h4>
+    </div>
+    <div class="professions-container">
+        <div class="list-group professions-list">
+            <a class="list-group-item list-group-item-action" *ngFor="let profession of professions">
+                <div class="d-flex w-100 justify-content-between">
+                    <h6 class="mb-1 text-success">{{ profession.title }}</h6>
+                </div>
+                <small class="text-body-secondary">{{ profession.description }}</small>
+            </a>
+        </div>
+    </div>
+</div>

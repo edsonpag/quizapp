@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+import { AfterViewInit, Component } from "@angular/core";
 import { Router } from "@angular/router";
 
 @Component({
@@ -9,8 +9,6 @@ import { Router } from "@angular/router";
 
 export class IALoadingPageComponent implements AfterViewInit {
     value: number = 0;
-
-    @ViewChild('loading') loading!: ElementRef;
 
     constructor(private router: Router) { }
 
@@ -28,9 +26,7 @@ export class IALoadingPageComponent implements AfterViewInit {
                 this.value = MAX_VALUE_ALLOWED;
                 clearInterval(interval);
                 setTimeout(() => {
-                    this.loading.nativeElement.classList.add('hide');
-                    this.router.navigate(['quiz/profission']);
-
+                    this.router.navigate(['aplicativo/quiz/result']);
                 }, 600)
             } else {
                 this.value = incrementedValue

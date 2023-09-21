@@ -1,0 +1,89 @@
+{
+    "avatar": "../../../assets/svg/ANALYTICAL.svg",
+    "alt": "Avatar de uma pessoa analítica",
+    "personalityDescription": "Os Analíticos são indivíduos que se destacam por sua abordagem lógica e meticulosa em relação a problemas e situações. Eles são altamente observadores e habilidosos em analisar informações de maneira crítica. Tomam decisões cuidadosamente, baseadas em dados e preferem compreender profundamente antes de agir ou tomar decisões.",
+    "pages": [
+        {
+            "title": "Racionalidade",
+            "avatar": "../../../assets/svg/PAGE1.svg",
+            "alt": "Avatar de uma pessoa sentada na grama",
+            "text": "A racionalidade é uma característica distintiva das pessoas analíticas. Elas tomam decisões com base em fatos, evidências e lógica, em vez de serem guiadas por emoções impulsivas. Isso resulta em escolhas mais ponderadas e consistentes."
+        },
+        {
+            "title": "Curiosidade",
+            "avatar": "../../../assets/svg/PAGE2.svg",
+            "alt": "Dois avatares conversando sentados em um sofá",
+            "text": "As pessoas com personalidade analítica são naturalmente curiosas. Elas têm um desejo intrínseco de aprender e explorar o mundo ao seu redor. Essa curiosidade as impulsiona a fazer perguntas, aprofundar-se em tópicos complexos e buscar constantemente novos conhecimentos."
+        },
+        {
+            "title": "Atenção aos detalhes",
+            "avatar": "../../../assets/svg/PAGE3.svg",
+            "alt": "Dois avatares conversando proximos a uma árvore",
+            "text": "A capacidade de observar e analisar detalhes é uma habilidade inerente às pessoas analíticas. Elas notam nuances e informações que podem passar despercebidas por outros. Essa atenção aos detalhes é crucial ao analisar dados complexos ou resolver problemas intricados."
+        },
+        {
+            "title": "Pensamento crítico",
+            "avatar": "../../../assets/svg/PAGE4.svg",
+            "alt": "Dois avatares negociando compra e venda de produtos",
+            "text": "Pessoas analíticas são mestres na arte do pensamento crítico. Elas têm a capacidade de avaliar argumentos, informações e evidências de forma imparcial. Isso lhes permite identificar falácias, contradições e avaliar a validade das informações."
+        },
+        {
+            "title": "Habilidade analítica",
+            "avatar": "../../../assets/svg/PAGE5.svg",
+            "alt": "Dois avatares, um setado mexendo no computador e outro olhando para ele",
+            "text": "Uma das qualidades mais marcantes é a habilidade de dividir problemas complexos em partes menores e mais gerenciáveis. Isso permite que elas compreendam a natureza subjacente dos desafios e desenvolvam soluções eficazes."
+        },
+        {
+            "title": "Organização",
+            "avatar": "../../../assets/svg/PAGE6.svg",
+            "alt": "Quatro avatares sentandos em uma mesa conversando e um cachorro do lado",
+            "text": "A organização é fundamental para pessoas analíticas. Elas mantêm suas informações, projetos e tarefas bem estruturados. Isso não apenas facilita o acompanhamento, mas também aumenta a eficiência na resolução de problemas."
+        },
+        {
+            "title": "Persistência",
+            "avatar": "../../../assets/svg/PAGE7.svg",
+            "alt": "Dois avatares conversando sobre carros",
+            "text": "Enfrentar obstáculos é parte integrante do processo analítico. Pessoas com essa personalidade são persistentes e determinadas. Elas não se deixam abater facilmente por desafios, mas continuam a buscar soluções mesmo diante de dificuldades."
+        },
+        {
+            "title": "Comunicação clara",
+            "avatar": "../../../assets/svg/PAGE8.svg",
+            "alt": "Dois avatares conversando",
+            "text": "Apesar de sua capacidade de lidar com complexidades, as pessoas analíticas têm o dom de comunicar suas ideias de forma simples e acessível. Isso facilita a transmissão de informações e a colaboração com outros, tornando-as excelentes comunicadoras."
+        },
+        {
+            "title": "Autodisciplina",
+            "avatar": "../../../assets/svg/PAGE9.svg",
+            "alt": "Dois avatares em uma livraria",
+            "text": "A autodisciplina é essencial para manter o foco em metas e objetivos. Pessoas analíticas são autocontroladas e evitam distrações desnecessárias, o que lhes permite trabalhar de maneira produtiva e eficiente."
+        },
+        {
+            "title": "Tomada de decisão informada",
+            "avatar": "../../../assets/svg/PAGE10.svg",
+            "alt": "Dois avatares em uma livraria",
+            "text": "Ao enfrentar decisões importantes, as pessoas analíticas conduzem análises abrangentes. Elas consideram todas as opções disponíveis, pesam cuidadosamente as vantagens e desvantagens, e preveem as consequências a longo prazo antes de tomar uma decisão final."
+        }
+    ],
+    "professions": [
+        {
+            "title": "Contador ou Auditor",
+            "description": "Profissionais contábeis e auditores examinam registros financeiros, garantem a precisão das demonstrações contábeis e garantem a conformidade com regulamentações fiscais e financeiras."
+        },
+        {
+            "title": "Engenheiro de Qualidade",
+            "description": "Engenheiros de qualidade garantem que produtos e processos atendam a padrões de qualidade rigorosos. Eles desenvolvem procedimentos de controle de qualidade e realizam análises detalhadas."
+        },
+        {
+            "title": "Analista de Dados",
+            "description": "Analistas de dados coletam, processam e analisam informações para identificar tendências, padrões e insights. A precisão é fundamental na interpretação dos dados."
+        },
+        {
+            "title": "Arquivista ou Bibliotecário",
+            "description": "Profissionais nesses campos organizam e gerenciam informações, registros e coleções, garantindo a precisão e a acessibilidade das informações."
+        },
+        {
+            "title": "Pesquisador Científico",
+            "description": "Pesquisadores científicos conduzem estudos e experimentos em diversas áreas, como biologia, química, física, entre outras. Eles precisam de precisão e detalhamento em suas pesquisas."
+        }
+    ]
+}

@@ -2,9 +2,6 @@
     <div class="carousel-inner">
         <div *ngFor="let slide of slides; let i = index" class="carousel-item" [ngClass]="i === 0 ? 'active' : ''">
             <img [src]="slide.image" class="picsum-img-wrapper w-50 rounded-circle" alt="Imagem de uma pessoa no carousel">
-            <div class="my-caption">
-                <p>{{ slide.text }}</p>
-            </div>
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -15,4 +12,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
+</div>
+<div class="my-caption">
+    <small>{{slides[currentSlideIndex].text}}</small>
 </div>
