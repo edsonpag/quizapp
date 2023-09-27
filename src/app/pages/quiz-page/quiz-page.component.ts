@@ -160,6 +160,6 @@ export class QuizPageComponent implements OnInit {
         this.calculateResults();
         this.quizService.setSubmitted(true);
         localStorage.setItem("submitted", "true")
-        this.router.navigate(['aplicativo/quiz/loading'])
+        this.router.navigate(['/quiz/loading'])
     }
 }

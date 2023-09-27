@@ -4,6 +4,7 @@ export interface Lead {
     email: ""
     cellphoneNumber: ""
     terms: false
-    profission: string
-    ageRange: string
+    personality: string
+    age: number
+    creationDate: Date | null
 }

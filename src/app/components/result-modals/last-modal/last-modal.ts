@@ -10,4 +10,6 @@ export class LastModalComponent {
 
     @Input()
     professions!: any[]
+
+    premium: boolean = true
 }

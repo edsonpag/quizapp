@@ -7,61 +7,71 @@
             "title": "Racionalidade",
             "avatar": "../../../assets/svg/PAGE1.svg",
             "alt": "Avatar de uma pessoa sentada na grama",
-            "text": "A racionalidade é uma característica distintiva das pessoas analíticas. Elas tomam decisões com base em fatos, evidências e lógica, em vez de serem guiadas por emoções impulsivas. Isso resulta em escolhas mais ponderadas e consistentes."
+            "text": "A racionalidade é uma característica distintiva das pessoas analíticas. Elas tomam decisões com base em fatos, evidências e lógica, em vez de serem guiadas por emoções impulsivas. Isso resulta em escolhas mais ponderadas e consistentes.",
+            "premium": false
         },
         {
             "title": "Curiosidade",
             "avatar": "../../../assets/svg/PAGE2.svg",
             "alt": "Dois avatares conversando sentados em um sofá",
-            "text": "As pessoas com personalidade analítica são naturalmente curiosas. Elas têm um desejo intrínseco de aprender e explorar o mundo ao seu redor. Essa curiosidade as impulsiona a fazer perguntas, aprofundar-se em tópicos complexos e buscar constantemente novos conhecimentos."
+            "text": "As pessoas com personalidade analítica são naturalmente curiosas. Elas têm um desejo intrínseco de aprender e explorar o mundo ao seu redor. Essa curiosidade as impulsiona a fazer perguntas, aprofundar-se em tópicos complexos e buscar constantemente novos conhecimentos.",
+            "premium": false
         },
         {
             "title": "Atenção aos detalhes",
             "avatar": "../../../assets/svg/PAGE3.svg",
             "alt": "Dois avatares conversando proximos a uma árvore",
-            "text": "A capacidade de observar e analisar detalhes é uma habilidade inerente às pessoas analíticas. Elas notam nuances e informações que podem passar despercebidas por outros. Essa atenção aos detalhes é crucial ao analisar dados complexos ou resolver problemas intricados."
+            "text": "A capacidade de observar e analisar detalhes é uma habilidade inerente às pessoas analíticas. Elas notam nuances e informações que podem passar despercebidas por outros. Essa atenção aos detalhes é crucial ao analisar dados complexos ou resolver problemas intricados.",
+            "premium": false
         },
         {
             "title": "Pensamento crítico",
             "avatar": "../../../assets/svg/PAGE4.svg",
             "alt": "Dois avatares negociando compra e venda de produtos",
-            "text": "Pessoas analíticas são mestres na arte do pensamento crítico. Elas têm a capacidade de avaliar argumentos, informações e evidências de forma imparcial. Isso lhes permite identificar falácias, contradições e avaliar a validade das informações."
+            "text": "Pessoas analíticas são mestres na arte do pensamento crítico. Elas têm a capacidade de avaliar argumentos, informações e evidências de forma imparcial. Isso lhes permite identificar falácias, contradições e avaliar a validade das informações.",
+            "premium": false
         },
         {
             "title": "Habilidade analítica",
             "avatar": "../../../assets/svg/PAGE5.svg",
             "alt": "Dois avatares, um setado mexendo no computador e outro olhando para ele",
-            "text": "Uma das qualidades mais marcantes é a habilidade de dividir problemas complexos em partes menores e mais gerenciáveis. Isso permite que elas compreendam a natureza subjacente dos desafios e desenvolvam soluções eficazes."
+            "text": "Uma das qualidades mais marcantes é a habilidade de dividir problemas complexos em partes menores e mais gerenciáveis. Isso permite que elas compreendam a natureza subjacente dos desafios e desenvolvam soluções eficazes.",
+            "premium": true
         },
         {
             "title": "Organização",
             "avatar": "../../../assets/svg/PAGE6.svg",
             "alt": "Quatro avatares sentandos em uma mesa conversando e um cachorro do lado",
-            "text": "A organização é fundamental para pessoas analíticas. Elas mantêm suas informações, projetos e tarefas bem estruturados. Isso não apenas facilita o acompanhamento, mas também aumenta a eficiência na resolução de problemas."
+            "text": "A organização é fundamental para pessoas analíticas. Elas mantêm suas informações, projetos e tarefas bem estruturados. Isso não apenas facilita o acompanhamento, mas também aumenta a eficiência na resolução de problemas.",
+            "premium": true
         },
         {
             "title": "Persistência",
             "avatar": "../../../assets/svg/PAGE7.svg",
             "alt": "Dois avatares conversando sobre carros",
-            "text": "Enfrentar obstáculos é parte integrante do processo analítico. Pessoas com essa personalidade são persistentes e determinadas. Elas não se deixam abater facilmente por desafios, mas continuam a buscar soluções mesmo diante de dificuldades."
+            "text": "Enfrentar obstáculos é parte integrante do processo analítico. Pessoas com essa personalidade são persistentes e determinadas. Elas não se deixam abater facilmente por desafios, mas continuam a buscar soluções mesmo diante de dificuldades.",
+            "premium": true
         },
         {
             "title": "Comunicação clara",
             "avatar": "../../../assets/svg/PAGE8.svg",
             "alt": "Dois avatares conversando",
-            "text": "Apesar de sua capacidade de lidar com complexidades, as pessoas analíticas têm o dom de comunicar suas ideias de forma simples e acessível. Isso facilita a transmissão de informações e a colaboração com outros, tornando-as excelentes comunicadoras."
+            "text": "Apesar de sua capacidade de lidar com complexidades, as pessoas analíticas têm o dom de comunicar suas ideias de forma simples e acessível. Isso facilita a transmissão de informações e a colaboração com outros, tornando-as excelentes comunicadoras.",
+            "premium": true
         },
         {
             "title": "Autodisciplina",
             "avatar": "../../../assets/svg/PAGE9.svg",
             "alt": "Dois avatares em uma livraria",
-            "text": "A autodisciplina é essencial para manter o foco em metas e objetivos. Pessoas analíticas são autocontroladas e evitam distrações desnecessárias, o que lhes permite trabalhar de maneira produtiva e eficiente."
+            "text": "A autodisciplina é essencial para manter o foco em metas e objetivos. Pessoas analíticas são autocontroladas e evitam distrações desnecessárias, o que lhes permite trabalhar de maneira produtiva e eficiente.",
+            "premium": true
         },
         {
             "title": "Tomada de decisão informada",
             "avatar": "../../../assets/svg/PAGE10.svg",
             "alt": "Dois avatares em uma livraria",
-            "text": "Ao enfrentar decisões importantes, as pessoas analíticas conduzem análises abrangentes. Elas consideram todas as opções disponíveis, pesam cuidadosamente as vantagens e desvantagens, e preveem as consequências a longo prazo antes de tomar uma decisão final."
+            "text": "Ao enfrentar decisões importantes, as pessoas analíticas conduzem análises abrangentes. Elas consideram todas as opções disponíveis, pesam cuidadosamente as vantagens e desvantagens, e preveem as consequências a longo prazo antes de tomar uma decisão final.",
+            "premium": true
         }
     ],
     "professions": [

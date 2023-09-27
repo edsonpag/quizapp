@@ -5,9 +5,10 @@ import { DepoimentsModule } from "src/app/components/depoiments/depoiments.modul
 import { FaqModule } from "src/app/components/faq/faq.module";
 import { ResultPageRoutingModule } from "./result-page-routing.module";
 import { ResultPageComponent } from "./result-page.component";
-import { FirstModalComponent } from "src/app/components/result-modals/first-modal/first-modal.component";
-import { DefaultModalComponent } from "src/app/components/result-modals/default-modal/default-modal";
-import { LastModalComponent } from "src/app/components/result-modals/last-modal/last-modal";
+import { FirstModalModule } from "src/app/components/result-modals/first-modal/first-modal.module";
+import { DefaultModalModule } from "src/app/components/result-modals/default-modal/default-modal.module";
+import { LastModalModule } from "src/app/components/result-modals/last-modal/last-modal.module";
+import { PremiumModalModule } from "src/app/components/result-modals/premium-modal/premium-modal.module";
 
 @NgModule({
     imports: [
@@ -15,13 +16,14 @@ import { LastModalComponent } from "src/app/components/result-modals/last-modal/
         CommonModule,
         DepoimentFormModule,
         DepoimentsModule,
+        FirstModalModule,
+        DefaultModalModule,
+        LastModalModule,
+        PremiumModalModule,
         FaqModule
     ],
     declarations: [
-        ResultPageComponent,
-        FirstModalComponent,
-        DefaultModalComponent,
-        LastModalComponent
+        ResultPageComponent
     ],
     exports: []
 })

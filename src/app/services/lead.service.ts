@@ -12,15 +12,17 @@ export class LeadService {
         email: "",
         cellphoneNumber: "",
         terms: false,
-        profission: "",
-        ageRange: ""
+        personality: "",
+        age: 0,
+        creationDate: null
     }
     
     constructor(private angularFirestore: AngularFirestore) {}
 
     add(lead: Lead) {
-        lead.id = this.angularFirestore.createId();
-        return this.angularFirestore.collection("/Leads").add(lead);
+        lead.id = this.angularFirestore.createId()
+        lead.creationDate = new Date()
+        return this.angularFirestore.collection("/Leads").add(lead)
     }
 
     getAll() {

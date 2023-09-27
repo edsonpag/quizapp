@@ -12,6 +12,7 @@
         [text]="pageData.pages[i].text"
         [avatar]="pageData.pages[i].avatar"
         [alt]="pageData.pages[i].alt"
+        [premium]="pageData.pages[i].premium"
         ></default-modal>
     </div>
     <last-modal
@@ -22,6 +23,6 @@
         <div class="dots">
             <div class="dot" *ngFor="let page of [].constructor(numberOfPages); let i = index" [ngClass]="i === currentPage ? 'active' : ''" (click)="goToPage(i)"></div>
         </div>
-        <button *ngIf="currentPage < numberOfPages" (click)="nextSlide()" class="next-button">Continuar</button>
+        <button *ngIf="currentPage < (numberOfPages - 1)" (click)="nextSlide()" class="next-button">Continuar</button>
     </div>
 </div>

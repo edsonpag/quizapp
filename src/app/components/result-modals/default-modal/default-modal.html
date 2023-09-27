@@ -1,4 +1,4 @@
-<div class="default-modal">
+<div *ngIf="!premium" class="default-modal">
     <div class="modal-header">
         <h4>{{ title }}</h4>
     </div>
@@ -9,3 +9,4 @@
         <small>{{ text }}</small>
     </div>
 </div>
+<premium-modal *ngIf="premium"></premium-modal>

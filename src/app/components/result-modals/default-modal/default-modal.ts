@@ -19,4 +19,7 @@ export class DefaultModalComponent {
 
     @Input()
     alt!: string
+
+    @Input()
+    premium!: boolean
 }

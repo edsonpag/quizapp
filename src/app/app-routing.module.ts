@@ -4,10 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./pages/vsl-page/vsl-page.module').then(vslPageModule => vslPageModule.VslPageModule)
-  },
-  {
-    path: 'aplicativo',
     loadChildren: () => import('./pages/lading-page/lading-page.module').then(ladingPageModulo => ladingPageModulo.LadingPageModulo)
   },
   {

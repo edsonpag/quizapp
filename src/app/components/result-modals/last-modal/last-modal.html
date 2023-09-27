@@ -1,4 +1,4 @@
-<div class="last-modal">
+<div *ngIf="!premium" class="last-modal">
     <div class="modal-header">
         <h4>Profissões Recomendadas</h4>
     </div>
@@ -13,3 +13,4 @@
         </div>
     </div>
 </div>
+<premium-modal *ngIf="premium"></premium-modal>

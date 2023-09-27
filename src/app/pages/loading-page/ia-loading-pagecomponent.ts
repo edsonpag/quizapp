@@ -1,5 +1,11 @@
 import { AfterViewInit, Component } from "@angular/core";
+import { AbstractControl, FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { LeadService } from "src/app/services/lead.service";
+import { QuizService } from "src/app/services/quiz.service";
+import { cellphoneValidator } from "src/app/validators/cellphone.validator";
+import { emailValidator } from "src/app/validators/email.validator";
+import { nameValidator } from "src/app/validators/name.validator";
 
 @Component({
     selector: 'ia-loading-page',
@@ -8,12 +14,47 @@ import { Router } from "@angular/router";
 })
 
 export class IALoadingPageComponent implements AfterViewInit {
+   
     value: number = 0;
 
-    constructor(private router: Router) { }
+    resultData
+
+    personalities = ["", "Comunicativa", "Estável", "Analítica"]
+
+    liberationForm: FormGroup = new FormGroup({
+        name: new FormControl('', [Validators.required, nameValidator]),
+        age: new FormControl('', [Validators.required]),
+        email: new FormControl('', [Validators.required, emailValidator]),
+        cellphoneNumber: new FormControl('', [Validators.required, cellphoneValidator]),
+        terms: new FormControl('', [Validators.requiredTrue])
+    });
+
+    constructor(private router: Router, private quizService: QuizService, private leadService: LeadService) {
+        this.resultData = this.quizService.getResult()
+    }
 
     ngAfterViewInit(): void {
         this.updateProgressBar();
+    }
+
+    getName(): AbstractControl | null {
+        return this.liberationForm.get('name');
+    }
+
+    getAge(): AbstractControl | null {
+        return this.liberationForm.get('age');
+    }
+
+    getEmail(): AbstractControl | null {
+        return this.liberationForm.get('email');
+    }
+
+    getCellphoneNumber(): AbstractControl | null {
+        return this.liberationForm.get('cellphoneNumber');
+    }
+
+    getTerms(): AbstractControl | null {
+        return this.liberationForm.get('terms');
     }
 
     updateProgressBar(): void {
@@ -26,11 +67,35 @@ export class IALoadingPageComponent implements AfterViewInit {
                 this.value = MAX_VALUE_ALLOWED;
                 clearInterval(interval);
                 setTimeout(() => {
-                    this.router.navigate(['aplicativo/quiz/result']);
+                    document.querySelector(".liberation.hide")?.classList.remove('hide')
+                    document.querySelector(".loading-page")?.classList.add('hide')
                 }, 600)
             } else {
                 this.value = incrementedValue
             }
         }, 600);
+    }
+
+    handleAgeInputData(event: any): void {
+        if (event.target.value)
+            event.target.value = Math.round(event.target.value.replace(/\D/g,''))
+        else
+            event.target.value = ""
+    }
+
+
+    saveLeadData(): void {
+        this.leadService.lead.cellphoneNumber = this.getCellphoneNumber()?.value
+        this.leadService.lead.name = this.getName()?.value
+        this.leadService.lead.age = this.getAge()?.value
+        this.leadService.lead.email = this.getEmail()?.value
+        this.leadService.lead.terms = this.getTerms()?.value
+        this.leadService.lead.personality = this.personalities[this.resultData.category.index]
+        this.leadService.add(this.leadService.lead);
+    }
+
+    onSubmit(): void {
+        this.saveLeadData()
+        this.router.navigate(['/quiz/result']);
     }
 }
