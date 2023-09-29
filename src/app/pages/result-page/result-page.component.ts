@@ -1,5 +1,5 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { DarkModeService } from "src/app/services/dark-mode.service";
+import { Component, OnInit } from "@angular/core";
+import { DepoimentsService } from "src/app/services/depoiments.service";
 import { QuizService } from "src/app/services/quiz.service";
 
 @Component({
@@ -8,7 +8,7 @@ import { QuizService } from "src/app/services/quiz.service";
     styleUrls: ['./result-page.component.css']
 })
 
-export class ResultPageComponent implements OnInit, OnDestroy {
+export class ResultPageComponent implements OnInit {
 
 
     resultData
@@ -27,18 +27,16 @@ export class ResultPageComponent implements OnInit, OnDestroy {
 
     personalities = ["", "Comunicativa", "Estável", "Analítica"]
 
-    constructor(private quizService: QuizService, private darkModeService: DarkModeService) {
+    depoiments
+
+    constructor(private quizService: QuizService, private depoimentsService: DepoimentsService) {
         this.resultData = this.quizService.getResult()
+        this.depoiments = this.depoimentsService.getAll()
     }
 
     async ngOnInit(): Promise<void> {
-        this.darkModeService.addDarkMode()
         await this.loadPageData()
         this.updateNumberOfPages()
-    }
-
-    ngOnDestroy(): void {
-        this.darkModeService.removeDarkMode()
     }
 
     async loadPageData(): Promise<any> {
@@ -58,5 +56,15 @@ export class ResultPageComponent implements OnInit, OnDestroy {
 
     goToPage(pageNumber: number) {
         this.currentPage = pageNumber
+    }
+
+    goToCheckout(): void {
+        const leadName = localStorage.getItem('lead_name')
+        const leadEmail = localStorage.getItem('lead_email')
+        const leadCellphoneNumber = localStorage.getItem('lead_cellphoneNumber')
+        let checkoutUrl = `https://pay.kiwify.com.br/u1XZFEI`
+        if (leadName && leadEmail && leadCellphoneNumber)
+            checkoutUrl += `?name=${leadName}&email=${leadEmail}&phone=${leadCellphoneNumber}`
+        window.open(checkoutUrl, '_blank')
     }
 }

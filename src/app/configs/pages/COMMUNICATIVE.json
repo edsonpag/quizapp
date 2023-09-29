@@ -1,73 +1,73 @@
 {
     "avatar": "../../../assets/svg/COMMUNICATIVE.svg",
     "alt": "Avatar de uma pessoa comunicativa e criativa",
-    "personalityDescription": "Os Comunicativos são caracterizados por suas habilidades sociais e excelência na comunicação. São pessoas extrovertidas que constroem relacionamentos interpessoais com facilidade. Expressam suas ideias de forma clara e persuasiva, tornando-se bons comunicadores. Costumam ser empáticos e atenciosos nas interações com os outros.",
+    "personalityDescription": "Você é uma pessoa comunicativa e otimista. Ser uma pessoa comunicativa significa ter o dom da conversa e a habilidade de se conectar com os outros facilmente, tendo a capacidade de tornar qualquer interação mais viva e interessante. Você é uma pessoa entusiasmada, que sempre tem uma boa energia para compartilhar. Criatividade e ser uma pessoa comunicativa são duas das suas qualidades mais importantes. Você está sempre procurando avaliar e julgar situações com muita empatia. Sendo assim, tem a rara capacidade de compreender a dor do outro. Você é uma pessoa divertida, multitarefa e naturalmente muito carismática. Às vezes até é procurado por outras pessoas para receber aconselhamentos e opiniões. Isso acontece, porque sua habilidade em entender os outros te torna uma ótima pessoa para mediar situações tensas. Fora que é uma ótima pessoa para trabalhar em equipe. Você tem sempre a tendência de colocar os sentimentos em primeiro lugar, o que às vezes te atrapalha em ser entendido por pessoas muito sérias. Continue sempre praticando esse seu lado da empatia e da comunicação, porque essas qualidades te qualificam dentre muitas pessoas e assim você conseguirá alcançar um grande sucesso profissional.",
     "pages": [
         {
-            "title": "Habilidades de Comunicação",
+            "title": "Indeciso em qual Carreira seguir pelo resto de sua vida?",
             "avatar": "../../../assets/svg/PAGE1.svg",
             "alt": "Avatar de uma pessoa sentada na grama",
             "text": "Como alguém que valoriza a interação social, considere carreiras que exijam habilidades de comunicação sólidas, como vendas, marketing, relações públicas ou consultoria.",
-            "premium": false
+            "premium": true
         },
         {
-            "title": "Trabalho em Equipe",
+            "title": "Medo de não ser bom o suficiente para começar algo?",
             "avatar": "../../../assets/svg/PAGE2.svg",
             "alt": "Dois avatares conversando sentados em um sofá",
             "text": "Independente de gostar ou não de trabalhar em equipe, você tem competências e habilidades que irão te destacar em ambientes sociais e de grupo.",
-            "premium": false
+            "premium": true
         },
         {
-            "title": "Networking",
+            "title": "Sente que os outros estão evoluindo e você não?",
             "avatar": "../../../assets/svg/PAGE3.svg",
             "alt": "Dois avatares conversando proximos a uma árvore",
             "text": "Sua capacidade de criar relacionamentos pode ser uma vantagem em carreiras que dependem de uma rede profissional sólida, como gestão de eventos, recrutamento ou consultoria de negócios.",
-            "premium": false
+            "premium": true
         },
         {
-            "title": "Criatividade",
+            "title": "Você se sente parado no tempo?",
             "avatar": "../../../assets/svg/PAGE4.svg",
             "alt": "Dois avatares negociando compra e venda de produtos",
             "text": "Se você é criativo e gosta de inovar, considere profissões relacionadas à arte, design, publicidade ou entretenimento.",
-            "premium": false
+            "premium": true
         },
         {
-            "title": "Empatia",
+            "title": "Tem vontade de vencer na vida mas não recebe o devido apoio?",
             "avatar": "../../../assets/svg/PAGE5.svg",
             "alt": "Dois avatares, um setado mexendo no computador e outro olhando para ele",
             "text": "Sua capacidade de entender e se conectar com os outros pode ser uma vantagem em carreiras que envolvam cuidados de saúde, psicologia, aconselhamento ou trabalho social.",
             "premium": true
         },
         {
-            "title": "Flexibilidade",
+            "title": "Ansiedade por não ter conquistado nada ainda?",
             "avatar": "../../../assets/svg/PAGE6.svg",
             "alt": "Quatro avatares sentandos em uma mesa conversando e um cachorro do lado",
             "text": "Avalie sua disposição para lidar com mudanças e ambientes de trabalho dinâmicos, uma vez que muitas carreiras sociais envolvem situações imprevisíveis.",
             "premium": true
         },
         {
-            "title": "Tolerância ao Estresse",
+            "title": "Deseja ter uma vida estável no futuro?",
             "avatar": "../../../assets/svg/PAGE7.svg",
             "alt": "Dois avatares conversando sobre carros",
             "text": "Antes de escolher uma carreira verifique se você consegue lidar bem com o estresse, especialmente em carreiras que envolvam negociação, vendas de alto volume ou gestão de crises.",
             "premium": true
         },
         {
-            "title": "Resolução de Conflitos",
+            "title": "Deseja conquistar seus sonhos e dar orgulho para quem você ama?",
             "avatar": "../../../assets/svg/PAGE8.svg",
             "alt": "Dois avatares conversando",
             "text": "Suas habilidades interpessoais podem ser valiosas em carreiras que envolvam resolução de conflitos, como mediação ou recursos humanos.",
             "premium": true
         },
         {
-            "title": "Paixão pelo Público",
+            "title": "Almeja ter um relacionamento onde o amor seja mútuo?",
             "avatar": "../../../assets/svg/PAGE9.svg",
             "alt": "Dois avatares em uma livraria",
             "text": "Considere profissões que envolvam servir ou entreter o público, como atuação, música, educação ou jornalismo.",
             "premium": true
         },
         {
-            "title": "Equilíbrio Entre Trabalho e Vida Pessoa",
+            "title": "Deseja ganhar dinheiro trabalhando de sua casa?",
             "avatar": "../../../assets/svg/PAGE10.svg",
             "alt": "Dois avatares em uma livraria",
             "text": "Lembre-se de buscar carreiras que lhe proporcionem o equilíbrio entre trabalho e vida pessoal que você deseja, pois muitas carreiras sociais podem ser exigentes em termos de tempo.",

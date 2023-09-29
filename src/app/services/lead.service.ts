@@ -17,11 +17,14 @@ export class LeadService {
         creationDate: null
     }
     
-    constructor(private angularFirestore: AngularFirestore) {}
-
+    constructor(private angularFirestore: AngularFirestore) { }
+    
     add(lead: Lead) {
         lead.id = this.angularFirestore.createId()
         lead.creationDate = new Date()
+        localStorage.setItem('lead_name', this.lead.name)
+        localStorage.setItem('lead_email', this.lead.email)
+        localStorage.setItem('lead_cellphoneNumber', this.lead.cellphoneNumber)
         return this.angularFirestore.collection("/Leads").add(lead)
     }
 

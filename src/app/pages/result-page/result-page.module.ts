@@ -9,6 +9,7 @@ import { FirstModalModule } from "src/app/components/result-modals/first-modal/f
 import { DefaultModalModule } from "src/app/components/result-modals/default-modal/default-modal.module";
 import { LastModalModule } from "src/app/components/result-modals/last-modal/last-modal.module";
 import { PremiumModalModule } from "src/app/components/result-modals/premium-modal/premium-modal.module";
+import { StopWatchModule } from "src/app/components/stopwatch/stopwatch.module";
 
 @NgModule({
     imports: [
@@ -20,6 +21,7 @@ import { PremiumModalModule } from "src/app/components/result-modals/premium-mod
         DefaultModalModule,
         LastModalModule,
         PremiumModalModule,
+        StopWatchModule,
         FaqModule
     ],
     declarations: [

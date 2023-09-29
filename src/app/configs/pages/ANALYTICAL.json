@@ -1,73 +1,73 @@
 {
     "avatar": "../../../assets/svg/ANALYTICAL.svg",
     "alt": "Avatar de uma pessoa analítica",
-    "personalityDescription": "Os Analíticos são indivíduos que se destacam por sua abordagem lógica e meticulosa em relação a problemas e situações. Eles são altamente observadores e habilidosos em analisar informações de maneira crítica. Tomam decisões cuidadosamente, baseadas em dados e preferem compreender profundamente antes de agir ou tomar decisões.",
+    "personalityDescription": "Você é uma pessoa Meticulosa e Responsável. Uma pessoa meticulosa é aquela que age com minúcia, estando sempre focada em todos os aspectos e detalhes daquilo que está fazendo, com o intuito de não cometer erros. Você é organizado, seguro e busca sempre a qualidade em tudo que faz. Responsabilidade e ser uma pessoa analítica são duas das qualidades mais importantes em você. Você está sempre procurando avaliar e julgar situações de forma objetiva. Sendo assim, tem capacidade rara de ser uma pessoa sincera. Você é inteligente, criativo e naturalmente muito equilibrado. As vezes até é procurado para receber aconselhamento opiniões de outras pessoas. Isso porque você fornece uma profunda sabedoria analítica sem julgar a pessoa, mas sim a causa. Você é humilde, o que te ajuda a estar sempre em busca de progresso pessoal. Você tem sempre a tendência de colocar a razão e dados em primeiro lugar, o que até as vezes te atrapalha em ser entendido por pessoas muito emocionais. Mas isso porque você tem uma capacidade tão intensa de analisar e ser uma pessoa que busca seguir a razão naturalmente. Continue sempre praticando esse seu lado analítico e responsável, porque essas qualidades te qualificam dentre muitas pessoas e assim você conseguirá alcançar todo o seu sucesso profissional na vida.",
     "pages": [
         {
-            "title": "Racionalidade",
+            "title": "Indeciso em qual Carreira seguir pelo resto de sua vida?",
             "avatar": "../../../assets/svg/PAGE1.svg",
             "alt": "Avatar de uma pessoa sentada na grama",
             "text": "A racionalidade é uma característica distintiva das pessoas analíticas. Elas tomam decisões com base em fatos, evidências e lógica, em vez de serem guiadas por emoções impulsivas. Isso resulta em escolhas mais ponderadas e consistentes.",
-            "premium": false
+            "premium": true
         },
         {
-            "title": "Curiosidade",
+            "title": "Medo de não ser bom o suficiente para começar algo?",
             "avatar": "../../../assets/svg/PAGE2.svg",
             "alt": "Dois avatares conversando sentados em um sofá",
             "text": "As pessoas com personalidade analítica são naturalmente curiosas. Elas têm um desejo intrínseco de aprender e explorar o mundo ao seu redor. Essa curiosidade as impulsiona a fazer perguntas, aprofundar-se em tópicos complexos e buscar constantemente novos conhecimentos.",
-            "premium": false
+            "premium": true
         },
         {
-            "title": "Atenção aos detalhes",
+            "title": "Sente que os outros estão evoluindo e você não?",
             "avatar": "../../../assets/svg/PAGE3.svg",
             "alt": "Dois avatares conversando proximos a uma árvore",
             "text": "A capacidade de observar e analisar detalhes é uma habilidade inerente às pessoas analíticas. Elas notam nuances e informações que podem passar despercebidas por outros. Essa atenção aos detalhes é crucial ao analisar dados complexos ou resolver problemas intricados.",
-            "premium": false
+            "premium": true
         },
         {
-            "title": "Pensamento crítico",
+            "title": "Você se sente parado no tempo?",
             "avatar": "../../../assets/svg/PAGE4.svg",
             "alt": "Dois avatares negociando compra e venda de produtos",
             "text": "Pessoas analíticas são mestres na arte do pensamento crítico. Elas têm a capacidade de avaliar argumentos, informações e evidências de forma imparcial. Isso lhes permite identificar falácias, contradições e avaliar a validade das informações.",
-            "premium": false
+            "premium": true
         },
         {
-            "title": "Habilidade analítica",
+            "title": "Tem vontade de vencer na vida mas não recebe o devido apoio?",
             "avatar": "../../../assets/svg/PAGE5.svg",
             "alt": "Dois avatares, um setado mexendo no computador e outro olhando para ele",
             "text": "Uma das qualidades mais marcantes é a habilidade de dividir problemas complexos em partes menores e mais gerenciáveis. Isso permite que elas compreendam a natureza subjacente dos desafios e desenvolvam soluções eficazes.",
             "premium": true
         },
         {
-            "title": "Organização",
+            "title": "Ansiedade por não ter conquistado nada ainda?",
             "avatar": "../../../assets/svg/PAGE6.svg",
             "alt": "Quatro avatares sentandos em uma mesa conversando e um cachorro do lado",
             "text": "A organização é fundamental para pessoas analíticas. Elas mantêm suas informações, projetos e tarefas bem estruturados. Isso não apenas facilita o acompanhamento, mas também aumenta a eficiência na resolução de problemas.",
             "premium": true
         },
         {
-            "title": "Persistência",
+            "title": "Deseja ter uma vida estável no futuro?",
             "avatar": "../../../assets/svg/PAGE7.svg",
             "alt": "Dois avatares conversando sobre carros",
             "text": "Enfrentar obstáculos é parte integrante do processo analítico. Pessoas com essa personalidade são persistentes e determinadas. Elas não se deixam abater facilmente por desafios, mas continuam a buscar soluções mesmo diante de dificuldades.",
             "premium": true
         },
         {
-            "title": "Comunicação clara",
+            "title": "Deseja conquistar seus sonhos e dar orgulho para quem você ama?",
             "avatar": "../../../assets/svg/PAGE8.svg",
             "alt": "Dois avatares conversando",
             "text": "Apesar de sua capacidade de lidar com complexidades, as pessoas analíticas têm o dom de comunicar suas ideias de forma simples e acessível. Isso facilita a transmissão de informações e a colaboração com outros, tornando-as excelentes comunicadoras.",
             "premium": true
         },
         {
-            "title": "Autodisciplina",
+            "title": "Almeja ter um relacionamento onde o amor seja mútuo?",
             "avatar": "../../../assets/svg/PAGE9.svg",
             "alt": "Dois avatares em uma livraria",
             "text": "A autodisciplina é essencial para manter o foco em metas e objetivos. Pessoas analíticas são autocontroladas e evitam distrações desnecessárias, o que lhes permite trabalhar de maneira produtiva e eficiente.",
             "premium": true
         },
         {
-            "title": "Tomada de decisão informada",
+            "title": "Deseja ganhar dinheiro trabalhando de sua casa?",
             "avatar": "../../../assets/svg/PAGE10.svg",
             "alt": "Dois avatares em uma livraria",
             "text": "Ao enfrentar decisões importantes, as pessoas analíticas conduzem análises abrangentes. Elas consideram todas as opções disponíveis, pesam cuidadosamente as vantagens e desvantagens, e preveem as consequências a longo prazo antes de tomar uma decisão final.",

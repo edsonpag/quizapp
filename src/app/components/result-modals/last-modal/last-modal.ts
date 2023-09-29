@@ -12,4 +12,6 @@ export class LastModalComponent {
     professions!: any[]
 
     premium: boolean = true
+
+    title: string = "Profissões Recomendadas"
 }

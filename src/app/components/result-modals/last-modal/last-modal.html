@@ -1,6 +1,6 @@
 <div *ngIf="!premium" class="last-modal">
     <div class="modal-header">
-        <h4>Profissões Recomendadas</h4>
+        <h4>{{ title }}</h4>
     </div>
     <div class="professions-container">
         <div class="list-group professions-list">
@@ -13,4 +13,4 @@
         </div>
     </div>
 </div>
-<premium-modal *ngIf="premium"></premium-modal>
+<premium-modal [title]="title" *ngIf="premium"></premium-modal>

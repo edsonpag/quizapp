@@ -14,7 +14,7 @@ export class DepoimentsService {
             commentDate: "Comentário enviado dia 21/09/2023 ás 11:10"
         },
         {
-            rate: 5,
+            rate: 4,
             name: "Artur Ruiz",
             age: 19,
             text: "Meu nome é Artur, tenho 19 anos e gostaria de deixar minha experiência sobre como esse aplicativo me ajudou. Sempre tive um sonho em dar entrada no meu primeiro carro, porém os salarios de jovens sem experiência são uma merda, eu era caixa em um supermercado na minha cidade, recebia apenas 1400 R$ por mês, estava muito puto com o meu trabalho e com o rumo da minha vida, nunca sobrava dinheiro no final do mês para fazer uma viagem ou dar entrada no meu sonhado carro e o pior que todo mês eu fechava no vermelho aculamando cada vez mais dívidas. Decidi dar uma chance a esse teste vocacional e seguir a profissão disponibilizada no aplicativo. Iniciei minha carreira como uma renda extra, todo mês tinha entre 500-800 reais entrando na minha conta de forma automática e isso me ajudou muito no começo, principalmente a pagar as minhas dividas. Hoje em dia já é a minha renda princípal e eu consigo viver apenas dela e o melhor de tudo é que no proximo mês vou conseguir dar entrada no meu carro dos sonhos e tenho certeza que isso é só o começo!",
@@ -30,7 +30,7 @@ export class DepoimentsService {
             commentDate: "Comentário enviado dia 20/09/2023 ás 12:19"
         },
         {
-            rate: 5,
+            rate: 4,
             name: "Jaqueline Aguiar",
             age: 48,
             text: "Eu nunca imaginei que um simples quiz online pudesse ser tão revelador. Tenho 48 anos e achei que já era tarde de mais para começar uma nova carreira, porem com a ajuda de vocês, consegui desbloquear todo o potêncial que estava preso dentro de mim. Graças a essa descoberta, iniciei uma nova carreira e estou prosperando! Sou grata por toda a orientação que me proporcionaram e por me ajudarem a encontrar minha verdadeira paixão.",

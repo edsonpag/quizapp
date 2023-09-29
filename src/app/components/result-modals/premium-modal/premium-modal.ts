@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     selector: 'premium-modal',
@@ -7,8 +7,19 @@ import { Component } from "@angular/core";
 })
 
 export class PremiumModalComponent {
+
+    @Input()
+    title!: string
+
+    constructor() { }
     
     goToCheckout(): void {
-        window.open('https://pay.kiwify.com.br/u1XZFEI', '_blank')
+        const leadName = localStorage.getItem('lead_name')
+        const leadEmail = localStorage.getItem('lead_email')
+        const leadCellphoneNumber = localStorage.getItem('lead_cellphoneNumber')
+        let checkoutUrl = `https://pay.kiwify.com.br/u1XZFEI`
+        if (leadName && leadEmail && leadCellphoneNumber)
+            checkoutUrl += `?name=${leadName}&email=${leadEmail}&phone=${leadCellphoneNumber}`
+        window.open(checkoutUrl, '_blank')
     }
 }

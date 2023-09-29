@@ -5,9 +5,7 @@
     min-height: 580px;
     width: 90vw;
     max-width: 995px;
-    border-radius: 12px 12px 0 0;
     color: black;
-    filter: drop-shadow(0px 0px 25px var(--primary-color));
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -25,23 +23,13 @@
     text-align: center;
 }
 
-.background-modal-up {
-    border-radius: 12px 12px 0 0;
-    background-color: #f6f6f7;
-    position: absolute;
-    top: 0;
-    z-index: -1;
-    height: 50%;
-    width: 100%;
-}
-
 .first-modal-up h6 {
-    margin-top: 35px;
+    margin-top: 30px;
     margin-bottom: 20px;
 }
 
 .first-modal-down small {
-    max-width: 515px;
+    max-width: 900px;
     margin-bottom: 10px;
     padding-inline: 10px;
 }

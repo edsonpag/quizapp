@@ -1,28 +1,61 @@
 <div class="result-page">
-    <first-modal 
-        *ngIf="currentPage === 0" 
-        [personality]="personalities[resultData.category.index]" 
-        [personalityDescription]="pageData.personalityDescription" 
-        [avatar]="pageData.avatar" 
-        [alt]="pageData.alt">
-    </first-modal>
-    <div *ngFor="let page of this.pageData.pages; let i = index">
-        <default-modal *ngIf="currentPage === (i + 1)"
-        [title]="pageData.pages[i].title"
-        [text]="pageData.pages[i].text"
-        [avatar]="pageData.pages[i].avatar"
-        [alt]="pageData.pages[i].alt"
-        [premium]="pageData.pages[i].premium"
-        ></default-modal>
-    </div>
-    <last-modal
-    *ngIf="currentPage === (numberOfPages - 1)"
-    [professions]="pageData.professions"
-    ></last-modal>
-    <div class="modal-footer">
-        <div class="dots">
-            <div class="dot" *ngFor="let page of [].constructor(numberOfPages); let i = index" [ngClass]="i === currentPage ? 'active' : ''" (click)="goToPage(i)"></div>
+    <div class="modal-container">
+        <stopwatch-component></stopwatch-component>
+        <first-modal 
+            *ngIf="currentPage === 0" 
+            [personality]="personalities[resultData.category.index]" 
+            [personalityDescription]="pageData.personalityDescription" 
+            [avatar]="pageData.avatar" 
+            [alt]="pageData.alt">
+        </first-modal>
+        <div *ngFor="let page of this.pageData.pages; let i = index">
+            <default-modal *ngIf="currentPage === (i + 1)"
+            [title]="pageData.pages[i].title"
+            [text]="pageData.pages[i].text"
+            [avatar]="pageData.pages[i].avatar"
+            [alt]="pageData.pages[i].alt"
+            [premium]="pageData.pages[i].premium"
+            ></default-modal>
         </div>
-        <button *ngIf="currentPage < (numberOfPages - 1)" (click)="nextSlide()" class="next-button">Continuar</button>
+        <last-modal
+        *ngIf="currentPage === (numberOfPages - 1)"
+        [professions]="pageData.professions"
+        ></last-modal>
+        <div class="modal-footer">
+            <div class="dots">
+                <div class="dot" *ngFor="let page of [].constructor(numberOfPages); let i = index" [ngClass]="i === currentPage ? 'active' : ''" (click)="goToPage(i)"></div>
+            </div>
+            <button *ngIf="currentPage < (numberOfPages - 1)" (click)="nextSlide()" class="next-button">Continuar</button>
+        </div>
     </div>
+    <div class="about-sucess-map">
+        <h4>Como o mapa do sucesso foi criado?</h4>
+        <p>Com uma adolescência de incertezas, confusões e comparações desnecessárias Claudio de Oliveira não sabia se na decisão de sua carreira se seguiria seu coração, conselhos ou o que estava em alta para ganhar dinheiro, sendo assim prestou vestibular e conseguiu passar em faculdades totalmente diferentes, desde nutrição que misturava seu desejo em ter uma saúde melhor e ciências da computação para alcançar a estabilidade que tanto almejava. Começou uma, não se encontrou, passou para outra e também ficou frustrado nesse sentimento de busca pelo sucesso pessoal, ele fez uma missão de dois anos de serviço humanitário, com isso conheceu várias pessoas que o ajudaram nesse caminho para o sucesso pessoal. Onde em contato com americanos que também serviam junto conheceu um método revolucionário dos Estados Unidos apenas em inglês que direciona a pessoa em uma carreira através principalmente de sua personalidade, ele achou isso incrível e precisava trazer isso para o Brasil de forma acessível. Retornando para sua casa, se especializou para ser um mentor educacional e contratou uma equipe com psicólogos e engenheiros de software para elaborarem um teste vocacional que a revelação seria um “Mapa do Sucesso” que foi apelidado por vários jovens ao realizarem o teste tão personalizado e preciso que conseguisse acertar em cheio sobre a pessoa para saírem da escuridão e ter um caminho de clareza.</p>
+    </div>
+    <button (click)="goToCheckout()" class="checkout-button" role="button" style="margin-top: 50px;">
+        <span class="checkout-button-shadow"></span>
+        <span class="checkout-button-edge"></span>
+        <span class="checkout-button-front" style="background: hsl(247, 70%, 62%);">
+            Liberar acesso agora
+        </span>
+    </button>
+    <div class="depoiments-container">
+        <depoiments-component *ngFor="let depoiment of depoiments" [depoiment]="depoiment"></depoiments-component>
+    </div>
+    <div class="depoiments-form-container">
+        <depoiment-form-component></depoiment-form-component>
+    </div>
+    <div class="faq-container">
+        <faq-component></faq-component>
+    </div>
+    <div class="ways-container">
+        <p>Agora você tem dois caminhos para seguir, o primeiro e não recomendado por nós é continuar se aventurando em indecisões e incertezas sobre seu presente e futuro, ou o melhor, receber a clareza e orientação necessária para que você destrave e tenha a direção perfeita para alcançar seus sonhos. Nosso presente de toda sua revelação personalizada o mapa do sucesso está esgotando, caso você queira hoje garantir com 80% de desconto clique no link abaixo que seu mapa do sucesso personalizado já está pronto, basta finalizar a compra para ter acesso. De R$100,00 por apenas R$19,90 hoje, podendo parcelar no cartão de crédito ou pagar no cartão de débito ou pix. Estamos te aguardando do outro lado.</p>
+    </div>
+    <button (click)="goToCheckout()" class="checkout-button" role="button" style="margin-block: 40px;">
+        <span class="checkout-button-shadow"></span>
+        <span class="checkout-button-edge"></span>
+        <span class="checkout-button-front" style="background: red;">
+            Liberar acesso agora
+        </span>
+    </button>
 </div>
