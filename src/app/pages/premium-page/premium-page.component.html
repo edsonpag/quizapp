@@ -1,0 +1,31 @@
+<div class="result-page">
+    <div class="modal-container">
+        <first-modal 
+            *ngIf="currentPage === 0" 
+            [personality]="personalities[resultData.category.index]" 
+            [personalityDescription]="pageData.personalityDescription" 
+            [avatar]="pageData.avatar" 
+            [alt]="pageData.alt">
+        </first-modal>
+        <div *ngFor="let page of this.pageData.pages; let i = index">
+            <default-modal *ngIf="currentPage === (i + 1)"
+            [title]="pageData.pages[i].title"
+            [text]="pageData.pages[i].text"
+            [avatar]="pageData.pages[i].avatar"
+            [alt]="pageData.pages[i].alt"
+            [premium]="false"
+            ></default-modal>
+        </div>
+        <last-modal
+        *ngIf="currentPage === (numberOfPages - 1)"
+        [professions]="pageData.professions"
+        [premium]="false"
+        ></last-modal>
+        <div class="modal-footer">
+            <div class="dots">
+                <div class="dot" *ngFor="let page of [].constructor(numberOfPages); let i = index" [ngClass]="i === currentPage ? 'active' : ''" (click)="goToPage(i)"></div>
+            </div>
+            <button *ngIf="currentPage < (numberOfPages - 1)" (click)="nextSlide()" class="next-button">Continuar</button>
+        </div>
+    </div>
+</div>

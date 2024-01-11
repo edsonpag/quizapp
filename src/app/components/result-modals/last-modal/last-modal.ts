@@ -11,7 +11,8 @@ export class LastModalComponent {
     @Input()
     professions!: any[]
 
-    premium: boolean = true
+    @Input()
+    premium!: boolean
 
     title: string = "Profissões Recomendadas"
 }

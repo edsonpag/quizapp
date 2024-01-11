@@ -1,11 +1,11 @@
 import { RouterModule, Routes } from "@angular/router";
 import { NgModule } from "@angular/core";
-import { ResultPageComponent } from "./result-page.component";
+import { PremiumPageComponent } from "./premium-page.component";
 
 const routes: Routes = [
     {
         path: '',
-        component: ResultPageComponent
+        component: PremiumPageComponent
     }
 ]
 

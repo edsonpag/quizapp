@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./pages/lading-page/lading-page.module').then(ladingPageModulo => ladingPageModulo.LadingPageModulo)
+    loadChildren: () => import('./pages/lading-page/lading-page.module').then(ladingPageModule => ladingPageModule.LadingPageModulo)
   },
   {
     path: 'admin/644ecc8c-f0c2-4e39-bd22-af2c036bcc68',

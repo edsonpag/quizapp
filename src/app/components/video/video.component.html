@@ -1,14 +1,10 @@
-<div #videoPlayer class="video-player">
-    <div class="alternatives-1">
-        <button (click)="resumeVideoAndHideQuestions('beginner')">Iniciante</button>
-        <button (click)="resumeVideoAndHideQuestions('intermediary')">Médio</button>
-        <button (click)="resumeVideoAndHideQuestions('advanced')">Avançado</button>
+<stopwatch-component *ngIf="showSecondStopwatch" [headline]="'Suas respostas ficarão salvas pelos próximos 15 minutos!'" [minutes]="15" [backgroundColor]="'red'"></stopwatch-component>
+<div class="video-container">
+    <h5 style="margin-block: 20px; text-align: center;">Esse aplicativo <span style="color: var(--primary-color); font-weight: bold;">revela sua profissão</span> através de sua personalidade</h5>
+    <div #videoPlayer class="video-player">
+        <video class="video-element" [poster]="poster" [playsInline]="true" #video disablepictureinpicture controlslist="nodownload noplaybackrate">
+            <source [src]="src" type="video/mp4">
+        </video>
     </div>
-    <video [playsInline]="true" #video>
-        <source [src]="src" type="video/mp4">
-    </video>
-    <div class="media-controls">
-        <button [disabled]="!canPressPlayPauseBtn" #playPauseBtn class="play-pause-btn"></button>
-        <button #volumeBtn class="volume-btn"></button>
-    </div>
+    <p style="margin-top: 16px; text-align: center;">Assista o vídeo até o final para <span style="color: var(--primary-color); font-weight: bold;">descobrir sua vocação</span> ainda hoje.</p>
 </div>

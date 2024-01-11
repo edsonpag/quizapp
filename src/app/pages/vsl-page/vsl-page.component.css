@@ -1,0 +1,148 @@
+.result-page {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.vsl-video {
+    margin-top: 30px;
+    max-width: 995px;
+    width: 90vw;
+}
+
+.about-sucess-map {
+    margin-top: 45px;
+    width: 90vw;
+    max-width: 995px;
+    text-align: center;
+}
+
+.about-sucess-map h4 {
+    font-weight: bold;
+}
+
+.about-sucess-map p {
+    margin-bottom: 0;
+    margin-top: 45px;
+}
+
+.depoiments-container {
+    margin-top: 30px;
+    width: 90vw;
+    max-width: 995px;
+}
+
+.depoiments-form-container {
+    margin-top: 30px;
+    width: 90vw;
+    max-width: 930px;
+}
+
+.faq-container {
+    margin-top: 30px;
+    width: 90vw;
+    max-width: 930px;
+}
+
+.ways-container {
+    margin-top: 30px;
+    width: 90vw;
+    max-width: 930px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+.ways-container p {
+    margin-bottom: 0;
+    margin-top: 30px;
+}
+
+.checkout-button {
+    max-width: 240px;
+    width: 85%;
+    color: white;
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    transition: filter 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.checkout-button-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition:
+        transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.checkout-button-edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(to left,
+            hsl(247, 70%, 16%) 0%,
+            hsl(247, 70%, 32%) 8%,
+            hsl(247, 70%, 32%) 92%,
+            hsl(247, 70%, 16%) 100%);
+}
+
+.checkout-button-front {
+    display: block;
+    position: relative;
+    padding: 12px 27px;
+    border-radius: 12px;
+    color: white;
+    will-change: transform;
+    transform: translateY(-4px);
+    transition:
+        transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.checkout-button:hover {
+    filter: brightness(110%);
+    -webkit-filter: brightness(110%);
+}
+
+.checkout-button:hover .checkout-button-front {
+    transform: translateY(-6px);
+    transition:
+        transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.checkout-button:active .checkout-button-front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+
+.checkout-button:hover .checkout-button-shadow {
+    transform: translateY(4px);
+    transition:
+        transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.checkout-button:active .checkout-button-shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+}
+
+.checkout-button:focus:not(:focus-visible) {
+    outline: none;
+}

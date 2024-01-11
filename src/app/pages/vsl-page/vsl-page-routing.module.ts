@@ -1,11 +1,11 @@
 import { RouterModule, Routes } from "@angular/router";
 import { NgModule } from "@angular/core";
-import { ResultPageComponent } from "./result-page.component";
+import { VslPageComponent } from "./vsl-page.component";
 
 const routes: Routes = [
     {
         path: '',
-        component: ResultPageComponent
+        component: VslPageComponent
     }
 ]
 
@@ -19,4 +19,4 @@ const routes: Routes = [
     providers: []
 })
 
-export class ResultPageRoutingModule { }
+export class VslPageRoutingModule { }

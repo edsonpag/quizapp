@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, ViewEncapsulation, Input, OnDestroy } from '@angular/core'
 import Lottie, { AnimationItem } from 'lottie-web'
-// @ts-ignore
-import * as ScrollReveal from "../../libs/scrollreveal/scrollreveal";
 
 @Component({
   selector: 'video-component',
@@ -10,10 +8,13 @@ import * as ScrollReveal from "../../libs/scrollreveal/scrollreveal";
   encapsulation: ViewEncapsulation.None
 })
 
-export class VideoComponent implements OnInit {
+export class VideoComponent implements OnInit, OnDestroy {
 
     @Input('src')
     src!: string
+
+    @Input()
+    poster!: string
 
     @ViewChild('video', { static: true })
     videoEl!: ElementRef
@@ -24,19 +25,33 @@ export class VideoComponent implements OnInit {
     @ViewChild('volumeBtn', { static: true })
     volumeBtn!: ElementRef
 
+    @ViewChild('fullscreenBtn', { static: true })
+    fullscreenBtn!: ElementRef
+
     playing = false
 
     canPressPlayPauseBtn = true
 
     mutated = false
 
+    fullscreen = false
+
     playPauseBtnAnimation!: AnimationItem
 
     volumeBtnAnimation!: AnimationItem
 
+    showSecondStopwatch: boolean = false
+
+    interval: any
+
     ngOnInit(): void {
-      this.createLottieAnimations()
+      //this.createLottieAnimations()
       this.attachEvents()
+      this.updatePage()
+    }
+
+    ngOnDestroy(): void {
+      clearInterval(this.interval)
     }
 
     createLottieAnimations(): void {
@@ -60,15 +75,21 @@ export class VideoComponent implements OnInit {
 
     attachEvents() {
       this.attachPlayPauseBtnEvent()
-      this.attachEndEvent()
-      this.attachVolumeBtnEvent()
-      //this.attachQuestionsToUserEvent()
-      this.attachUpdateMiniCursoPageEvent()
+      //this.attachEndEvent()
+      //this.attachVolumeBtnEvent()
+      //this.attachFullscreenBtnEvent()
     }
 
     attachPlayPauseBtnEvent() {
-      this.playPauseBtnAnimation.goToAndStop(14, true);
+      /*this.playPauseBtnAnimation.goToAndStop(14, true);
       this.playPauseBtn.nativeElement.addEventListener('click', () => {
+        if (this.playing)
+          this.pauseVideo()
+        else
+          this.resumeVideo()
+      })*/
+
+      this.videoEl.nativeElement.addEventListener('click', () => {
         if (this.playing)
           this.pauseVideo()
         else
@@ -91,21 +112,14 @@ export class VideoComponent implements OnInit {
       })
     }
 
-    attachQuestionsToUserEvent() {
-      this.getVideoEl().addEventListener('timeupdate', () => {
-        const TIME_TO_SHOW_QUESTIONS_IN_SECONDS = 8
-        const currentTime = this.getVideoEl().currentTime
-        if (currentTime > TIME_TO_SHOW_QUESTIONS_IN_SECONDS)
-          this.pauseVideoToShowQuestions()
-      })
-    }
-
-    attachUpdateMiniCursoPageEvent() {
-      this.getVideoEl().addEventListener('timeupdate', () => {
-        const TIME_TO_UPDATE_MINI_CURSO_PAGE_IN_SECONDS = 600
-        const currentTime = this.getVideoEl().currentTime
-        if (TIME_TO_UPDATE_MINI_CURSO_PAGE_IN_SECONDS < currentTime) {
-          this.updateMiniCursoPage()
+    attachFullscreenBtnEvent() {
+      this.fullscreenBtn.nativeElement.addEventListener('click', () => {
+        if (this.fullscreen) {
+            // @ts-ignore
+            this.getVideoEl().exitFullscreen()
+        }
+        else {
+          this.getVideoEl().requestFullscreen()
         }
       })
     }
@@ -117,7 +131,7 @@ export class VideoComponent implements OnInit {
     pauseVideo() {
       if (this.canPressPlayPauseBtn) {
         this.getVideoEl().pause()
-        this.playPauseBtnAnimation.playSegments([0, 14], true)
+        //this.playPauseBtnAnimation.playSegments([0, 14], true)
         this.playing = false
       }
     }
@@ -130,7 +144,7 @@ export class VideoComponent implements OnInit {
     resumeVideo() {
       if (this.canPressPlayPauseBtn) {
         this.getVideoEl().play()
-        this.playPauseBtnAnimation.playSegments([14, 27], true)
+        //this.playPauseBtnAnimation.playSegments([14, 27], true)
         this.playing = true
       }
     }
@@ -162,34 +176,18 @@ export class VideoComponent implements OnInit {
       document.querySelector('.alternatives-1')?.classList.remove('transition-effect')
     }
 
-    updateMiniCursoPage() {
-      document.querySelectorAll(".hide").forEach(el => el.classList.remove("hide"))
-      this.addScrollReveal()
-    }
-
-    addScrollReveal(): void {
-      ScrollReveal({
-          reset: true,
-          distance: '60px',
-          duration: 900,
-          delay: 0
-      })
-      ScrollReveal().reveal('.button-first-page', { origin: 'left' })
-      ScrollReveal().reveal('#copy-2-title', { origin: 'left' })
-      ScrollReveal().reveal('.copy-part', { origin: 'bottom', interval: 200 })
-      ScrollReveal().reveal('.treasure-map-person-name', { origin: 'left' })
-      ScrollReveal().reveal('.treasure-map', { origin: 'left' })
-      ScrollReveal().reveal('.paragraph-1', { origin: 'left' })
-      ScrollReveal().reveal('.paragraph-2', { origin: 'bottom' })
-      ScrollReveal().reveal('.list-group li', { origin: 'bottom', interval: 200 })
-      ScrollReveal().reveal('.first-button', { origin: 'bottom' })
-      ScrollReveal().reveal('.audios h2', { origin: 'bottom' })
-      ScrollReveal().reveal('.audios .audio-player', { origin: 'left', interval: 200 })
-      ScrollReveal().reveal('.faq-container .faq-title', { origin: 'left' })
-      ScrollReveal().reveal('.my-accordion-item', { origin: 'bottom', interval: 200 })
-      ScrollReveal().reveal('.last-button', { origin: 'bottom' })
-      ScrollReveal().reveal('.still-have-doubts', { origin: 'left' })
-      ScrollReveal().reveal('.still-have-doubts-p', { origin: 'left' })
-      ScrollReveal().reveal('.change-history-button', { origin: 'bottom' })
+    updatePage(): void {
+      this.interval = setInterval(() => {
+          const vslVideo = document.querySelector('.video-player video') as HTMLVideoElement
+          let currentTime = vslVideo.currentTime
+          if (currentTime > 415) {
+              document.querySelectorAll(".hide").forEach(hideElement => {
+                  if (!hideElement.classList.contains('depoiment-added'))
+                      hideElement.classList.remove('hide')
+              })
+              this.showSecondStopwatch = true
+              clearInterval(this.interval)
+          }
+      }, 1000)
   }
 }

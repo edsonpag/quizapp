@@ -1,9 +1,7 @@
 .timer-container {
-    border-radius: 12px 12px 0 0;
     position: relative;
     width: 90vw;
     max-width: 995px;
-    background-color: var(--primary-color);
     display: flex;
     gap: 10px;
     flex-direction: column;

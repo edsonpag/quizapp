@@ -14,6 +14,10 @@ const routes: Routes = [
     {
         path: 'result',
         loadChildren: () => import('../result-page/result-page.module').then(resultPageModule => resultPageModule.ResultPageModule)
+    },
+    {
+        path: 'premium',
+        loadChildren: () => import("../premium-page/premium-page.module").then(premiumPageModule => premiumPageModule.PremiumPageModule)
     }
 ]
 

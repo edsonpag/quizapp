@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
     selector: 'stopwatch-component',
@@ -7,6 +7,16 @@ import { Component, OnInit } from "@angular/core";
 })
 
 export class StopWatchComponent implements OnInit {
+
+    @Input()
+    headline!: string
+
+    @Input()
+    minutes!: number
+
+    @Input()
+    backgroundColor!: string
+
     remainingTime!: number;
 
     timer: any;
@@ -36,7 +46,7 @@ export class StopWatchComponent implements OnInit {
     }
 
     resetTimer() {
-        this.remainingTime = 15 * 60;
+        this.remainingTime = this.minutes * 60;
         this.formatTime();
         this.stopTimer();
     }
